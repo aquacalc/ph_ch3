@@ -471,7 +471,7 @@ The next display drives this point home.
   [/p]
 
   [p style:`{marginBottom: '5px', marginLeft:'80px'}`]
-    10[sup]-pH[/sup] = 10[sup]-([Display value:my_ph /])[/sup] = [[span style:`{color:'green', fontSize: '1.0rem'}` ][Display value: conc_h_plus format:".7r" /][/span] mol/L = \[H[sup]+[/sup]\]
+    10[sup]-pH[/sup] = 10[sup]-([Display value:my_ph /])[/sup] = [span style:`{color:'green', fontSize: '1.0rem'}` ][Display value: conc_h_plus format:".7r" /][/span] mol/L = \[H[sup]+[/sup]\]
   [/p]
 
 
