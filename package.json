@@ -8,7 +8,7 @@
     "css": "styles.css",
     "authorView": false
   },
-  "homepage": "https://aquacalc.github.io/ph_ch2",
+  "homepage": "https://aquacalc.github.io/ph_ch3",
   "scripts": {
     "deploy": "gh-pages -d build"
   },
