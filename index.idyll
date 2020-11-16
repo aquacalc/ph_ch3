@@ -10,6 +10,17 @@
   color:"white"
    /]
 
+[p]
+The previous section was preparation for understanding important aspects of pH covered in this final part of the **WQ ToolBox** 
+pH chapter.
+[/p]
+
+[p]
+These topics include several that often cause confusion, such as how to calculate acidity (\[H[sup]+[/sup]\]) from pH, the 
+correct way to average pH values, and the problems with measuring seawater pH on the NBS scale -- the one most everyone uses.
+[/p]
+
+
 [p style: `{fontSize: '0.90rem'}` ]
  *This document was developed with* [a href:"https://idyll-lang.org/"]Idyll[/a], *a "toolkit for creating data-driven stories 
  and explorable explanations". Custom components were built with* [a href:"https://reactjs.org/"]React[/a] *and*  [a href:"https://d3js.org/"]D3[/a].
@@ -22,21 +33,18 @@
 [div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', marginBottom:'18px', paddingTop:'2px'}`]
 [h3 id:"top"]Table of Contents[/h3]
 [ul style:`{listStyleType:'none', marginTop:'0px'}`]
-
-
   [ul className: 'ulToc']
     [li] [a href:"#section-goals"]Section Goals[/a] [/li]
     [li] [a href:"#inconvenient"]Inconvenient numbers[/a] [/li]
     [li] [a href:"#ph-def"]pH ≔ -log[sub]10[/sub]|\[H[sup]+[/sup]\]|[/a] [/li]
-    [li] [a href:"#ten-to-minus-ph"]What is 10[sup]-pH[/sup]?![/a] [/li]
+    [li] [a href:"#ten-to-minus-ph"]*What is 10[sup]-pH[/sup]?!*[/a] [/li]
     [li] [a href:"#power-of-ten"]A Power of Ten[/a] [/li]
+    [li] [a href:"#mean-ph"]*What does ‘mean pH’ mean?!*[/a] [/li]
     [li] [a href:"#neutral-ph"]pH 7 is not always neutral[/a] [/li]
-    // [li] [a href:"#"]Measuring pH[/a] [/li]
     [li] [a href:"#ph-scales"]NBS & the Three Little pH Scales[/a] [/li]
-      [li] [a href:"#next-steps"]Next Steps...[/a] [/li]
-      [li] [a href:"#refs"]References[/a] [/li]
+    [li] [a href:"#next-steps"]Next Steps...[/a] [/li]
+    [li] [a href:"#refs"]References[/a] [/li]
   [/ul]
-
 [/ul]
 [/div]
 
@@ -50,12 +58,16 @@
   [h4]Section Goals[/h4]
 
   [ul]
-    [li] become familiar with **water's dissociation** into ions [/li]
-    [li] describe the concept of **dynamic equilibrium** [/li]
-    [li] define an **equilibrium constant** [/li]
-    [li] understand how water's **equilibrium constant relates to pH** [/li]
-    [li] confidently use common **water chemistry terms** [/li]
-    [li] explain what a **mole** is and why we use it [/li]
+    [li] describe three ways to handle **inconveniently small (large) numbers** [/li]
+    [li] write the **strict definition of pH** (in terms of activity) [/li]
+    [li] write the **practical definition of pH** (in terms of concentration) [/li]
+    [li] understand why pH is defined on a **logarithmic scale** [/li]
+    [li] explain the meaning of **10[sup]-pH[/sup]** [/li]
+    [li] know which **pH change doubles (halves) acidity** [/li]
+    [li] explain why **pH 7.0 is not always neutral** [/li]
+    [li] explain **the correct way to average a set of pH values** [/li]
+    [li] describe the **NBS pH scale** and discuss its limitations [/li]
+    [li] list the **pH scales for seawater** and explain their importance [/li]
   [/ul]
 
 [/div]
@@ -99,7 +111,7 @@ We still can find a friendlier form for our present purposes, especiallly as neg
 [/p]
 
 [p]
-***Metric prefixes*** Another way to make those small numbers more useable is to represent them in terms of one of the standard metric prefixes for quantities less than one, 
+***Metric prefixes*** Another way to make those small numbers more useable is to represent them as one of the standard metric prefixes for quantities less than one, 
 like *milli-* (one-thousandth), *micro-* (one-millionth), and *nano-* (one-billionth). (For a full list, see the appendix of the **WQ ToolBox** online manual.)
 [/p]
 
@@ -117,16 +129,16 @@ scaled in millimoles per kg (**mmol/kg**); *i.e.*, thousandths of a mole per kg.
 We'd work more efficiently -- and feel more comfortable -- with a reasonably-sized positive number to describe acidity. And that finally brings us to pH.
 [/p]
 
+// ((((((((( PH DEF )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"ph-def"]*pH [span style:`{fontSize:'1.5rem'}` ]≔[/span] -log[sub]10[/sub]|{H[sup]+[/sup]}|*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
 [aside]
 [Inline]
 The symbol "[span style:`{fontSize:'1.13rem'}` ]≔[/span]" indicates a definition, not an equation. "log[sub]10[/sub]" sometimes is written as "lg".
 [/Inline]
 [/aside]
-
-// ((((((((( PH DEF )))))))))
-[div style:`{marginTop: '35px'}`]
-[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"ph-def"]*pH [span style:`{fontSize:'1.5rem'}` ]≔[/span] -log[sub]10[/sub]|{H[sup]+[/sup]}|*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
-[/div]
 
 [p]
  One way to transform those zero-filled \[H[sup]+[/supb]\] values into a human-friendly form is by hitting them with a logarithm ("log", for short).
@@ -152,7 +164,7 @@ The symbol "[span style:`{fontSize:'1.13rem'}` ]≔[/span]" indicates a definiti
 [/div]
 
 [p]
-  As a heads-up, you also might see it written with activity in different notation:
+  As a heads-up, you also might see it written in different notation with [Equation display:false]\alpha[/Equation] (alpha) symbolizing activity:
 [/p]
 
 [div]
@@ -162,8 +174,8 @@ The symbol "[span style:`{fontSize:'1.13rem'}` ]≔[/span]" indicates a definiti
 [/div]
 
 [p]
-  As pointed out in the previous section, in dilute solutions activity can be approximated by concentration. This leads to the more 
-  commonly written definition of pH, with *concentration* substituted for activity:
+  We pointed out in the previous section that activity can be approximated by concentration in dilute solutions. This leads to the more 
+  common -- and *approximate* -- definition of pH in which concentration is substituted for activity:
 [/p]
 
 [div style:`{marginTop: '15px'}`]
@@ -175,8 +187,8 @@ The symbol "[span style:`{fontSize:'1.13rem'}` ]≔[/span]" indicates a definiti
 [/p]
 
 [p]
-For now, we'll focus on transforming those unwieldy \[H[sup]+[/sup]\] values into friendly pH values. We'll do this by using the previous interactive display 
-that shows how \[H[sup]+[/sup]\] depends on temperature and adding code that shows how -log[sub]10[/sub] turns **[span style:`{color:'green'}`]\[H[sup]+[/sup]\][/span]** 
+For now, we'll focus on transforming those unwieldy \[H[sup]+[/sup]\] values into friendly pH values. We'll build on the earlier interactive display 
+that shows how \[H[sup]+[/sup]\] depends on temperature by adding code that shows how -log[sub]10[/sub] turns **[span style:`{color:'green'}`]\[H[sup]+[/sup]\][/span]** 
 (in **[span style:`{color: 'green', fontSize: '1.1rem'}`]green[/span]**) 
 into the familiar pH values that you know and love.
 [/p]
@@ -224,7 +236,7 @@ into the familiar pH values that you know and love.
 [derived name: thePh value: `-Math.log10(sqrt_log_1)` /]
 
 // ** REPEAT ROOT Kw INTERACTION with *_kw suffix
-[p style:`{marginBottom: '5px', textAlign: 'center'}`]Here's the H[sup]+[/sup] concentration at [Display value: tempForSelectedUnits_log format:".1f" /][Display value: tempUnits_log/][/p]
+[p style:`{marginBottom: '5px', textAlign: 'left'}`]Here's the H[sup]+[/sup] concentration at [Display value: tempForSelectedUnits_log format:".1f" /][Display value: tempUnits_log/][/p]
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^ ORIGINAL ^^^^^^^^^^^^^^^^^^^^^^^^^ //
 
@@ -241,7 +253,7 @@ into the familiar pH values that you know and love.
   [/p]
 
 // -- NEGATIVE LOG10 -- //
-[p style:`{marginBottom: '8px', marginTop: '0px', textAlign: 'center'}`]And here's the -log[sub]10[/sub] transform of that \[H[sup]+[/sup]\] into a pH[/p]
+[p style:`{marginBottom: '8px', marginTop: '35px', textAlign: 'left'}`]And here's the -log[sub]10[/sub] transform of that \[H[sup]+[/sup]\] into pH[/p]
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^ ORIGINAL ^^^^^^^^^^^^^^^^^^^^^^^^^ //
 
@@ -259,15 +271,16 @@ into the familiar pH values that you know and love.
 // ^^^^^^^^^^^^^^^^^^^^^^^^^ //
 
 [p]
-*Why use the negative log[sub]10[/sub] instead of just log[sub]10[/sub]?*
+*Why use* **negative** *log[sub]10[/sub] instead of just log[sub]10[/sub]?*
 [/p]
 
 [p]
-If we had used the *negative* log[sub]10[/sub], then the pH spit out the other end would have been negative. We prefer a positive value.
+If we had used *positive* log[sub]10[/sub], then the pH spit out the other end would have been negative. Using -log[sub]10[/sub] makes most all pH values positive, as we 
+prefer them.
 [/p]
 
 [p]
-A consequence of that choice, of course, is that solutions with higher acidity are assigned a lower pH, but we’re used to that by now.
+One consequence of that choice is that solutions with higher acidity are assigned a lower pH. That's a bit inconvenient, but we’re used to that by now.
 [/p]
 
 [p]
@@ -277,12 +290,12 @@ A consequence of that choice, of course, is that solutions with higher acidity a
 [p]
 Any logarithmic base would work: log[sub]2[/sub] (binary), log[sub]16[/sub] (hex), or log[sub]e[/sub] (*ln*, the Natural logarithm). 
 But log[sub]10[/sub], the Common or Briggsian logarithm, was well tabulated before the wide availability of digital computing devices and so was the go-to base 
-for most applications; and we seem to be “wired” to be more comfortable with the base-10 number system.
+for most scientific and engineering work; and we seem to be “wired” to be more comfortable with the base-10 number system.
 [/p]
 
-[hr/]
+[hr className:'neutral-ph-hr'/]
 
-[p]And that's how we get pH, the "master variable" we depend on to describe the acidity of production and recreational aquatic systems.[/p]
+[p]OK. We now have pH, the "master variable" that describes the acidity of production and recreational aquatic systems.[/p]
 
 [p]
 When someone asks how acidic your system is, you can answer:
@@ -296,6 +309,62 @@ When someone asks how acidic your system is, you can answer:
 
 [p style:`{textAlign: 'center', margin: '0px'}`]
 "*My \[H[sup]+[/sup]\] is [Display value: sqrt_log_1 format: '.7r' /] mol/L*."
+[/p]
+
+[hr className:'neutral-ph-hr'/]
+
+[p]
+Before moving on, it's useful to visualize the relationship between pH and \[H[sup]+[/sup]\]. This is illustrated in the next interactive display.
+[/p]
+
+
+// **************************** //
+// ******* PH vs [H^+] ******** //
+// **************************** //
+
+[div className:"dynamic-module" ]
+
+  [div className: 'yellow-panel-div']
+
+    [h4 style:`{textAlign:'center', paddingTop:'10px'}` ]The Non-linear Relationship between pH and \[H[sup]+[/sup]\][/h4]
+
+    [p style:`{fontSize: '1.05rem', textAlign: 'center', marginTop:'0px'}` ]
+    (To change **pH**, click it and drag horizontally. Range: pH 6 to pH 9)
+    [/p]
+
+    [var name:"phOne_graph" value:7.25 /]
+
+    // Owing to (digital) rounding error, 'magnify' by 10^9, do the calc, then telescope out
+    [derived name: hplus_graph value:`10000000000 * Math.pow(10, -phOne_graph)`/]
+
+    [div style:`{fontSize: '2.00rem', textAlign: 'center'}`]
+    pH [span style:`{color:'green'}`][Dynamic value:phOne_graph min: 6.0 max: 9.0 step: 0.01 /][/span]
+    [/div]
+
+    // [div style:`{fontSize: '2.00rem', textAlign: 'center'}`]
+    // from pH [span style:`{color:color_phOne_full}`][Dynamic value:phOne_entered min: 6.0 max: 9.0 step: 0.01 /][/span] to pH [span style:`{color:color_phTwo_full}`][Dynamic value:phTwo_entered min: 6.0 max: 9.0 step: 0.01 /][/span]
+    // [/div]
+
+     [PhVsHplus_graph className:"d3-component" 
+      ph_1: phOne_graph 
+      hPlus_1: hplus_graph 
+      /]
+
+  [/div]
+   
+[/div]
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[p]
+For now, the main take-away is that the relationship between pH and \[H[sup]+[/sup]\] is non-linear: *i.e.*, their relationshp is not described 
+by a straight line.
+[/p]
+
+[p]
+That non-linearity introduces some potential wrinkles into the correct use of pH that we'll iron out below. In fact, we'll rely on this graph to show how small 
+changes in pH represent large changes in acid concentration; and in demonstrating how to correctly calculate the average of a set of pH values.
 [/p]
 
 
@@ -392,12 +461,12 @@ science and engineering.
 [/p]
 
 [p]
-As described above this panel, logs "tame" inconveniently expressed numbers by transforming them into a more human-readable form.
+As described above this panel, a logarithm can "tame" inconveniently expressed numbers by transforming them into a more human-friendly form. Log transforms are 
+particularly useful whenever a variable spans a very wide range of values: logs compress such wide ranges into a more manageable narrow ones.
 [/p]
 
 [p]
 Logs are used in this way not only for pH, but also for the decibel scale of sound intensity and the Richter Scale that describes earthquake damage. 
-In fact, whenever a variable spans a wide range of values, a log transform will compress it into a more manageable range.
 [/p]
 // Observed that multiplying two numbers of the same base was simplified by adding their exponents. *e.g.*, 
 // 4 x 8 = 2[sup]2[/sup] x 2[sup]3[/sup] = 2[sup]\(2 + 3\)[/sup] = 2[sup]5[/sup] = 32
@@ -419,7 +488,7 @@ In fact, whenever a variable spans a wide range of values, a log transform will 
 [/div]
 
 [p]
-When you dive into the tech literature, you might see pH as an exponent:
+When you dive into the tech literature, you'll sometimes see pH as an exponent:
 [/p]
 
 [Equation display:true]
@@ -435,9 +504,24 @@ So, what does it mean?
 [/p]
 
 [p]
-We’ve seen above how to calculate pH as -log[sub]10[/sub]|\[H[sup]+[/sup]\]|. 10[sup]-pH[/sup] does the *inverse*: it's how we calculate \[H[sup]+[/sup]\] 
-when we have pH. The next display drives this point home.
+We learned above that, when we have \[H[sup]+[/sup]\], we calculate pH with the -log[sub]10[/sub]:
 [/p]
+
+[p]
+[Equation display:true]
+  {pH} = -\log_{10}{[H^+]}
+[/Equation]
+[/p]
+
+[p]
+That's when we have \[H[sup]+[/sup]\] and want pH. To do the inverse -- *i.e.*, when we have pH and want \[H[sup]+[/sup]\] -- we use the mathematical inverse of the base-10 logarithm 
+-- base-10 exponentiation:
+[/p]
+
+[Equation display:true]
+  [{H^+}] = 10^{-pH}
+[/Equation]
+//  10^{-pH} = {\lbrace{H^+}\rbrace} \approx[{H^+}]
 
 [p]
 The next display drives this point home.
@@ -467,23 +551,22 @@ The next display drives this point home.
 
 // ** RESULT: [H+] for pH...
   [p]
-    Calculating \[H[sup]+[/sup]\] when we have pH...
+    Calculate \[H[sup]+[/sup]\] from pH...
   [/p]
 
   [p style:`{marginBottom: '5px', marginLeft:'80px'}`]
-    10[sup]-pH[/sup] = 10[sup]-([Display value:my_ph /])[/sup] = [span style:`{color:'green', fontSize: '1.0rem'}` ][Display value: conc_h_plus format:".7r" /][/span] mol/L = \[H[sup]+[/sup]\]
+    \[H[sup]+[/sup]\] = 10[sup]-pH[/sup] = 10[sup]-([Display value:my_ph /])[/sup] = **[span style:`{color:'green', fontSize: '1.0rem'}` ][Display value: conc_h_plus format:".7r" /][/span]** mol/L
   [/p]
 
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^ [H+] from pH ^^^^^^^^^^^^^^^^^^^^^^^^^ //
 
-// [p style:`{textAlign:'left'}`]
-  [p]
-    ...and calculating pH from \[H[sup]+[/sup]\]...
+[p style:`{marginTop:'30px'}`]
+    Calculate pH from \[H[sup]+[/sup]\]...
   [/p]
 
   [p style:`{marginLeft:'68px'}`]
-    -log[sub]10[/sub]|\[H[sup]+[/sup]\] = -log[sub]10[/sub]|[span style:`{color:'green', fontSize: '1.0rem'}` ][Display value: conc_h_plus format:".7r" /][/span]| = [Display value:calced_ph /] = pH
+    pH = -log[sub]10[/sub]|\[H[sup]+[/sup]\]| = -log[sub]10[/sub]|**[span style:`{color:'green', fontSize: '1.0rem'}` ][Display value: conc_h_plus format:".7r" /][/span]**| = [Display value:calced_ph /]
   [/p]
 
   [/div]
@@ -500,15 +583,25 @@ You might wonder why we would need to know \[H[sup]+[/sup]\] after we already ha
 Fair question. The reason is that, once we have measured pH, we need to do more with it than just enter it in a spreadsheet and admire it.
 [/p]
 
+// [p]
+// As stated in the first section, pH determines the concentration of critical water-quality properties, such as Un-Ionized Ammonia (UIA).
+// [/p]
+
 [p]
-As stated near the top, pH determines the concentration of critical water-quality properties, such as Un-Ionized Ammonia (UIA). The formulae used to calculate 
-this and other properties require \[H[sup]+[/sup]\], so we need a way to change our measured pH into \[H[sup]+[/sup]\]. Ten raised to the -pH power does the trick.
+In particular, the formulae we use to calculate the critical water-quality properties that we manage, such as Un-Ionized Ammonia (UIA), require \[H[sup]+[/sup]\].
+[/p]
+
+[p]
+That means that we need a way to change our measured pH values into their corresponding \[H[sup]+[/sup]\] values. Ten raised to the -pH power does the trick.
 [/p]
 
 [p]
 We won’t take a side-trip from here into an explanation of the steps that turn 10[sup]-pH[/sup] into \[H[sup]+[/sup]\]. For now, we'll just mention that 
-logs and exponents are related as *inverse functions*: one un-does whatever the other one does. You'll find a more complete explanation in the manual’s math 
-refresher appendix. 
+logarithms and exponents are *inverse functions*: one un-does whatever the other does.
+[/p]
+
+[p]
+You'll find a more complete explanation, along with examples, in the manual’s math refresher appendix. 
 [/p]
 
 
@@ -552,7 +645,7 @@ slider, you'll see the concentration of H[sup]+[/sup] change by one order of mag
     [/div]
 
     [div style:`{marginLeft: '170px'}` ]
-    pH [Display value: myPh /] = [Display value: concHPlus format: '.2r' /] \[H[sup]+[/sup]\] mol/L
+    at pH [Display value: myPh /], \[H[sup]+[/sup]\] = [Display value: concHPlus format: '.2r' /] mol/L
     [/div]
 
   [/div]
@@ -566,26 +659,26 @@ slider, you'll see the concentration of H[sup]+[/sup] change by one order of mag
 // The [p] inserted between them "fixed" it
 //
   [p]
-    This makes integral changes in pH easy to understand:
+    Such one-unit changes in pH are easy to understand:
   [/p]
 
     [ul]
-      [li]every one-unit increase (*e.g.*, pH 7 to pH 8) means 10 times *less* acid[/li]
-      [li]every one-unit decrease (*e.g.*, pH 7 to pH 6) means 10 times *more* acid[/li]
+      [li]every increase of one pH unit (*e.g.*, pH 7 to pH 8) means 10 times *less* acid[/li]
+      [li]every decrease of one pH unit (*e.g.*, pH 7 to pH 6) means 10 times *more* acid[/li]
     [/ul]
 
   [p]
-    Arbitrary changes -- *e.g.*, from pH 7.20 to pH 6.85 -- are not as obvious. How much more acidic is a solution with pH 6.85 than one with pH 7.20?
+    Arbitrary changes -- *e.g.*, from pH 7.20 to pH 6.85 -- are not as obvious. How much more acidic is a solution of pH 6.85 than one with pH 7.20?
   [/p]
 
 
 [p]
-The next interactive display is laid out in a more thorough way so that you might get a better "feel" for how changes in pH relate to 
+The tool in the next interactive display will help you get a better "feel" for how more general changes in pH relate to 
 changes in a solution's acidity.
 [/p]
 
 [p style:`{fontSize:'small'}`]
-  (**NB**: The uppercase Greek letter Δ ("delta") that will appear below means "change".)
+  (**NB**: The uppercase Greek letter Δ ("delta") that you'll see below means "change".)
 [/p]
 
 // **************************** //
@@ -596,7 +689,9 @@ changes in a solution's acidity.
 
   [div className: 'yellow-panel-div']
 
-    [p style:`{fontSize: '1.05rem', textAlign: 'center', paddingTop:'20px'}` ]
+    [h4 style:`{textAlign:'center', paddingTop:'10px'}` ]pH Changes and \[H[sup]+[/sup]\] Acidity [/h4]
+
+    [p style:`{fontSize: '1.05rem', textAlign: 'center', paddingTop:'0px'}` ]
     (To change either **pH**, click it and drag horizontally. Range: pH 6 to pH 9)
     [/p]
 
@@ -651,7 +746,7 @@ changes in a solution's acidity.
     // acidity: [Display value: percentChange format:'.1f' /]% [Display value: moreOrLess_posto /]
     // [/div]
 
-     [PhVsHplus className:"d3-component" 
+     [PhVsHplus_posto className:"d3-component" 
      ph_1: phOne_entered 
      ph_2: phTwo_entered 
      hPlus_1: phOne_hPlus 
@@ -678,20 +773,201 @@ changes in a solution's acidity.
   [span style:`{fontSize: '0.92rem', marginTop: '0px'}`]A 0.3 *decrease* in pH doubles acid concentration; a 0.3 *increase* halves it.[/span]
   [/aside]
 
+  // [p]  
+  //   If the relationship between pH and \[H[sup]+[/sup]\] were linear, then pH always would change at the same rate \[H[sup]+[/sup]\] 
+  //   in the is on the log[sub]10[/sub] scale...
+  // [/p]
+
+  // [p]  
+  //   Because the relationship between pH and \[H[sup]+[/sup]\] is non-linear, the propotional change...
+  // [/p]
+
   [p]  
-    Because pH is on the log[sub]10[/sub] scale, acid concentration doubles (*i.e.*, increases by 100%) with ***approximately*** every 
-    0.30 drop in pH.
+    As a rule of thumb, acid concentration doubles (*i.e.*, increases by 100%) with each drop in pH of ***approximately*** 0.30 units.
   [/p]
 
   [p]  
-    For example, pH 6.0 is about twice as acidic as pH 6.3; pH 6.3 is about twice as acidic as pH 6.6 -- and pH 6.0 is roughly *four times* as acidic 
-    as pH 6.6.
+    You can see this in the display.
+  [/p]
+
+  [ul]
+    [li] set the "from" pH (on the left) to 7.72 [/li]
+    [li] set the "to" pH (on the right) 0.30 units lower to pH 7.42 [/li]
+  [/ul]
+  [p]  
+    The graph will display a 99.5% increase in acidity -- roughly 100% (or double) the acidity at pH 7.72, the starting point.
   [/p]
 
   [p]  
-    Similarly, every pH *increase* of about 0.30 cuts the amount of acid in half (*i.e.*, decreases it by 100%): pH 8.1 is about one-half as 
-    acidic as pH 7.8.
+    Note that lowering the "to" pH another 0.01 units to 7.41 represents an increase in acidity of about *104%* from the starting pH.
   [/p]
+
+  [p]  
+    The exact doubling point is between 0.30 and 0.31 (if you're interested, it's much closer to 0.3010299956639812). We round that 
+    off to 0.30 only because it's a nice number that serves our need for a rough approximation.
+  [/p]
+
+  [p]  
+    You'll get the same percentage increase in acidity for any pair of pH values as long as the ending pH is 0.30 pH units lower than the starting pH.
+  [/p]
+
+  [p]  
+    Similarly, each pH *increase* of 0.30 pH units cuts the amount of acid by about one-half (*i.e.*, decreases it by 50%).
+  [/p]
+
+  [p]  
+    You can see this in the display: *e.g.*, if you start at pH 8.08 and raise it by 0.30 units to pH 8.38, the resulting solution 
+    will be about one-half as acidic.
+  [/p]
+
+  [p]  
+    The intent of this exercise is to drive home one important point:
+  [/p]
+
+  [p style:`{textAlign:'center'}` ]  
+    *small changes in pH represent large changes in a solution's acid concentration*
+  [/p]
+
+
+// ******************* //
+// ***** MEAN PH ***** //
+// ******************* //
+
+// ((((((((( Mean pH )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px', marginTop: '50px'}` id:"mean-ph"]***What does 'mean pH' mean?!***[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]
+Question: *What's the mean (*i.e.*, average) of pH 7 and pH 8?* Is it pH 7.5?
+[/p]
+
+[p]
+Another consequence of putting pH on the -log[sub]10[/sub] scale is that we have to be careful when answering that straighforward question.
+[/p]
+
+[p]
+When we ask for a mean value, we're asking for a summary statistic that describes the central tendency of a set of data.
+[/p]
+
+[p]
+For example, if we measure water temperature over three days and get 26.6 °C, 25.0 °C, and 24.3 °C, then our mean water temperature is:
+[/p]
+
+[Equation display:true]
+  \dfrac{26.6 + 25.0 + 24.3}{3} = 25.3
+[/Equation]
+
+[p]
+Simple enough: Add all the temperatures (75.9) and divide by the number of temperatures (3) to get 25.3 °C. Nothing earth-shaking.
+[/p]
+
+[p]
+Now let's treat pH 7 and pH 8 the same way:
+[/p]
+
+[Equation display: true]
+  \dfrac{7 + 8}{2} = 7.5
+[/Equation]
+
+[p]
+Here's the issue that we have to address:
+[/p]
+
+[ul]
+  [li] \[H[sup]+[/su]\] determines a solution's acidity and is what we measure [/li]
+  [li] we transform \[H[sup]+[/sup]\] into pH with the -log[sub]10[/sub] transform [/li]
+  [li] -log[sub]10[/sub] is a non-linear transformation that changes the relationship between \[H[sup]+[/su]\] and pH [/li]
+[/ul]
+
+[p]
+The result is that the average pH is not the same as the average \[H[sup]+[/su]\]
+[/p]
+
+[p]
+We've already seen three consequences of this non-linear transform in interactive displays:
+[/p]
+
+[ul]
+  [li] higher \[H[sup]+[/su]\] produces lower pH [/li]
+  [li] small changes in pH produce larger changes in \[H[sup]+[/su]\] [/li]
+  [li] the rate of change pH ... [/li]
+[/ul]
+
+[p]
+Here's another consequence of the -log[sub]10[/sub] transform:
+[/p]
+
+[p]
+The average of a set of pH values generally is *not equal to* the average \[H[sup]+[/su]\] of those pH values.
+[/p]
+
+That's all owed to the -log[sub]10[/sub] transformation. Illustrated by modifying the last display...
+
+
+// *************************** //
+// ******* PH AVERAGE ******** //
+// *************************** //
+
+[div className:"dynamic-module" ]
+
+  [div className: 'yellow-panel-div']
+
+    [h4 style:`{textAlign:'center', paddingTop:'10px'}` ] Calculating Mean pH [/h4]
+
+    [p style:`{fontSize: '1.05rem', textAlign: 'center', marginTop:'0px'}` ]
+    (To change **pH**, click it and drag horizontally. Range: pH 6 to pH 9)
+    [/p]
+
+    [var name:"phOne_average" value:6.5 /]
+    [var name:"phTwo_average" value:8.0 /]
+
+    // Owing to (digital) rounding error, 'magnify' by 10^9, do the calc, then telescope out
+    [derived name: phOne_hPlus value:`10000000000 * Math.pow(10, -phOne_average)`/]
+    [derived name: phTwo_hPlus value:`10000000000 * Math.pow(10, -phTwo_average)`/]
+
+    // Averages
+    [derived name: ph_average value:`(phOne_average.toFixed(2) + phTwo_average.toFixed(2)) / 2`/]
+    [derived name: hplus_average value:`(Math.pow(10, -phOne_average.toFixed(2)) + Math.pow(10, -phTwo_average.toFixed(2))) / 2`/]
+
+    [div style:`{fontSize: '2.00rem', textAlign: 'center'}`]
+    from pH [span style:`{color:color_phOne_full}`][Dynamic value:phOne_average min: 6.0 max: 9.0 step: 0.01 /][/span] to pH [span style:`{color:color_phTwo_full}`][Dynamic value:phTwo_average min: 6.0 max: 9.0 step: 0.01 /][/span]
+    [/div]
+
+    // [derived name: phIncreasingDecreasing value:`equalityTest < 1 ? "--" : (phOne_average < phTwo_average ? "pH has increased, so the solution is LESS acidic" : "pH has decreased, so the solution is MORE acidic")` /]
+    // [p style:`{fontSize: '1.1rem', textAlign: 'center', marginBottom: '0px'}`]
+    //   [span style:`{color:color_phTwo_full}` ][Display value: phIncreasingDecreasing /][/span]
+    // [/p]
+
+     [PhAverage className:"d3-component" 
+     ph_1: phOne_average 
+     ph_2: phTwo_average 
+     hPlus_1: phOne_hPlus 
+     hPlus_2: phTwo_hPlus
+     ph_average: ph_average
+     hplus_average: hplus_average
+      /]
+
+  [/div]
+   
+[/div]
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Context: two here -- summarizing pH in a tank
+clean data: not mindlessly include outliers, but mindfully consider if they are significant or a measurement error
+
+// // see: https://towardsdatascience.com/on-average-youre-using-the-wrong-average-geometric-harmonic-means-in-data-analysis-2a703e21ea0
+// "ultimately judgement & scientific skepticism are required, as ever, for sound empiricism"
+// "Understand the nature of your data & think carefully about the summary statistics you use to describe it — or risk being wrong ‘on average’."
+
+// // see: 
+// "Suppose we have random variable [H+]i. If we take the log transformation pHi = loge([H+]i), then pH-bar is the natural log of the geometric mean of [H+]." 
+// "It follows, then, that e^(pH-bar) is the geometric mean of [H+]."
+
+//   [var name:"textVal" value:"Hello World" /]
+// [TextInput value:textVal /]
 
 [p]
 The take-way: Be aware that small changes in pH mean large changes in acid concentration. This underlines the need for precise pH management to 
@@ -725,6 +1001,8 @@ And pH 7 isn't always neutral.
 We can see this for ourselves by putting together a couple pieces of the pH puzzle that we learned above.
 [/p]
 
+[hr className:"neutral-ph-hr"/]
+
 [p style:`{marginBottom: '2px', fontSize: '1.15rem'}`]
 ① **Pure water is always neutral.**
 [/p]
@@ -752,8 +1030,14 @@ And that means that pure water ***always*** is neutral.
 
 [p style:`{marginTop: '0px'}`]
 We saw that higher temperature drives the reaction to the right. That produces more H[sup]+[/sup], and that means lower pH.
+[/p]
+
+// [p style:`{marginBottom:'8px'}`]
+[p]
 Similarly, lower temperature drives the reaction to the left. That produces fewer H[sup]+[/sup], and that means higher pH.
 [/p]
+
+[hr className:"neutral-ph-hr"/]
 
 [p style:`{marginBottom:'3px'}`]
 Putting those facts together:
@@ -841,28 +1125,26 @@ Salinity [Range value: sal min: 0 max: 40 step: 0.1 /]
 
 // ** ^^^^^^^^^^^^^^^^^ NEUTRAL PH ^^^^^^^^^^^^^^^^^^ ** //
 
+[p]
+Note that changing salinity in the above panel demonstrates how dissolved ions affect pH. Dissolved carbon dioxide 
+(CO[sub]2[/sub]) -- injected from the atmospheric or respired by fish -- also changes the pH in very important ways. That 
+is the subject of the manual's Carbonate System chapter.
+[/p]
 
 #### Neutral pH is not a "magic target"
 
 [p]
-Some explanations of pH don't mention that neutral pH varies. This might leave the false impression that neutral pH always is 7.0 and 
-that it even has some special status. Some might even be led to think that pH 7.0 is a target to shoot for. It isn't.
+Some explanations of pH leave the false impression that neutral pH always is 7.0 and that it even has some special status. 
+That might lead some to think that pH 7.0 is a target to shoot for. It isn't.
 [/p]
 
 [p]
-As seen in the "Water Quality Whack-a-Mole" game, the optimal pH range doesn't always include pH 7.0 or the neutral pH, 
-whatever it may be. 
+As seen in the "Water Quality Whack-a-Mole" game of the first section, the optimal pH range doesn't always include 7.0 or even neutral pH, whatever it is. 
 [/p]
 
 [p]
 For some hydroponics applications, the goal is to keep pH at or below 6; for a seawater reef tank, the target is around 
 pH 8.1 to 8.3. In any case, the optimal pH range is easily identified for any set of conditions by the **WQ ToolBox** software.
-[/p]
-
-[p]
-It's worth noting here that changing salinity in the above panel demonstrates how dissolved ions affect pH, too. Dissolved carbon dioxide 
-(CO[sub]2[/sub]) -- whether injected from the atmospheric or respired by fish -- also changes the pH balance in very important ways. That 
-is the subject of the manual's Carbonate System chapter.
 [/p]
 
 // So...what throws off this balance?

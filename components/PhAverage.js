@@ -2,8 +2,6 @@ const React = require("react");
 const D3Component = require("idyll-d3-component");
 const d3 = require("d3");
 
-// const ResizeObserver = require("resize-observer-polyfill");[]
-
 const phData = [
   // { ph: 5, hplus: 0.000009999999999999999 },
   // { ph: 5.25, hplus: 0.00000562341325190349 },
@@ -27,17 +25,6 @@ const phData = [
   // { ph: 9.75, hplus: 1.7782794100389226e-10 },
   // { ph: 10, hplus: 1e-10 },
 ];
-
-// const dimensions = {
-//   width: 600,
-//   height: 1600,
-//   margins: {
-//     top: 10,
-//     right: 10,
-//     bottom: 40,
-//     left: 60,
-//   },
-// };
 
 const size = 600;
 
@@ -112,57 +99,23 @@ const getUpDownArrows = (moreOrLess_ph, hplusArrow) => {
   };
 };
 
-// CALC SLOPE OF PH DIRCTION ARROW (red -> blue OR blue -> red)
-const slope_ph_change = (ph_1, ph_2, hPlus_1, hPlus_2) => {
-  // console.log(ph_1);
-  console.log(hPlus_1);
-  console.log(hPlus_2);
-  // console.log(ph_2 - ph_1);
-
-  // [NB] Divide hplus_x by 10^10 because pass as props * 10^10
-  let slope = 0;
-
-  // [NB] If hplus_1 === hplus_2, slope is not '0'; it's Inf; but need to handle for display
-  if (hPlus_1 !== hPlus_2) {
-    slope =
-      Math.abs(ph_2 - ph_1) / Math.abs((hPlus_2 - hPlus_1) / Math.pow(10, 10));
-  }
-
-  return slope;
-};
-
 // NB: When needed, over-ride round() in generalConversions
 const round = (value, decimals) =>
   Number(Math.round(value + "e" + decimals) + "e-" + decimals);
 
-class PhVsHplus extends D3Component {
+class PhAverage extends D3Component {
   initialize(node, props) {
     const svg = (this.svg = d3.select(node).append("svg"));
 
-    // const svgContent = svg
-    //   .append("g")
-    //   .attr("width", dimensions.width)
-    //   .attr("height", dimensions.height)
-    //   .attr("fill", "green");
-
-    const {
-      ph_1,
-      ph_2,
-      hPlus_1,
-      hPlus_2,
-      ph_diff,
-      hplus_diff,
-      posto,
-      moreOrLess_ph,
-      moreOrLess_hPlus,
-      moreOrLess_posto,
-    } = props;
+    const { ph_1, ph_2, hPlus_1, hPlus_2, ph_average, hplus_average } = props;
 
     const real_hPlus_1 = hPlus_1 / Math.pow(10, 9);
     const real_hPlus_2 = hPlus_2 / Math.pow(10, 9);
 
+    console.log("props", props);
+
     // PH ARROWS ⇧⇩ displayed next to results (pH, hplus, posto changes)
-    const myArrows = getUpDownArrows(moreOrLess_ph, moreOrLess_hPlus);
+    // const myArrows = getUpDownArrows(moreOrLess_ph, moreOrLess_hPlus);
 
     // PH INPUT -- build the pH data to plot
     // For display...lower pH: RED; higher pH: BLUE; equal pHs: GREEN
@@ -280,21 +233,21 @@ class PhVsHplus extends D3Component {
 
     // [TEST] LINE: TARGET CIRCLE TO STATEMENT
     // 'start' property FALSE => the target pH (larger circle)
-    svg
-      .selectAll(".ph-target-to-statement")
-      .data(phEntryData)
-      .enter()
-      .append("line")
-      .attr("class", "ph-target-to-statement")
-      .transition()
-      .duration(750)
-      .attr("stroke", (d) => (!d.start ? d.color : "")) // !d.start => target pH
-      .attr("stroke-opacity", 0.55)
-      .style("stroke-width", 5)
-      .attr("x1", 340)
-      .attr("y1", 210)
-      .attr("x2", (d) => (!d.start ? xScale(d.hplus) : ""))
-      .attr("y2", (d) => (!d.start ? yScale(d.ph) : ""));
+    // svg
+    //   .selectAll(".ph-target-to-statement")
+    //   .data(phEntryData)
+    //   .enter()
+    //   .append("line")
+    //   .attr("class", "ph-target-to-statement")
+    //   .transition()
+    //   .duration(750)
+    //   .attr("stroke", (d) => (!d.start ? d.color : "")) // !d.start => target pH
+    //   .attr("stroke-opacity", 0.55)
+    //   .style("stroke-width", 5)
+    //   .attr("x1", 340)
+    //   .attr("y1", 210)
+    //   .attr("x2", (d) => (!d.start ? xScale(d.hplus) : ""))
+    //   .attr("y2", (d) => (!d.start ? yScale(d.ph) : ""));
 
     // PH LINE CIRCLES
     let circles = svg
@@ -304,7 +257,8 @@ class PhVsHplus extends D3Component {
       .append("circle")
       .attr("cx", (d) => xScale(xAccessor(d)))
       .attr("cy", (d) => yScale(yAccessor(d)))
-      .attr("r", (d) => (d.start ? 9 : 13))
+      .attr("r", 13)
+      // .attr("r", (d) => (d.start ? 9 : 13))
       .attr("fill", (d) => d.color)
       .attr("opacity", 0.55);
 
@@ -339,9 +293,8 @@ class PhVsHplus extends D3Component {
       .attr("class", "ph-yaxis-markers")
       .attr("cx", -24.5)
       .attr("cy", (d) => yScale(yAccessor(d)))
-      .attr("r", (d) => (d.start ? 4.5 : 7.0))
-      // .attr("r", (d) => (d.start ? 7 : 4.5))
-      // .attr("r", 6.5)
+      .attr("r", 7.0)
+      // .attr("r", (d) => (d.start ? 4.5 : 7.0))
       .attr("fill", (d) => d.color);
 
     // PH X-AXIS CIRCLES
@@ -353,7 +306,8 @@ class PhVsHplus extends D3Component {
       .attr("class", "ph-xaxis-markers")
       .attr("cx", (d) => xScale(xAccessor(d)))
       .attr("cy", 550)
-      .attr("r", (d) => (d.start ? 4.5 : 7.0))
+      .attr("r", 7.0)
+      // .attr("r", (d) => (d.start ? 4.5 : 7.0))
       .attr("fill", (d) => d.color);
 
     // ********************** //
@@ -367,7 +321,7 @@ class PhVsHplus extends D3Component {
       .attr("y", 100)
       .attr("width", 680)
       .attr("height", 220)
-      .attr("stroke", myArrows.acid_arrow_color)
+      // .attr("stroke", myArrows.acid_arrow_color)
       // .attr("stroke", "#808080")
       .attr("stroke-width", 2)
       .attr("rx", 30) // [NB] D3 round rect corners
@@ -385,9 +339,9 @@ class PhVsHplus extends D3Component {
       .attr("y", 150)
       .style("font-size", "2.5rem")
       .style("font-weight", "400")
-      .text(`Δ pH: ${myArrows.phArrow} ${round(ph_diff, 2)} pH units`)
+      // .text(`Δ pH: ${myArrows.phArrow} ${round(ph_diff, 2)} pH units`)
       .attr("text-anchor", "start")
-      .attr("fill", myArrows.acid_arrow_color)
+      // .attr("fill", myArrows.acid_arrow_color)
       .attr("opacity", 0.8);
     // .attr("fill", "#808080");
 
@@ -399,13 +353,13 @@ class PhVsHplus extends D3Component {
       .attr("y", 220)
       .style("font-size", "2.5rem")
       .style("font-weight", "400")
-      .text(
-        `Δ [H${superPlus}]: ${myArrows.hplus_postoArrow} ${hplus_diff.toFixed(
-          12
-        )} mol/L`
-      )
+      // .text(
+      //   `Δ [H${superPlus}]: ${myArrows.hplus_postoArrow} ${hplus_diff.toFixed(
+      //     12
+      //   )} mol/L`
+      // )
       .attr("text-anchor", "start")
-      .attr("fill", myArrows.acid_arrow_color)
+      // .attr("fill", myArrows.acid_arrow_color)
       .attr("opacity", 0.8);
 
     // ACIDITY CHANGE
@@ -416,9 +370,9 @@ class PhVsHplus extends D3Component {
       .attr("y", 290)
       .style("font-size", "2.5rem")
       .style("font-weight", "400")
-      .text(`acidity: ${myArrows.hplus_postoArrow} ${round(posto, 2)}%`)
+      // .text(`acidity: ${myArrows.hplus_postoArrow} ${round(posto, 2)}%`)
       .attr("text-anchor", "start")
-      .attr("fill", myArrows.acid_arrow_color)
+      // .attr("fill", myArrows.acid_arrow_color)
       .attr("opacity", 0.8);
 
     // ************************* //
@@ -435,8 +389,8 @@ class PhVsHplus extends D3Component {
       .attr("stroke", "green")
       .attr("stroke-width", 2)
       .attr("rx", 30) // [NB] D3 round rect corners
-      .attr("fill", "#FFFFDD")
-      .attr("opacity", myArrows.acid_arrow_color === "green" ? 1.0 : 0);
+      .attr("fill", "#FFFFDD");
+    // .attr("opacity", myArrows.acid_arrow_color === "green" ? 1.0 : 0);
 
     // NO CHANGE TEXT
     svg
@@ -446,20 +400,9 @@ class PhVsHplus extends D3Component {
       .attr("y", 225)
       .style("font-size", "2.5rem")
       .text(`No Change`)
-      .attr("text-anchor", "start")
-      .attr("fill", myArrows.acid_arrow_color)
-      .attr("opacity", myArrows.acid_arrow_color === "green" ? 1.0 : 0);
-
-    // // *********************** //
-    // // *** DIRECTION ARROW *** //
-    // // *********************** //
-    // const phSlope = slope_ph_change(
-    //   yScale(ph_1),
-    //   yScale(ph_2),
-    //   xScale(hPlus_1),
-    //   xScale(hPlus_2)
-    // );
-    // console.log(`phSlope = ${phSlope}`);
+      .attr("text-anchor", "start");
+    // .attr("fill", myArrows.acid_arrow_color)
+    // .attr("opacity", myArrows.acid_arrow_color === "green" ? 1.0 : 0);
 
     // ********************** //
     // ******** AXES ******** //
@@ -523,33 +466,13 @@ class PhVsHplus extends D3Component {
   // ****************************** //
 
   update(props, oldProps) {
-    const {
-      ph_1,
-      ph_2,
-      hPlus_1,
-      hPlus_2,
-      ph_diff,
-      hplus_diff,
-      posto,
-      moreOrLess_ph,
-      moreOrLess_hPlus,
-      // moreOrLess_posto,
-    } = props;
+    const { ph_1, ph_2, hPlus_1, hPlus_2, ph_average, hplus_average } = props;
+
+    console.log("props", props);
 
     // "UPDATE" SCALES
     let xScale = d3.scaleLinear().domain([0, 0.000001]).range([0, 750]);
     let yScale = d3.scaleLinear().domain([6, 9]).range([550, 100]);
-
-    // // *********************** //
-    // // *** DIRECTION ARROW *** //
-    // // *********************** //
-    // const phSlope = slope_ph_change(
-    //   yScale(ph_1),
-    //   yScale(ph_2),
-    //   xScale(hPlus_1),
-    //   xScale(hPlus_2)
-    // );
-    // console.log(`phSlope = ${phSlope}`);
 
     // GET NEW PH INPUT
     // For display...lower pH: RED; higher pH: BLUE; equal pHs: GREEN
@@ -558,12 +481,12 @@ class PhVsHplus extends D3Component {
     // console.log(phEntryData);
 
     // GET UP/DOWN ⇧⇩
-    const myArrows = getUpDownArrows(moreOrLess_ph, moreOrLess_hPlus);
+    // const myArrows = getUpDownArrows(moreOrLess_ph, moreOrLess_hPlus);
 
     // console.log(myArrows);
 
     // [HACK] prop comes in from idyll as O(10^-15) when should be 0
-    const myPoSto = posto < Math.pow(10, -10) ? 0 : posto;
+    // const myPoSto = posto < Math.pow(10, -10) ? 0 : posto;
 
     // PH CIRCLES
     this.svg
@@ -573,7 +496,8 @@ class PhVsHplus extends D3Component {
       .duration(750)
       .attr("cx", (d) => xScale(d.hplus))
       .attr("cy", (d) => yScale(d.ph))
-      .attr("r", (d) => (d.start ? 9 : 13))
+      .attr("r", 13)
+      // .attr("r", (d) => (d.start ? 9 : 13))
       .attr("fill", (d) => d.color);
     // .attr("opacity", 0.45);
 
@@ -584,7 +508,8 @@ class PhVsHplus extends D3Component {
       .transition()
       .duration(750)
       .attr("cy", (d) => yScale(d.ph))
-      .attr("r", (d) => (d.start ? 4.5 : 7.0))
+      .attr("r", 7.0)
+      // .attr("r", (d) => (d.start ? 4.5 : 7.0))
       .attr("fill", (d) => d.color);
 
     // PH X-AXIS CIRCLES
@@ -594,7 +519,8 @@ class PhVsHplus extends D3Component {
       .transition()
       .duration(750)
       .attr("cx", (d) => xScale(d.hplus))
-      .attr("r", (d) => (d.start ? 4.5 : 7.0))
+      .attr("r", 7.0)
+      // .attr("r", (d) => (d.start ? 4.5 : 7.0))
       .attr("fill", (d) => d.color);
 
     // [TEST] LINE: TARGET CIRCLE TO STATEMENT
@@ -632,45 +558,32 @@ class PhVsHplus extends D3Component {
     //   .attr("stroke", (d) => d.color)
     //   .attr("stroke-opacity", 0.35);
 
-    this.svg
-      .selectAll(".result-rect")
-      .attr("stroke", myArrows.acid_arrow_color);
+    this.svg.selectAll(".result-rect");
+    // .attr("stroke", myArrows.acid_arrow_color);
 
     // RESULT TEXT
-    this.svg
-      .selectAll(".ph-change-label")
-      .transition()
-      .duration(500)
-      .text(`Δ pH: ${myArrows.phArrow} ${round(ph_diff, 2)} pH units`)
-      .attr("fill", myArrows.acid_arrow_color);
+    this.svg.selectAll(".ph-change-label").transition().duration(500);
+    // .text(`Δ pH: ${myArrows.phArrow} ${round(ph_diff, 2)} pH units`)
+    // .attr("fill", myArrows.acid_arrow_color);
 
-    this.svg
-      .selectAll(".hplus-change-label")
-      .transition()
-      .duration(500)
-      .text(
-        `Δ [H${superPlus}]: ${myArrows.hplus_postoArrow} ${hplus_diff.toFixed(
-          12
-        )} mol/L`
-      )
-      .attr("fill", myArrows.acid_arrow_color);
+    this.svg.selectAll(".hplus-change-label").transition().duration(500);
+    // .text(
+    //   `Δ [H${superPlus}]: ${myArrows.hplus_postoArrow} ${hplus_diff.toFixed(
+    //     12
+    //   )} mol/L`
+    // )
+    // .attr("fill", myArrows.acid_arrow_color);
 
-    this.svg
-      .selectAll(".acidity-change-label")
-      .transition()
-      .duration(500)
-      .text(`acidity: ${myArrows.hplus_postoArrow} ${round(myPoSto, 2)}%`)
-      .attr("fill", myArrows.acid_arrow_color);
+    this.svg.selectAll(".acidity-change-label").transition().duration(500);
+    // .text(`acidity: ${myArrows.hplus_postoArrow} ${round(myPoSto, 2)}%`)
+    // .attr("fill", myArrows.acid_arrow_color);
 
     // ************************* //
     // **** NO CHANGE "DIV" **** //
     // ************************* //
 
-    this.svg
-      .selectAll(".result-no-change")
-      .transition()
-      .duration(500)
-      .attr("opacity", myArrows.acid_arrow_color === "green" ? 1.0 : 0);
+    this.svg.selectAll(".result-no-change").transition().duration(500);
+    // .attr("opacity", myArrows.acid_arrow_color === "green" ? 1.0 : 0);
 
     // NO CHANGE TEXT
     this.svg
@@ -679,8 +592,8 @@ class PhVsHplus extends D3Component {
       .duration(500)
       .text(`No Change`)
       .attr("text-anchor", "start")
-      .attr("fill", "green")
-      .attr("opacity", myArrows.acid_arrow_color === "green" ? 1.0 : 0);
+      .attr("fill", "green");
+    // .attr("opacity", myArrows.acid_arrow_color === "green" ? 1.0 : 0);
 
     // ******************* //
     // ** END OF UPDATE ** //
@@ -688,4 +601,4 @@ class PhVsHplus extends D3Component {
   }
 }
 
-module.exports = PhVsHplus;
+module.exports = PhAverage;
