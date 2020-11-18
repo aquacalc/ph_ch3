@@ -34,6 +34,19 @@ const whoIsLow = (ph_1, ph_2) => {
   const ph_low = ph_1 < ph_2 ? ph_1 : ph_2;
   const ph_high = ph_1 < ph_2 ? ph_2 : ph_1;
 
+  // ARITHMETIC MEAN PH
+  const mean_ph_arithmetic = (ph_low + ph_high) / 2;
+
+  // GEOMETRIC MEAN H-PLUS
+  const mean_hplus_geometric = Math.pow(
+    Math.pow(10, -ph_low) * Math.pow(10, -ph_high),
+    0.5
+  );
+
+  console.log(`   ph-bar: ${mean_ph_arithmetic}`);
+  console.log(`hplus-bar: ${mean_hplus_geometric}`);
+  console.log("---------------");
+
   // pH data entered in Idyll
   // [NB] inefficiently re-calc of hplus (it's passed as a prop)
   // [NB] chaning order of returned array based on which pH is lower
@@ -50,6 +63,18 @@ const whoIsLow = (ph_1, ph_2) => {
       color: ph_1 === ph_2 ? "green" : "blue",
       start: ph_high === ph_1, // ...else BLUE is the start point
     },
+    // {
+    //   ph: ph_mean,
+    //   hplus: -24.5,
+    //   color: ph_1 === ph_2 ? "green" : "blue",
+    //   start: ph_high === ph_1, // ...else BLUE is the start point
+    // },
+    // {
+    //   ph: 550,
+    //   hplus: Math.pow(10, -ph_high),
+    //   color: ph_1 === ph_2 ? "green" : "blue",
+    //   start: ph_high === ph_1, // ...else BLUE is the start point
+    // },
   ];
 
   return theData;

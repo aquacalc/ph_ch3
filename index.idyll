@@ -16,13 +16,19 @@ pH chapter.
 [/p]
 
 [p]
-These topics include several that often cause confusion, such as how to calculate acidity (\[H[sup]+[/sup]\]) from pH, the 
+Topics include several that regularly cause confusion, such as how to calculate acidity (\[H[sup]+[/sup]\]) from pH, the 
 correct way to average pH values, and the problems with measuring seawater pH on the NBS scale -- the one most everyone uses.
 [/p]
 
-
 [p style: `{fontSize: '0.90rem'}` ]
- *This document was developed with* [a href:"https://idyll-lang.org/"]Idyll[/a], *a "toolkit for creating data-driven stories 
+ *This document was developed with* [a href:"https://idyll-lang.org/"]Idyll[/a] [Cite 
+  authors:"Matthew Conlen and Jeffrey Heer"
+  title:"Idyll: A Markup Language for Authoring and Publishing Interactive Articles on the Web"
+  url:"https://idl.cs.washington.edu/files/2018-Idyll-UIST.pdf" 
+  id:"idyll-uist"
+  venue: "Seattle, WA"
+  date:"2018"
+/], *a "toolkit for creating data-driven stories 
  and explorable explanations". Custom components were built with* [a href:"https://reactjs.org/"]React[/a] *and*  [a href:"https://d3js.org/"]D3[/a].
 [/p]
 
@@ -41,6 +47,7 @@ correct way to average pH values, and the problems with measuring seawater pH on
     [li] [a href:"#power-of-ten"]A Power of Ten[/a] [/li]
     [li] [a href:"#mean-ph"]*What does ‘mean pH’ mean?!*[/a] [/li]
     [li] [a href:"#neutral-ph"]pH 7 is not always neutral[/a] [/li]
+    [li] [a href:"#ph-electrode"]The pH Electrode[/a] [/li]
     [li] [a href:"#ph-scales"]NBS & the Three Little pH Scales[/a] [/li]
     [li] [a href:"#next-steps"]Next Steps...[/a] [/li]
     [li] [a href:"#refs"]References[/a] [/li]
@@ -60,14 +67,15 @@ correct way to average pH values, and the problems with measuring seawater pH on
   [ul]
     [li] describe three ways to handle **inconveniently small (large) numbers** [/li]
     [li] write the **strict definition of pH** (in terms of activity) [/li]
-    [li] write the **practical definition of pH** (in terms of concentration) [/li]
+    [li] write the **operational definition of pH** (in terms of concentration) [/li]
     [li] understand why pH is defined on a **logarithmic scale** [/li]
     [li] explain the meaning of **10[sup]-pH[/sup]** [/li]
-    [li] know which **pH change doubles (halves) acidity** [/li]
+    [li] know **the pH change that doubles (halves) acidity** [/li]
     [li] explain why **pH 7.0 is not always neutral** [/li]
-    [li] explain **the correct way to average a set of pH values** [/li]
+    [li] have a basic idea of **how a pH electrode works** [/li]
     [li] describe the **NBS pH scale** and discuss its limitations [/li]
-    [li] list the **pH scales for seawater** and explain their importance [/li]
+    [li] list the **pH scales for seawater** and explain their use [/li]
+    [li] explain **the correct way to average a set of pH values** [/li]
   [/ul]
 
 [/div]
@@ -174,8 +182,8 @@ The symbol "[span style:`{fontSize:'1.13rem'}` ]≔[/span]" indicates a definiti
 [/div]
 
 [p]
-  We pointed out in the previous section that activity can be approximated by concentration in dilute solutions. This leads to the more 
-  common -- and *approximate* -- definition of pH in which concentration is substituted for activity:
+  We pointed out in the previous section that activity can be approximated by concentration in dilute solutions. This leads to the operational 
+  -- and *approximate* -- definition of pH in which concentration is substituted for activity:
 [/p]
 
 [div style:`{marginTop: '15px'}`]
@@ -183,7 +191,7 @@ The symbol "[span style:`{fontSize:'1.13rem'}` ]≔[/span]" indicates a definiti
 [/div]
 
 [p]
-  This distinction becomes important in concentrated solutions, solutions with high ionic activity (like seawater), and when examining the behavior of pH electrodes. 
+  This approximation is less valid in concentrated solutions, solutions with high ionic activity (like seawater), and when examining the behavior of pH electrodes. 
 [/p]
 
 [p]
@@ -253,7 +261,7 @@ into the familiar pH values that you know and love.
   [/p]
 
 // -- NEGATIVE LOG10 -- //
-[p style:`{marginBottom: '8px', marginTop: '35px', textAlign: 'left'}`]And here's the -log[sub]10[/sub] transform of that \[H[sup]+[/sup]\] into pH[/p]
+[p style:`{marginBottom: '8px', marginTop: '35px', textAlign: 'left'}`]And here's the -log[sub]10[/sub] transform of that **[span style:`{color:'green'}` ]\[H[sup]+[/sup]\][/span]** into pH[/p]
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^ ORIGINAL ^^^^^^^^^^^^^^^^^^^^^^^^^ //
 
@@ -825,154 +833,8 @@ changes in a solution's acidity.
   [/p]
 
   [p style:`{textAlign:'center'}` ]  
-    *small changes in pH represent large changes in a solution's acid concentration*
+    *small changes in pH cause large changes in acid concentration*
   [/p]
-
-
-// ******************* //
-// ***** MEAN PH ***** //
-// ******************* //
-
-// ((((((((( Mean pH )))))))))
-[div style:`{marginTop: '35px'}`]
-[Inline] [h3 style:`{display: 'inline', marginRight: '30px', marginTop: '50px'}` id:"mean-ph"]***What does 'mean pH' mean?!***[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
-[/div]
-
-[p]
-Question: *What's the mean (*i.e.*, average) of pH 7 and pH 8?* Is it pH 7.5?
-[/p]
-
-[p]
-Another consequence of putting pH on the -log[sub]10[/sub] scale is that we have to be careful when answering that straighforward question.
-[/p]
-
-[p]
-When we ask for a mean value, we're asking for a summary statistic that describes the central tendency of a set of data.
-[/p]
-
-[p]
-For example, if we measure water temperature over three days and get 26.6 °C, 25.0 °C, and 24.3 °C, then our mean water temperature is:
-[/p]
-
-[Equation display:true]
-  \dfrac{26.6 + 25.0 + 24.3}{3} = 25.3
-[/Equation]
-
-[p]
-Simple enough: Add all the temperatures (75.9) and divide by the number of temperatures (3) to get 25.3 °C. Nothing earth-shaking.
-[/p]
-
-[p]
-Now let's treat pH 7 and pH 8 the same way:
-[/p]
-
-[Equation display: true]
-  \dfrac{7 + 8}{2} = 7.5
-[/Equation]
-
-[p]
-Here's the issue that we have to address:
-[/p]
-
-[ul]
-  [li] \[H[sup]+[/su]\] determines a solution's acidity and is what we measure [/li]
-  [li] we transform \[H[sup]+[/sup]\] into pH with the -log[sub]10[/sub] transform [/li]
-  [li] -log[sub]10[/sub] is a non-linear transformation that changes the relationship between \[H[sup]+[/su]\] and pH [/li]
-[/ul]
-
-[p]
-The result is that the average pH is not the same as the average \[H[sup]+[/su]\]
-[/p]
-
-[p]
-We've already seen three consequences of this non-linear transform in interactive displays:
-[/p]
-
-[ul]
-  [li] higher \[H[sup]+[/su]\] produces lower pH [/li]
-  [li] small changes in pH produce larger changes in \[H[sup]+[/su]\] [/li]
-  [li] the rate of change pH ... [/li]
-[/ul]
-
-[p]
-Here's another consequence of the -log[sub]10[/sub] transform:
-[/p]
-
-[p]
-The average of a set of pH values generally is *not equal to* the average \[H[sup]+[/su]\] of those pH values.
-[/p]
-
-That's all owed to the -log[sub]10[/sub] transformation. Illustrated by modifying the last display...
-
-
-// *************************** //
-// ******* PH AVERAGE ******** //
-// *************************** //
-
-[div className:"dynamic-module" ]
-
-  [div className: 'yellow-panel-div']
-
-    [h4 style:`{textAlign:'center', paddingTop:'10px'}` ] Calculating Mean pH [/h4]
-
-    [p style:`{fontSize: '1.05rem', textAlign: 'center', marginTop:'0px'}` ]
-    (To change **pH**, click it and drag horizontally. Range: pH 6 to pH 9)
-    [/p]
-
-    [var name:"phOne_average" value:6.5 /]
-    [var name:"phTwo_average" value:8.0 /]
-
-    // Owing to (digital) rounding error, 'magnify' by 10^9, do the calc, then telescope out
-    [derived name: phOne_hPlus value:`10000000000 * Math.pow(10, -phOne_average)`/]
-    [derived name: phTwo_hPlus value:`10000000000 * Math.pow(10, -phTwo_average)`/]
-
-    // Averages
-    [derived name: ph_average value:`(phOne_average.toFixed(2) + phTwo_average.toFixed(2)) / 2`/]
-    [derived name: hplus_average value:`(Math.pow(10, -phOne_average.toFixed(2)) + Math.pow(10, -phTwo_average.toFixed(2))) / 2`/]
-
-    [div style:`{fontSize: '2.00rem', textAlign: 'center'}`]
-    from pH [span style:`{color:color_phOne_full}`][Dynamic value:phOne_average min: 6.0 max: 9.0 step: 0.01 /][/span] to pH [span style:`{color:color_phTwo_full}`][Dynamic value:phTwo_average min: 6.0 max: 9.0 step: 0.01 /][/span]
-    [/div]
-
-    // [derived name: phIncreasingDecreasing value:`equalityTest < 1 ? "--" : (phOne_average < phTwo_average ? "pH has increased, so the solution is LESS acidic" : "pH has decreased, so the solution is MORE acidic")` /]
-    // [p style:`{fontSize: '1.1rem', textAlign: 'center', marginBottom: '0px'}`]
-    //   [span style:`{color:color_phTwo_full}` ][Display value: phIncreasingDecreasing /][/span]
-    // [/p]
-
-     [PhAverage className:"d3-component" 
-     ph_1: phOne_average 
-     ph_2: phTwo_average 
-     hPlus_1: phOne_hPlus 
-     hPlus_2: phTwo_hPlus
-     ph_average: ph_average
-     hplus_average: hplus_average
-      /]
-
-  [/div]
-   
-[/div]
-
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Context: two here -- summarizing pH in a tank
-clean data: not mindlessly include outliers, but mindfully consider if they are significant or a measurement error
-
-// // see: https://towardsdatascience.com/on-average-youre-using-the-wrong-average-geometric-harmonic-means-in-data-analysis-2a703e21ea0
-// "ultimately judgement & scientific skepticism are required, as ever, for sound empiricism"
-// "Understand the nature of your data & think carefully about the summary statistics you use to describe it — or risk being wrong ‘on average’."
-
-// // see: 
-// "Suppose we have random variable [H+]i. If we take the log transformation pHi = loge([H+]i), then pH-bar is the natural log of the geometric mean of [H+]." 
-// "It follows, then, that e^(pH-bar) is the geometric mean of [H+]."
-
-//   [var name:"textVal" value:"Hello World" /]
-// [TextInput value:textVal /]
-
-[p]
-The take-way: Be aware that small changes in pH mean large changes in acid concentration. This underlines the need for precise pH management to 
-maintain a healthy environment in production and recreational aquatic systems.
-[/p]
 
 
 // ******************** //
@@ -1150,6 +1012,174 @@ pH 8.1 to 8.3. In any case, the optimal pH range is easily identified for any se
 // So...what throws off this balance?
 
 
+// ((((((((( PH ELECTRODES )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"ph-electrode"]*The pH Electrode*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]
+pH measurements are such a standard part of water quality management that it's not unusual to take pH electrodes and meters for granted, using them without knowing 
+even the basics of how they work.
+[/p]
+
+[p]
+But if you're familiar with at least the basics, then you'll understand the reasons for the procedures that must be followed to keep pH electrodes in good working 
+order; and you'll also understand the issues that limit the accuracy of pH measurements in high salinity solutions like seawater.
+[/p]
+
+// EXPANDABLE PANEL -- Who invented the pH electrode
+// *************************************** //
+// ****** WHO INVENTED PH ELECTRODE ****** //
+// *************************************** //
+
+[p id:"close-ph-electrode"][/p]
+
+[var name:"showContent_ph_electrode" value:false /]
+
+[Button className: 'showHideBtn' onClick:`showContent_ph_electrode = !showContent_ph_electrode` ]
+  [Display value:`showContent_ph_electrode ? 'Hide Content' : 'The HBK Line' ` /]
+[/Button]
+
+[Conditional if:`showContent_ph_electrode`]
+
+[div className:"dynamic-module" ]
+
+
+[div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
+![HBK](static/images/hbk.png)
+[/div]
+
+[p]
+The HBK Line was the 2016 Pittsburgh Penguins' super productive 3rd line of Carl Hagelin, Nick Bonino, and Phil Kessel that helped propel the Pens to the first 
+of their back-to-back Stanley Cups. (Kessel - Bonino - Hagelin in the image)
+[/p]
+
+[p style:`{marginBottom:'50px'}` ]
+Without their combined hockey talent and play-making ingenuity, the Pens would have one less Cup.
+[/p]
+
+[div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
+![HBK_2](static/images/hbk_2.png)
+[/div]
+
+[p]
+The HBK Line in the present context of pH is German Nobel-Prize winner Fritz Haber, American Physical Chemist and inventor Arnold Beckman, and Polish Physical Chemist 
+Zygmunt Klemensiewicz.
+[/p]
+
+[p]
+Instead of burying the puck, Haber and Klemensiewicz developed the glass electrode in 1909 and Beckman, founder of Beckman Instruments, developed and patented 
+the pH meter in 1936 (US Patent 2,058,761: Apparatus for testing acidity by Arnold Beckman *et al.*, National Technical Laboratories).
+[/p]
+
+[p]
+Without their combined scientific and engineering ingenuity, we still might be using litmus paper.
+[/p]
+
+[div style: `{textAlign: 'center'}` ]
+[a className:"closePanelBtn" href:"#close-ph-electrode" onClick:`showContent_ph_electrode = false` ]Close Content[/a]
+[/div]
+
+[/div]
+[/Conditional]
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
+
+[p]
+pH meters work like voltmeters: they compare the voltage generated by the solution we're analyzing to that of a standard with known acidity. The difference in voltages 
+is used to calculate pH.
+[/p]
+
+// [div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
+// ![ph-electrode](static/images/ph-electrode-cell.png)
+// [/div]
+// [p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
+// Image by [a href:"https://pixabay.com/users/ginare77-13264986/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Regina Easley[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Pixabay[/a]
+// [/p]
+
+[p]
+Here are two short videos (among several on YouTube) that provide more detailed explanations of how the common glass-bulb electrodes are constructed to measure pH.
+[/p]
+
+[p]
+The first runs about three and one-half minutes. (Don't cringe when the robotic voice states that pH means "potential Hydrogen"; you know better than that from Part I.)
+[/p]
+
+[div className:"dynamic-module" style:`{textAlign: 'center', marginTop: '20px'}` ]
+[Youtube
+  id:"PBTn4gTEbkU"
+  play:false
+  audio:true
+  width:500
+  height:300
+  loop:1
+  options:`{ controls: 1 }`
+  /]
+[/div]
+
+[p]
+The two and one-half minute audio track of the second video is poor, but it has good content and reinforces the basics outlined in the first video.
+[/p]
+
+[div className:"dynamic-module" style:`{textAlign: 'center', marginTop: '20px'}` ]
+[Youtube
+  id:"aIn4D2QXUy4"
+  play:false
+  audio:true
+  width:500
+  height:300
+  loop:1
+  options:`{ controls: 1 }`
+  /]
+[/div]
+
+[p]
+In the ideal case, a pH electrode will respond only to the activity of the H[sup]+[/sup] in solution. In the real world, however, the electrode also responds to other 
+ions in solution that carry a single positive charge. These *monovalent* ions include Na[sup]+[/sup] and K[sup]+[/sup], both of which are present at significant 
+concentrations in seawater.
+[/p]
+
+[p]
+We also know from out discussion of activity (*vs.* concentration) in the previous section that some H[sup]+[/sup] ions will interact with other ions in solution and 
+with water itself. Those H[sup]+[/sup] ions -- the popcorn kernels that didn't pop -- won't be measured by the electrode.
+[/p]
+
+[p]
+Importantly, the electrode responds to H[sup]+[/sup] activity, not H[sup]+[/sup] concentration. And this is more of a problem as ionic strentgth increases.
+[/p]
+
+[p]
+The overall result is that other ions and H[sup]+[/sup] reactivity in solution combine to interfere with our pH measurement, either increasing or decreasing the 
+electrical potential (*i.e.*, the voltage) across the electrode.
+[/p]
+
+[p]
+be aware of these measurement errors 
+[/p]
+
+...temperature calso effects the chemical equilibria ... Temperature will affect the equilibria of solution phase species, 
+as well as chemical species used in the reference electrode.
+
+[p]
+The result is that it appears that the solution is less concentrated than they really are
+not available for reaction
+a measurable effect
+deviation...adjust...calculated by multiplying the concentration of a solute by an “activity coefficient”, usually symbolized γ, to give a quantity that more accurately represents 
+the intensity of the chemical properties of the solute than the concentration itself does:
+[/p]
+
+// BUFFERS AND SEGUE TO PH SCALES
+[p]
+"For pH meters to be accurate, they have to be properly calibrated (the meter is accurately translating voltage measurements into pH measurements), so they usually 
+need testing and adjusting before you start to use them. You calibrate a pH meter by dipping it into buffers (test solutions of known pH) and adjust the meter 
+accordingly. Another important consideration is that pH measurements made this way depend on temperature. Some meters have built-in thermometers and automatically 
+correct their own pH measurements as the temperature changes; those are best if fluctuations in temperature are likely to occur while you're making a number of 
+different measurements. Alternatively, you can correct the pH measurement yourself, or allow for it by calibrating your instrument and making pH measurements at 
+broadly the same temperature."
+[/p]
+
+
+
 // ((((((((( PH SCALES )))))))))
 [div style:`{marginTop: '35px'}`]
 [Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"ph-scales"]*NBS & the Three Little pH Scales*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
@@ -1178,7 +1208,7 @@ That's quickly followed by: *Am I using it?*
 
 [p]
 The quick answer to the second question: If you don't know what NBS is, then that's the pH scale you're using. In fact, it's very safe to say 
-that most everyone working outside of chemical oceanography is measuring pH on the NBS scale.
+that most everyone working outside of chemical oceanography measures pH on the NBS scale.
 [/p]
 
 [p]
@@ -1191,126 +1221,108 @@ You don't have to bother with the others:
 
 [ul]
   [li] if you're working with freshwater, then you're good-to-go with the NBS scale [/li]
-  [li] if you're working with saline water (like seawater), then the **WQ ToolBox** does the heavy lifting for you [/li]
+  [li] if you're working with seawater, then the **WQ ToolBox** does the heavy lifting [/li]
 [/ul]
 
 
 [p]
-Part of that work is making sure that the NBS pH that you enter is converted to the correct pH scale before performing additional water-quality 
+Part of the software's job is making sure that the NBS pH you enter is converted to the correct scale before performing water-quality 
 calculations.
 [/p]
 
-#### "_The standard is the standard_" -- Coach Mike Tomlin
+
+There are four important pH scales for seawater, of which NBS is the one that everyone uses -- except specialists like marine chemists. 
+So, when aquaculturists measure pH, they're measuring it on the NBS scale.
+NBS stands for "National Bureau of Standards". It was re-named in 1988 to NIST (National Institute of Standards and Technology). 
+NBS established the buffers used to calibrate pH electrodes, thus the reason for naming it the NBS scale. Most who deal with the 
+distinction still call it the NBS scale.
+
+"...derived and must be alert to the differences arising from the usage of various pH scales.
+
+"These primary standards are commonly known as NBS buffers (where NBS stands for the US National Bureau of Standards, now 
+National Institute of Standards and Technology, NIST). One of the constraints imposed upon these standards is that their 
+ionic strengths must not exceed 0.1 molal"
+
+The problem is that the NBS buffers are fine for freshwater but only good up to a certain ionic strength that is less than the ionic 
+strength of standard seawater. 
+
+"the concentration gradients across the reference electrode’s liquid junction will be significantly different between 
+any seawater sample and the standard buffers."
+
+That's an important point when measuring pH in seawater and when performing WQ calculations. 
+(Many people either ignore it or just don't know about it, as far as I've seen.)
+
+Further, the modern formulae used to compute the dissociation constants and other processes needed to perform important aquatic chemistry c
+alculations were not established on the NBS scale but on one of the others, either the Seawater, or Total, or Free scales.
+Bottom-line: I do all of the necessary conversions in the software -- which I've checked, re-checked, and re-re-checked vs reputable 
+marine science sources -- and then I convert back to the NBS scale -- the one that everyone uses -- for display in the WQ Map. 
+Thus, the user doesn't have to worry about any of those complicated details, although I will make them aware of them in the manual. 
+(Using the wrong scale yields erroneous results -- even small differences are unacceptable because pH is defined on a log-10 scale.)
 
 [p]
-pH measurements are standard in water quality management. So standard that most take them for granted without questioning whether they're 
-giving us a true measure of a solution's acidity. But dig a bit and you'll uncover a few importaant complications -- especially when measuring 
-seawater.
+Many **WQ ToolBox** calculations -- especially those that animate the **WQ Map** -- depend heavily on chemical equilibrium constants, like K[sub]w[/sub], 
+the dissociation constant of water that was central to the discussion of the previous section.
 [/p]
 
 [p]
-Activity was introduced briefly above in an expandable panel.
+Just like K[sub]w[/sub], these equilibrium constants are determined experimentally. ome were measured on the Total pH scale, others on the Seawater scale, and s
+on the Free scale.
 [/p]
 
 [p]
-The main point from that panel was that *concentration* represents the ideal case: We measure a quantity of a substance, dissolve it in a volume 
-of water, and expect that the ions that are produced swim around freely in the solution; they don't react with each other, with the solution, or 
-with other dissolved substances.
+To develop tools that help us manage water quality, especially with saline water, we have to make sure that pH measured on the NBS scale -- the scale that everyone 
+uses -- is correctly converted to the proper 
 [/p]
 
 [p]
-On the other hand, *concentration* : We measure a quantity of a substance, dissolve it in a volume 
-of water, and expect that the ions that are produced swim around freely in the solution; they don't react with each other, with the solution, or 
-with other dissolved substances.
-more descriptively, I think, *effective concentration*
+A good question is: How high can the salinity before the NBS scale...
 [/p]
 
-[p]
-Here's a simple example:
-[/p]
+// [p]
+// The main point from that panel was that *concentration* represents the ideal case: We measure a quantity of a substance, dissolve it in a volume 
+// of water, and expect that the ions that are produced swim around freely in the solution; they don't react with each other, with the solution, or 
+// with other dissolved substances.
+// [/p]
 
-// from abstract of "pH Paradoxes"
+// [p]
+// On the other hand, *concentration* : We measure a quantity of a substance, dissolve it in a volume 
+// of water, and expect that the ions that are produced swim around freely in the solution; they don't react with each other, with the solution, or 
+// with other dissolved substances.
+// more descriptively, I think, *effective concentration*
+// [/p]
 
-McCarty & Vitz describe some of the problems [Cite 
-  authors:"McCarty, C. and E. Vitz"
-  title:"pH Paradoxes: Demonstrating that it is not true that pH = -log[H+]"
-  url:"https://www.semanticscholar.org/paper/pH-Paradoxes%3A-Demonstrating-That-It-Is-Not-True-pH-Mccarty-Vitz/852c89694bebe3a5fc03c4bc78615d15b98dcae2#paper-header" 
-  id:"ph-paradoxes"
-  venue: "Journal of Chemical Education, 83 (2006) 752-757"
-  date:"2006"
-/]
+// [p]
+// Here's a simple example:
+// [/p]
 
-For example, when acid with pH ~1 is diluted with an equal volume of 5 M MgCl2, one would expect the pH calculated as -log\[H+\] to increase as 
-the concentration of acid is halved; surprisingly, it decreases to values below zero, as demonstrated with a pH meter or methyl green indicator [Cite id:"ph-paradoxes"/]
+// // from abstract of "pH Paradoxes"
 
-// ...Li, Na, and K can give rise to proton measurement errors in concentrated solutions. These cations can exchange with the protons in the glass membrane of the pH electrode 
-// resulting in erroneous potentials across the glass membrane and thus erroneous pH. Another source of error is the change in proton activity proton due to the ionic strength 
-// of solution. Also, temperature can effect several equilibria giving rise to complicated measurement errors. Temperature will affect the equilibria of solution phase species, 
-// as well as chemical species used in the reference electrode.
+// McCarty & Vitz describe some of the problems [Cite 
+//   authors:"McCarty, C. and E. Vitz"
+//   title:"pH Paradoxes: Demonstrating that it is not true that pH = -log[H+]"
+//   url:"https://www.semanticscholar.org/paper/pH-Paradoxes%3A-Demonstrating-That-It-Is-Not-True-pH-Mccarty-Vitz/852c89694bebe3a5fc03c4bc78615d15b98dcae2#paper-header" 
+//   id:"ph-paradoxes"
+//   venue: "Journal of Chemical Education, 83 (2006) 752-757"
+//   date:"2006"
+// /]
 
-[p]
-Those ions involvedd in interactions mean that fewer ion are swimming around freely in the solution. The results is that the activity is less than 
-the concentration we calculate -- the concentration that we *expect* -- when we measure a quantity of a substance and dissolve it in a volume of 
-water.
-[/p]
-
- standard pH probes respond to the hydrogen ion activity, not concentration, and the activity decreases as a 
-solution's ionic strength (salinity) increases.
-
-
-
-[p]
-The result is that it appears that the solution is less concentrated than they really are
-not available for reaction
-a measurable effect
-deviation...adjust...calculated by multiplying the concentration of a solute by an “activity coefficient”, usually symbolized γ, to give a quantity that more accurately represents 
-the intensity of the chemical properties of the solute than the concentration itself does:
-[/p]
+// For example, when acid with pH ~1 is diluted with an equal volume of 5 M MgCl2, one would expect the pH calculated as -log\[H+\] to increase as 
+// the concentration of acid is halved; surprisingly, it decreases to values below zero, as demonstrated with a pH meter or methyl green indicator [Cite id:"ph-paradoxes"/]
 
 A common example is 0.1 M HCl. Calculated in the "typical" way, pH is 1; with the corrections of activity (gamma ~ 0.826), it's less strong: about pH 1.08. because 
 on the log-10 scale, the concentration approach yields a value ~21% more acidic (true is ~17.4% less acidic), an important difference for precise work.
-
-[Equation display:true]
-  {pH} = -\log_{10}(\alpha_{H^+})
-[/Equation]
-
-[Equation display:true]
-  {pH} \colonapprox -\log_{10}{[H^+]}
-[/Equation]
-
-
-[Equation display:true]
-  {\alpha} = 
-  \gamma{[H^+]}
-[/Equation]
 
 // #### pH Paradoxes
 
 [h4 style:`{marginBottom:'2px'}`]pH Paradoxes[/h4]
 
-[p]
-
-chemical reactivity
-response of a hydrogen-sensitive electrode
-be aware of the errors involved
-pH is a fundamental concept that is central to acid–base chemistry
-pH depends on solution properties other than hydrogen ion concentration
-[/p]
-
 // // McCarty & Vitz
-// chemical reactivity
-// response of a hydrogen-sensitive electrode
-// be aware of the errors involved
-// pH is a fundamental concept that is central to acid–base chemistry
-// pH depends on solution properties other than hydrogen ion concentration
 // calculated by multiplying the concentration of a solute by an “activity coefficient”, usually symbolized γ, to give a quantity that more accurately represents 
 // the intensity of the chemical properties of the solute than the concentration itself does:
-
 
 // [Equation display:true]
 //   {pH} = -\log_{10}(\alpha_{H^+})
 // [/Equation]
-
 
 // [Equation display:true]
 //   {\alpha} = 
@@ -1335,45 +1347,154 @@ When you jump into the water quality literature, you'll see this fact expressed 
 [/p]
 
 
-[div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
-![ph-electrode](static/images/ph-electrode.jpg)
+// ******************* //
+// ***** MEAN PH ***** //
+// ******************* //
+
+// ((((((((( Mean pH )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px', marginTop: '50px'}` id:"mean-ph"]***What does 'mean pH' mean?!***[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
 [/div]
 
-[p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
-Image by [a href:"https://pixabay.com/users/ginare77-13264986/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Regina Easley[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Pixabay[/a]
+[p]
+Question: *What's the mean (*i.e.*, average) of pH 7 and pH 8?* Is it pH 7.5?
 [/p]
 
-Ideal pH electrode should have potential dependent solely on the activity of the H+. Unfortunately, there is no such thing 
-as ideal pH electrode.
+[p]
+Another consequence of putting pH on the -log[sub]10[/sub] scale is that we have to be careful when answering that straighforward question.
+[/p]
 
-Potential that builds up on the electrode surfaces has its source in the ions attaching themselves to the glass surface. Glass structure is such that only single charged ions are attracted. Depending on the ion this effect can be stronger or weaker, but the result will be always the same - other ions will interfere with the determination of pH.
+[p]
+When we ask for a mean value, we're asking for a summary statistic that describes the central tendency of a set of data.
+[/p]
 
-There are four important pH scales for seawater, of which NBS is the one that everyone uses -- except specialists like marine chemists. 
-So, when aquaculturists measure pH, they're measuring it on the NBS scale.
-NBS stands for "National Bureau of Standards". It was re-named in 1988 to NIST (National Institute of Standards and Technology). 
-NBS established the buffers used to calibrate pH electrodes, thus the reason for naming it the NBS scale. Most who deal with the 
-distinction still call it the NBS scale.
-The problem is that the NBS buffers are fine for freshwater but only good up to a certain ionic strength that is less than the ionic 
-strength of standard seawater. That's an important point when measuring pH in seawater and when performing WQ calculations. 
-(Many people either ignore it or just don't know about it, as far as I've seen.)
-Further, the modern formulae used to compute the dissociation constants and other processes needed to perform important aquatic chemistry c
-alculations were not established on the NBS scale but on one of the others, either the Seawater, or Total, or Free scales.
-Bottom-line: I do all of the necessary conversions in the software -- which I've checked, re-checked, and re-re-checked vs reputable 
-marine science sources -- and then I convert back to the NBS scale -- the one that everyone uses -- for display in the WQ Map. 
-Thus, the user doesn't have to worry about any of those complicated details, although I will make them aware of them in the manual. 
-(Using the wrong scale yields erroneous results -- even small differences are unacceptable because pH is defined on a log-10 scale.)
+[p]
+For example, if we measure water temperature over three days and get 26.6 °C, 25.0 °C, and 24.3 °C, then our mean water temperature is:
+[/p]
 
-"All of our calculations never- theless rely on the availability of equilibrium constants that have to be experimentally derived and 
-we therefore have to care about differences arising from the usage of various pH scales."
-"These primary standards are commonly known as NBS buffers (where NBS stands for the US National Bureau of Standards, now 
-National Institute of Standards and Technology, NIST). One of the constraints imposed upon these standards is that their 
-ionic strengths must not exceed 0.1 molal"
-"the concentration gradients across the reference electrode’s liquid junction will be signif- icantly different between 
-any seawater sample and the standard buffers."
+[Equation display:true]
+  \dfrac{26.6 + 25.0 + 24.3}{3} = 25.3
+[/Equation]
+
+[p]
+Simple enough: Add all the temperatures (75.9) and divide by the number of temperatures (3) to get 25.3 °C. Nothing earth-shaking.
+[/p]
+
+[p]
+Now let's treat pH 7 and pH 8 the same way:
+[/p]
+
+[Equation display: true]
+  \dfrac{7 + 8}{2} = 7.5
+[/Equation]
+
+[p]
+Here's the issue that we have to address:
+[/p]
+
+[ul]
+  [li] \[H[sup]+[/su]\] determines a solution's acidity and is what we measure [/li]
+  [li] we transform \[H[sup]+[/sup]\] into pH with the -log[sub]10[/sub] transform [/li]
+  [li] -log[sub]10[/sub] is a non-linear transformation that changes the relationship between \[H[sup]+[/su]\] and pH [/li]
+[/ul]
+
+[p]
+The result is that the average pH is not the same as the average \[H[sup]+[/su]\]
+[/p]
+
+[p]
+We've already seen three consequences of this non-linear transform in interactive displays:
+[/p]
+
+[ul]
+  [li] higher \[H[sup]+[/su]\] produces lower pH [/li]
+  [li] small changes in pH produce larger changes in \[H[sup]+[/su]\] [/li]
+  [li] the rate of change pH ... [/li]
+[/ul]
+
+[p]
+Here's another consequence of the -log[sub]10[/sub] transform:
+[/p]
+
+[p]
+The average of a set of pH values generally is *not equal to* the average \[H[sup]+[/su]\] of those pH values.
+[/p]
+
+That's all owed to the -log[sub]10[/sub] transformation. Illustrated by modifying the last display...
+
+
+// *************************** //
+// ******* PH AVERAGE ******** //
+// *************************** //
+
+[div className:"dynamic-module" ]
+
+  [div className: 'yellow-panel-div']
+
+    [h4 style:`{textAlign:'center', paddingTop:'10px'}` ] Calculating Mean pH [/h4]
+
+    [p style:`{fontSize: '1.05rem', textAlign: 'center', marginTop:'0px'}` ]
+    (To change **pH**, click it and drag horizontally. Range: pH 6 to pH 9)
+    [/p]
+
+    [var name:"phOne_average" value:6.5 /]
+    [var name:"phTwo_average" value:8.0 /]
+
+    // Owing to (digital) rounding error, 'magnify' by 10^9, do the calc, then telescope out
+    [derived name: phOne_hPlus value:`10000000000 * Math.pow(10, -phOne_average)`/]
+    [derived name: phTwo_hPlus value:`10000000000 * Math.pow(10, -phTwo_average)`/]
+
+    // Averages
+    [derived name: ph_average value:`(phOne_average.toFixed(2) + phTwo_average.toFixed(2)) / 2`/]
+    [derived name: hplus_average value:`(Math.pow(10, -phOne_average.toFixed(2)) + Math.pow(10, -phTwo_average.toFixed(2))) / 2`/]
+
+    [div style:`{fontSize: '2.00rem', textAlign: 'center'}`]
+    from pH [span style:`{color:color_phOne_full}`][Dynamic value:phOne_average min: 6.0 max: 9.0 step: 0.01 /][/span] to pH [span style:`{color:color_phTwo_full}`][Dynamic value:phTwo_average min: 6.0 max: 9.0 step: 0.01 /][/span]
+    [/div]
+
+    // [derived name: phIncreasingDecreasing value:`equalityTest < 1 ? "--" : (phOne_average < phTwo_average ? "pH has increased, so the solution is LESS acidic" : "pH has decreased, so the solution is MORE acidic")` /]
+    // [p style:`{fontSize: '1.1rem', textAlign: 'center', marginBottom: '0px'}`]
+    //   [span style:`{color:color_phTwo_full}` ][Display value: phIncreasingDecreasing /][/span]
+    // [/p]
+
+     [PhAverage className:"d3-component" 
+     ph_1: phOne_average 
+     ph_2: phTwo_average 
+     hPlus_1: phOne_hPlus 
+     hPlus_2: phTwo_hPlus
+     ph_average: ph_average
+     hplus_average: hplus_average
+      /]
+
+  [/div]
+   
+[/div]
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Context: two here -- summarizing pH in a tank
+clean data: not mindlessly include outliers, but mindfully consider if they are significant or a measurement error
+
+// // see: https://towardsdatascience.com/on-average-youre-using-the-wrong-average-geometric-harmonic-means-in-data-analysis-2a703e21ea0
+// "ultimately judgement & scientific skepticism are required, as ever, for sound empiricism"
+// "Understand the nature of your data & think carefully about the summary statistics you use to describe it — or risk being wrong ‘on average’."
+
+// // see: 
+// "Suppose we have random variable [H+]i. If we take the log transformation pHi = loge([H+]i), then pH-bar is the natural log of the geometric mean of [H+]." 
+// "It follows, then, that e^(pH-bar) is the geometric mean of [H+]."
+
+//   [var name:"textVal" value:"Hello World" /]
+// [TextInput value:textVal /]
+
+[p]
+The take-way: Be aware that small changes in pH mean large changes in acid concentration. This underlines the need for precise pH management to 
+maintain a healthy environment in production and recreational aquatic systems.
+[/p]
 
 Additional resources
 
-[a href:"https://phet.colorado.edu/en/simulation/ph-scale-basics"]Basic pH Animation[/a]
+// [a href:"https://phet.colorado.edu/en/simulation/ph-scale-basics"]Basic pH Animation[/a]
 
 // They're small: "proton at 0.833 femtometres, which is just under one trillionth of a millimetre" vs. 0.05 mm for h
 
@@ -1381,9 +1502,9 @@ Additional resources
 
 ## Take-aways
 
-[var name:"func" value:`Math.sin` /]
-[var name:"domainStart" value:0 /]
-[var name:"domainEnd" value:`2 * Math.PI` /]
+// [var name:"func" value:`Math.sin` /]
+// [var name:"domainStart" value:0 /]
+// [var name:"domainEnd" value:`2 * Math.PI` /]
 
 // ![Buzasunseastone](static/images/Buzasunseastone.jpg)
 
@@ -1395,15 +1516,6 @@ Additional resources
 [hr/]
 
 // ## References
-
-// [Cite 
-//   authors:"Matthew Conlen and Jeffrey Heer"
-//   title:"Idyll: A Markup Language for Authoring and Publishing Interactive Articles on the Web"
-//   url:"https://idl.cs.washington.edu/files/2018-Idyll-UIST.pdf" 
-//   id:"idyll-uist"
-//   venue: "Seattle, WA"
-//   date:"2018"
-// /]
 
 // // [Cite 
 // //   authors:"Myers, R.J."
