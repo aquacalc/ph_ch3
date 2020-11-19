@@ -10,6 +10,10 @@
   color:"white"
    /]
 
+[div style: `{textAlign:'center', color:'red', fontSize:'0.85rem'}` ]
+\[*This section still under development*\]
+[/div]
+
 [p]
 The previous section was preparation for understanding important aspects of pH covered in this final part of the **WQ ToolBox** 
 pH chapter.
