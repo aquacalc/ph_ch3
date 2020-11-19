@@ -1324,6 +1324,14 @@ small span {
   background: white;
 }
 
+/* HR above & below "neutral pH not always 7.0", pH section III */
+.neutral-ph-hr {
+  border-top: 2.5px dotted navy;
+  background: white;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 /* reduced from 4em to tighten spacing after Header */
 .article-header {
   margin-bottom: 2em;
