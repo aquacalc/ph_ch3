@@ -222,6 +222,8 @@ class PhScale extends D3Component {
     const decalage = ph_n * (size / 2);
     const decalage_gradient = (100.0 * Math.abs(props.neutralPh - 6.0)) / 2;
 
+    // console.log(`2...`, props.sal);
+
     // console.log(`NEW neutral pH = ${props.neutralPh}`);
     // console.log(`diff from ph 7 = ${ph_n}`);
     // console.log(`${props.neutralPh} - 6.0 = ${props.neutralPh - 6}`);

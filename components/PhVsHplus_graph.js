@@ -142,7 +142,7 @@ class PhVsHplus_graph extends D3Component {
       .attr("class", "ph-line-to-x")
       .transition()
       .duration(750)
-      .attr("stroke", "green")
+      .attr("stroke", "lightgray")
       .attr("stroke-opacity", 0.35)
       .style("stroke-width", 3)
       .attr("x1", (d) => xScale(xAccessor(d)))
@@ -158,7 +158,7 @@ class PhVsHplus_graph extends D3Component {
       .attr("class", "ph-line-to-y")
       .transition()
       .duration(750)
-      .attr("stroke", "green")
+      .attr("stroke", "lightgray")
       .attr("stroke-opacity", 0.35)
       .style("stroke-width", 3)
       .attr("x1", (d) => xScale(xAccessor(d)))
@@ -176,7 +176,7 @@ class PhVsHplus_graph extends D3Component {
       .attr("class", "ph-target-to-statement")
       .transition()
       .duration(750)
-      .attr("stroke", "green") // !d.start => target pH
+      .attr("stroke", "gray") // !d.start => target pH
       .attr("stroke-opacity", 0.55)
       .style("stroke-width", 5)
       .attr("x1", 340)
@@ -194,7 +194,7 @@ class PhVsHplus_graph extends D3Component {
       .attr("cy", (d) => yScale(yAccessor(d)))
       .attr("r", 13)
       // .attr("fill", "url(#linear-gradient)");
-      .attr("fill", "green");
+      .attr("fill", "gray");
     // .attr("opacity", 0.55);
 
     // ************************ //
@@ -213,7 +213,8 @@ class PhVsHplus_graph extends D3Component {
       .attr("r", 7.0)
       // .attr("r", (d) => (d.start ? 7 : 4.5))
       // .attr("r", 6.5)
-      .attr("fill", (d) => d.color);
+      .attr("fill", "gray");
+    // .attr("fill", (d) => d.color);
 
     // PH X-AXIS CIRCLES
     svg
@@ -225,7 +226,8 @@ class PhVsHplus_graph extends D3Component {
       .attr("cx", (d) => xScale(xAccessor(d)))
       .attr("cy", 550)
       .attr("r", 7.0)
-      .attr("fill", "green");
+      .attr("fill", "gray");
+    // .attr("fill", "green");
 
     // ********************** //
     // **** RESULT "DIV" **** //
@@ -238,7 +240,7 @@ class PhVsHplus_graph extends D3Component {
       .attr("y", 100)
       .attr("width", 680)
       .attr("height", 220)
-      .attr("stroke", "green")
+      .attr("stroke", "gray")
       // .attr("stroke", "#808080")
       .attr("stroke-width", 2)
       .attr("rx", 30) // [NB] D3 round rect corners
@@ -256,9 +258,9 @@ class PhVsHplus_graph extends D3Component {
       .attr("y", 180)
       .style("font-size", "2.5rem")
       .style("font-weight", "400")
-      .text(`  pH: ${round(ph_1, 2)} pH units`)
+      .text(`  pH: ${round(ph_1, 2)}`)
       .attr("text-anchor", "start")
-      .attr("fill", "green")
+      .attr("fill", "charcoal")
       .attr("opacity", 0.8);
     // .attr("fill", "#808080");
 
@@ -272,7 +274,7 @@ class PhVsHplus_graph extends D3Component {
       .style("font-weight", "400")
       .text(`  [H${superPlus}]: ${phEntryData[0].hplus.toFixed(12)} mol/L`)
       .attr("text-anchor", "start")
-      .attr("fill", "green")
+      .attr("fill", "charcoal")
       .attr("opacity", 0.8);
 
     // ********************** //
@@ -365,7 +367,8 @@ class PhVsHplus_graph extends D3Component {
       .attr("cx", (d) => xScale(d.hplus))
       .attr("cy", (d) => yScale(d.ph))
       .attr("r", 13)
-      .attr("fill", "green");
+      .attr("fill", "gray");
+    // .attr("fill", "green");
     // .attr("opacity", 0.45);
 
     // PH Y-AXIS CIRCLES
@@ -376,7 +379,8 @@ class PhVsHplus_graph extends D3Component {
       .duration(750)
       .attr("cy", (d) => yScale(d.ph))
       .attr("r", 7.0)
-      .attr("fill", (d) => d.color);
+      .attr("fill", "gray");
+    // .attr("fill", (d) => d.color);
 
     // PH X-AXIS CIRCLES
     this.svg
@@ -386,7 +390,8 @@ class PhVsHplus_graph extends D3Component {
       .duration(750)
       .attr("cx", (d) => xScale(d.hplus))
       .attr("r", 7.0)
-      .attr("fill", (d) => d.color);
+      .attr("fill", "gray");
+    // .attr("fill", (d) => d.color);
 
     // [TEST] LINE: TARGET CIRCLE TO STATEMENT
     // 'start' property FALSE => the target pH (larger circle)
@@ -396,7 +401,7 @@ class PhVsHplus_graph extends D3Component {
       .transition()
       .duration(750)
       .attr("opacity", 1) // !d.start => target pH
-      .attr("stroke", "green") // !d.start => target pH
+      .attr("stroke", "gray") // !d.start => target pH
       .attr("x2", (d) => xScale(d.hplus))
       .attr("y2", (d) => yScale(d.ph));
 
@@ -420,7 +425,8 @@ class PhVsHplus_graph extends D3Component {
       .attr("y1", (d) => yScale(d.ph))
       .attr("x2", (d) => xScale(d.hplus))
       .attr("y2", (d) => 550)
-      .attr("stroke", (d) => d.color)
+      .attr("stroke", "lightgray")
+      // .attr("stroke", (d) => d.color)
       .attr("stroke-opacity", 0.35);
 
     this.svg
@@ -431,17 +437,18 @@ class PhVsHplus_graph extends D3Component {
       .attr("x1", (d) => xScale(d.hplus))
       .attr("y1", (d) => yScale(d.ph))
       .attr("x2", -25)
-      .attr("y2", (d) => yScale(d.ph));
+      .attr("y2", (d) => yScale(d.ph))
+      .attr("stroke", "lightgray");
 
-    this.svg.selectAll(".result-rect").attr("stroke", "green");
+    this.svg.selectAll(".result-rect").attr("stroke", "gray");
 
     // RESULT TEXT
     this.svg
       .selectAll(".ph-change-label")
       .transition()
       .duration(500)
-      .text(`  pH: ${round(ph_1, 2)} pH units`)
-      .attr("fill", "green");
+      .text(`  pH: ${round(ph_1, 2)}`)
+      .attr("fill", "charcoal");
 
     this.svg
       .selectAll(".hplus-change-label")
@@ -449,7 +456,7 @@ class PhVsHplus_graph extends D3Component {
       .duration(500)
       // .text(`Δ [H${superPlus}]: ${real_hPlus_1.toFixed(12)} mol/L`)
       .text(`  [H${superPlus}]: ${phEntryData[0].hplus.toFixed(12)} mol/L`)
-      .attr("fill", "green");
+      .attr("fill", "charcoal");
 
     // ******************* //
     // ** END OF UPDATE ** //

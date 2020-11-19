@@ -16,8 +16,8 @@ pH chapter.
 [/p]
 
 [p]
-Topics include several that regularly cause confusion, such as how to calculate acidity (\[H[sup]+[/sup]\]) from pH, the 
-correct way to average pH values, and the problems with measuring seawater pH on the NBS scale -- the one most everyone uses.
+A few of these topics regularly cause confusion, such as how to calculate acidity (\[H[sup]+[/sup]\]) from pH, the 
+correct way to average pH values, and measuring pH in seawater on the NBS scale -- the one most everyone uses.
 [/p]
 
 [p style: `{fontSize: '0.90rem'}` ]
@@ -134,12 +134,12 @@ scaled in millimoles per kg (**mmol/kg**); *i.e.*, thousandths of a mole per kg.
 [/div]
 
 [p]
-We'd work more efficiently -- and feel more comfortable -- with a reasonably-sized positive number to describe acidity. And that finally brings us to pH.
+We'd work more efficiently -- and feel more comfortable -- with a reasonably-sized positive number that describes acidity. And that finally brings us to pH.
 [/p]
 
 // ((((((((( PH DEF )))))))))
 [div style:`{marginTop: '35px'}`]
-[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"ph-def"]*pH [span style:`{fontSize:'1.5rem'}` ]≔[/span] -log[sub]10[/sub]|{H[sup]+[/sup]}|*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"ph-def"]*pH [span style:`{fontSize:'1.5rem'}` ]≔[/span] -log[sub]10[/sub]{H[sup]+[/sup]}*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
 [/div]
 
 [aside]
@@ -182,8 +182,8 @@ The symbol "[span style:`{fontSize:'1.13rem'}` ]≔[/span]" indicates a definiti
 [/div]
 
 [p]
-  We pointed out in the previous section that activity can be approximated by concentration in dilute solutions. This leads to the operational 
-  -- and *approximate* -- definition of pH in which concentration is substituted for activity:
+  We pointed out in the previous section that, in dilute solutions, activity can be approximated by concentration. Substitutiong concentration for activity leads 
+  to the operational -- and *approximate* -- definition of pH:
 [/p]
 
 [div style:`{marginTop: '15px'}`]
@@ -279,12 +279,21 @@ into the familiar pH values that you know and love.
 // ^^^^^^^^^^^^^^^^^^^^^^^^^ //
 
 [p]
-*Why use* **negative** *log[sub]10[/sub] instead of just log[sub]10[/sub]?*
+Using -log[sub]10[/sub] thus turns [span][Display value: sqrt_log_1 format: '.7r' /][/span] mol/L into 
+[span]pH [Display value: thePh format: '.2f' /][/span]. (Note that pH has no units; it's a pure number.)
 [/p]
 
 [p]
-If we had used *positive* log[sub]10[/sub], then the pH spit out the other end would have been negative. Using -log[sub]10[/sub] makes most all pH values positive, as we 
-prefer them.
+Let's unpack two math questions that sometimes come up.
+[/p]
+
+[p]
+First: *Why use* **negative** *log[sub]10[/sub] instead of just log[sub]10[/sub]?*
+[/p]
+
+[p]
+We could have used *positive* log[sub]10[/sub], but then the pH spit out the other end would have been negative. Using -log[sub]10[/sub] makes most all pH values 
+-- and certainly all that you'll come across in your work -- positive, as we prefer them.
 [/p]
 
 [p]
@@ -292,7 +301,7 @@ One consequence of that choice is that solutions with higher acidity are assigne
 [/p]
 
 [p]
-*And why use the base-10 log?*
+Second: *Why use the base-10 log?*
 [/p]
 
 [p]
@@ -322,7 +331,8 @@ When someone asks how acidic your system is, you can answer:
 [hr className:'neutral-ph-hr'/]
 
 [p]
-Before moving on, it's useful to visualize the relationship between pH and \[H[sup]+[/sup]\]. This is illustrated in the next interactive display.
+Before moving on, it's useful to visualize the non-linear relationship between pH and \[H[sup]+[/sup]\] 
+that results after the -log[sub]10[/sub] transformation. This is illustrated in the next interactive display.
 [/p]
 
 
@@ -366,13 +376,12 @@ Before moving on, it's useful to visualize the relationship between pH and \[H[s
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 [p]
-For now, the main take-away is that the relationship between pH and \[H[sup]+[/sup]\] is non-linear: *i.e.*, their relationshp is not described 
-by a straight line.
+This non-linearity introduces some potential wrinkles into the correct interpretation of pH that we'll iron out below.
 [/p]
 
 [p]
-That non-linearity introduces some potential wrinkles into the correct use of pH that we'll iron out below. In fact, we'll rely on this graph to show how small 
-changes in pH represent large changes in acid concentration; and in demonstrating how to correctly calculate the average of a set of pH values.
+In fact, we'll rely on this graph to show how small changes in pH represent large changes in acid concentration; and again in demonstrating how to calculate 
+the average of a set of pH values.
 [/p]
 
 
@@ -470,7 +479,7 @@ science and engineering.
 
 [p]
 As described above this panel, a logarithm can "tame" inconveniently expressed numbers by transforming them into a more human-friendly form. Log transforms are 
-particularly useful whenever a variable spans a very wide range of values: logs compress such wide ranges into a more manageable narrow ones.
+particularly useful whenever a variable spans a very wide range of values: logs compress a wide range into a more manageable narrow range.
 [/p]
 
 [p]
@@ -544,11 +553,11 @@ The next display drives this point home.
 
   [div className: 'yellow-panel-div']
 
-  [h4 style:`{textAlign:'center', paddingTop:'10px'}` ]10[sup]-pH[/sup] calculates \[H[sup]+[/sup]\], the acid concentration in mol/L[/h4]
+  [h4 style:`{textAlign:'center', paddingTop:'10px'}` ]10[sup]-**[span style:`{color:'blue', fontSize: '1.0rem'}` ]pH[/span]**[/sup] calculates **[span style:`{color:'green', fontSize: '1.0rem'}` ]\[H[sup]+[/sup]\][/span]**, the acid concentration in mol/L[/h4]
 
   [var name:"my_ph" value:8.3 /]
   [Inline]
-  [span style:`{marginLeft: '145px'}` ]pH [Range value: my_ph min: -3 max: 15 step: 0.01 /] [Display value:my_ph /] (NBS Scale)[/span]
+  [span style:`{marginLeft: '145px'}` ]pH [Range value: my_ph min: -3 max: 15 step: 0.01 /] **[span style:`{color:'blue', fontSize: '1.0rem'}` ][Display value:my_ph /][/span]** (NBS Scale)[/span]
   [/Inline]
 
 // [H+] from pH
@@ -563,7 +572,7 @@ The next display drives this point home.
   [/p]
 
   [p style:`{marginBottom: '5px', marginLeft:'80px'}`]
-    \[H[sup]+[/sup]\] = 10[sup]-pH[/sup] = 10[sup]-([Display value:my_ph /])[/sup] = **[span style:`{color:'green', fontSize: '1.0rem'}` ][Display value: conc_h_plus format:".7r" /][/span]** mol/L
+    \[H[sup]+[/sup]\] = 10[sup]-pH[/sup] = 10[sup]-(**[span style:`{color:'blue', fontSize: '1.0rem'}` ][Display value:my_ph /][/span]**)[/sup] = **[span style:`{color:'green', fontSize: '1.0rem'}` ][Display value: conc_h_plus format:".7r" /][/span]** mol/L
   [/p]
 
 
@@ -574,7 +583,7 @@ The next display drives this point home.
   [/p]
 
   [p style:`{marginLeft:'68px'}`]
-    pH = -log[sub]10[/sub]|\[H[sup]+[/sup]\]| = -log[sub]10[/sub]|**[span style:`{color:'green', fontSize: '1.0rem'}` ][Display value: conc_h_plus format:".7r" /][/span]**| = [Display value:calced_ph /]
+    pH = -log[sub]10[/sub]|\[H[sup]+[/sup]\]| = -log[sub]10[/sub]|**[span style:`{color:'green', fontSize: '1.0rem'}` ][Display value: conc_h_plus format:".7r" /][/span]**| = **[span style:`{color:'blue', fontSize: '1.0rem'}` ][Display value:calced_ph /][/span]**
   [/p]
 
   [/div]
@@ -596,7 +605,7 @@ Fair question. The reason is that, once we have measured pH, we need to do more 
 // [/p]
 
 [p]
-In particular, the formulae we use to calculate the critical water-quality properties that we manage, such as Un-Ionized Ammonia (UIA), require \[H[sup]+[/sup]\].
+In particular, \[H[sup]+[/sup]\] is required by formulae we use to calculate the critical water-quality properties that we manage, such as Un-Ionized Ammonia (UIA).
 [/p]
 
 [p]
@@ -824,7 +833,7 @@ changes in a solution's acidity.
   [/p]
 
   [p]  
-    You can see this in the display: *e.g.*, if you start at pH 8.08 and raise it by 0.30 units to pH 8.38, the resulting solution 
+    You can see this in the display, too: *e.g.*, if you start at pH 8.08 and raise it by 0.30 units to pH 8.38, the resulting solution 
     will be about one-half as acidic.
   [/p]
 
@@ -960,9 +969,9 @@ Temperature [Range value: tempInC min: 4 max: 40 step: 0.1 /]
 [Select style:`{marginRight: "40px"}` value:tempUnits options:`["° C", "° F"]`  /]
 [/Inline]
 
-[var name: 'sal' value: 0 /]
+[var name:'sal' value:0 /]
 [Inline]
-Salinity [Range value: sal min: 0 max: 40 step: 0.1 /]
+Salinity [Range value:sal min:0 max:40 step:0.1 /]
 [Display value: sal format:".1f" /]‰
 [/Inline]
 
@@ -981,7 +990,7 @@ Salinity [Range value: sal min: 0 max: 40 step: 0.1 /]
 [derived name: concHplus value: `Math.pow(10, -phNeutral)` /]
 [derived name: concHplus_rounded value: `Math.pow(10, -phNeutral_rounded)` /]
 
-[PhScaleHorizontal className:"d3-component" tempValue: tempForSelectedUnits tempUnits: tempUnits sal: sal neutralPh: phNeutral_rounded /]
+[PhScaleHorizontal className:"d3-component" tempValue:tempForSelectedUnits tempUnits:tempUnits sal:sal neutralPh:phNeutral_rounded /]
 
 [/div]
 
@@ -1018,13 +1027,46 @@ pH 8.1 to 8.3. In any case, the optimal pH range is easily identified for any se
 [/div]
 
 [p]
-pH measurements are such a standard part of water quality management that it's not unusual to take pH electrodes and meters for granted, using them without knowing 
-even the basics of how they work.
+pH may be measured by observing color changes or voltage changes.
 [/p]
 
 [p]
-But if you're familiar with at least the basics, then you'll understand the reasons for the procedures that must be followed to keep pH electrodes in good working 
-order; and you'll also understand the issues that limit the accuracy of pH measurements in high salinity solutions like seawater.
+Color changes rely on pH-sensitive dyes. In the simplest case, they may be judged by the unassisted eye when using litmus paper, identifying the endpoint of a titration, 
+or associating the color of *Hydrangea* with soil pH.
+[/p]
+
+[div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
+![Hydrangeas](static/images/hydrangeas.jpg)
+[/div]
+
+[p]
+Such measurements naturally are rough and not suited for precise work.
+[/p]
+
+[p]
+Color changes also can be measured with an instrument, either a simple colorimeter or a more complicated and accurate spetrophotometer.
+[/p]
+
+[p]
+Most pH measurements today, however, are made potentiometrically with the familiar glass bulb electrode that responds to differences in electrical potential (voltage) 
+between the test solution and a standard.
+[/p]
+
+[p]
+The remainder of this discussion focuses on the glass bulb electrode that most everyone uses for pH; but it's worth mentioning a 
+tech advance in measuring pH: the Ion Selective Field Effect Transistor (**ISFET**).
+[/p]
+
+[p]
+ISFET pH electrodes are based on solid state silicon chip technology of the sort found in computers, cell phones, and Internet of Things (**IoT**) devices. 
+They're much more rugged and easier to maintain than glass bulb electrodes, but those advantages currently come at a significaant cost: they're more than twice 
+the cost of a glass bulb unit and they also require a special meter.
+[/p]
+
+[p]
+The main differences between the traditional glass bulb and newer ISFET probes are described succinctly in this 
+[a href:'https://www.grainger.com/know-how/equipment-information/kh-ph-electrode-types-uses' ]Grainger article[/a]. You'll find a very useful explanation of 
+Sea-Bird Scientific's ISFET pH technology that's used in oceanographic work, including the deep sea, [a href:"https://www.youtube.com/watch?v=D-malae4448"]in this video[/a].
 [/p]
 
 // EXPANDABLE PANEL -- Who invented the pH electrode
@@ -1043,7 +1085,6 @@ order; and you'll also understand the issues that limit the accuracy of pH measu
 [Conditional if:`showContent_ph_electrode`]
 
 [div className:"dynamic-module" ]
-
 
 [div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
 ![HBK](static/images/hbk.png)
@@ -1085,10 +1126,6 @@ Without their combined scientific and engineering ingenuity, we still might be u
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
 
-[p]
-pH meters work like voltmeters: they compare the voltage generated by the solution we're analyzing to that of a standard with known acidity. The difference in voltages 
-is used to calculate pH.
-[/p]
 
 // [div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
 // ![ph-electrode](static/images/ph-electrode-cell.png)
@@ -1098,11 +1135,17 @@ is used to calculate pH.
 // [/p]
 
 [p]
-Here are two short videos (among several on YouTube) that provide more detailed explanations of how the common glass-bulb electrodes are constructed to measure pH.
+Familiarizing yourself with the basic design and operation of the ubiquitous glass bulb electrode will clarify the reasons behind the routine lab procedures required 
+to keep them in good working condition. It also will give you the foundation for understanding the problems of measuring pH in seawater.
 [/p]
 
 [p]
-The first runs about three and one-half minutes. (Don't cringe when the robotic voice states that pH means "potential Hydrogen"; you know better than that from Part I.)
+The next two short videos (among several on YouTube) will help in that regard. They provide basic details of how the common glass bulb electrodes are constructed 
+and function.
+[/p]
+
+[p]
+The first runs about 3 1/2 minutes. (Don't cringe when the robotic voice says that pH means "potential Hydrogen"; you know better than that from Part I.)
 [/p]
 
 [div className:"dynamic-module" style:`{textAlign: 'center', marginTop: '20px'}` ]
@@ -1118,7 +1161,7 @@ The first runs about three and one-half minutes. (Don't cringe when the robotic 
 [/div]
 
 [p]
-The two and one-half minute audio track of the second video is poor, but it has good content and reinforces the basics outlined in the first video.
+The 2 1/2-minute audio track of the second video is poor, but it has good content and reinforces the basics from the first video.
 [/p]
 
 [div className:"dynamic-module" style:`{textAlign: 'center', marginTop: '20px'}` ]
@@ -1134,18 +1177,20 @@ The two and one-half minute audio track of the second video is poor, but it has 
 [/div]
 
 [p]
-In the ideal case, a pH electrode will respond only to the activity of the H[sup]+[/sup] in solution. In the real world, however, the electrode also responds to other 
-ions in solution that carry a single positive charge. These *monovalent* ions include Na[sup]+[/sup] and K[sup]+[/sup], both of which are present at significant 
-concentrations in seawater.
+In the ideal case, a pH electrode will respond only to the activity of the H[sup]+[/sup] ions in solution. In the real world, however, the electrode also responds to other 
+ions that carry a single positive charge. These *monovalent* ions include Na[sup]+[/sup] and K[sup]+[/sup], both of which are present at significant concentrations in seawater.
 [/p]
 
 [p]
-We also know from out discussion of activity (*vs.* concentration) in the previous section that some H[sup]+[/sup] ions will interact with other ions in solution and 
-with water itself. Those H[sup]+[/sup] ions -- the popcorn kernels that didn't pop -- won't be measured by the electrode.
+Further, the electrode responds to H[sup]+[/sup] activity, not H[sup]+[/sup] concentration. And this becomes more of a problem as ionic strentgth increases.
 [/p]
 
+Ions are charged so they interact in the solution attracting and repelling each other with coulomb forces. 
+These interactions influence ions behavior and don't allow to treat every ion in the solution independently.
+
 [p]
-Importantly, the electrode responds to H[sup]+[/sup] activity, not H[sup]+[/sup] concentration. And this is more of a problem as ionic strentgth increases.
+We also know from our discussion of activity (*vs.* concentration) in the previous section that some H[sup]+[/sup] ions interact with other ions in solution and 
+with water itself. These interacting H[sup]+[/sup] ions -- the popcorn kernels that didn't pop -- won't be measured by the electrode.
 [/p]
 
 [p]
@@ -1153,15 +1198,26 @@ The overall result is that other ions and H[sup]+[/sup] reactivity in solution c
 electrical potential (*i.e.*, the voltage) across the electrode.
 [/p]
 
-[p]
-be aware of these measurement errors 
-[/p]
-
 ...temperature calso effects the chemical equilibria ... Temperature will affect the equilibria of solution phase species, 
 as well as chemical species used in the reference electrode.
 
 [p]
-The result is that it appears that the solution is less concentrated than they really are
+The point here is to make you aware of these measurement errors
+[/p]
+
+[p]
+Randy Holmes-Farley provides a thorough and accessible explanation of pH electrodes and their calibration [Cite 
+  authors:"R. Holmes-Farley"
+  title:"Aquarium Chemistry: Measuring pH with a meter"
+  url:"https://reefs.com/magazine/aquarium-chemistry-measuring-ph-with-a-meter/"
+  id:"rhf_calibration"
+  venue: "reefs.com magazine"
+  date:"2003"
+/] that is well worth reading.
+[/p]
+
+
+[p]
 not available for reaction
 a measurable effect
 deviation...adjust...calculated by multiplying the concentration of a solute by an “activity coefficient”, usually symbolized γ, to give a quantity that more accurately represents 
@@ -1170,6 +1226,7 @@ the intensity of the chemical properties of the solute than the concentration it
 
 // BUFFERS AND SEGUE TO PH SCALES
 [p]
+Another important point -- and one mentioned in the two videos -- is calibration...
 "For pH meters to be accurate, they have to be properly calibrated (the meter is accurately translating voltage measurements into pH measurements), so they usually 
 need testing and adjusting before you start to use them. You calibrate a pH meter by dipping it into buffers (test solutions of known pH) and adjust the meter 
 accordingly. Another important consideration is that pH measurements made this way depend on temperature. Some meters have built-in thermometers and automatically 
@@ -1178,6 +1235,35 @@ different measurements. Alternatively, you can correct the pH measurement yourse
 broadly the same temperature."
 [/p]
 
+
+"Most popular method used to calculate ions activities is the one proposed by Debye and Hückel in 1923. IS limit ~0.1 or 5%o"
+
+// ******************** //
+// ** IONIC STRENGTH ** //
+// ******************** //
+
+[div className:"dynamic-module" ]
+
+  [div className: 'yellow-panel-div']
+
+    [h3 style:`{textAlign: 'center', marginTop: '8px'}`]Ionic Strength[/h3]
+
+    [var name:"sal_ionic" value:15 /]
+
+    Salinity [Range value:sal_ionic min:0 max:40 step: 0.01 /] [Display value:sal_ionic /]‰
+
+    [derived name:ionic_strength value:`(19.924 * sal_ionic) / (1000.0 - 1.005 * sal_ionic)` /]
+
+    Ionic Strength = [Display value:ionic_strength format:'.4f' /] mol/kg-H[sub]2[/sub]O
+
+    // myIS = (19.924 * sal_ionic) / (1000.0 - 1.005 * sal_ionic); // mole/kg-H2O (molal)
+
+    [IonicStrength className:"d3-component" sal:sal_ionic /]
+
+
+  [/div]
+
+[/div]
 
 
 // ((((((((( PH SCALES )))))))))
