@@ -1035,8 +1035,8 @@ pH may be measured by observing color changes or voltage changes.
 [/p]
 
 [p]
-Color changes rely on pH-sensitive dyes. In the simplest case, they may be judged by the unassisted eye when using litmus paper, identifying the endpoint of a titration, 
-or even associating the color of [a href:"https://www.americanscientist.org/article/curious-chemistry-guides-hydrangea-colors"]*Hydrangea* sepals with soil pH[/a].
+Color changes rely on pH-sensitive organic compounds. In the simplest case, they are judged by the unassisted eye when using litmus paper, identifying the endpoint 
+of a titration, or even associating the color of [a href:"https://www.americanscientist.org/article/curious-chemistry-guides-hydrangea-colors"]*Hydrangea* sepals with soil pH[/a].
 [/p]
 
 [div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
@@ -1056,6 +1056,19 @@ Most pH measurements today, however, are made potentiometrically with the famili
 (*i.e.*, voltage differences) between the test solution and a standard.
 [/p]
 
+[div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
+![ph-electrode](static/images/ph-electrode-cell.png)
+[/div]
+
+[div style:`{display:'flex', justifyContent:'space-between'}` ]
+[p style:`{textAlign:'left', marginTop:'3px', fontSize:'small'}`]
+Image by [a href:"https://pixabay.com/users/clker-free-vector-images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=35715"]Clker-Free-Vector-Images[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=35715"]Pixabay[/a]
+[/p]
+[p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
+Image by [a href:"https://pixabay.com/users/ginare77-13264986/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Regina Easley[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Pixabay[/a]
+[/p]
+[/div]
+
 [p]
 Our focus is on the glass bulb electrode that most everyone uses, but it's worth mentioning a tech advance in pH measurement: Ion Selective Field Effect 
 Transistors (**ISFET**).
@@ -1063,8 +1076,8 @@ Transistors (**ISFET**).
 
 [p]
 ISFET electrodes are based on solid state silicon chip technology of the sort found in computers, cell phones, and Internet of Things (**IoT**) devices. 
-They're much more rugged and easier to maintain than glass bulb electrodes, but those advantages currently come at a significaant cost: they're more than twice 
-the cost of a glass bulb unit and they also require a special meter.
+They're much more rugged and easier to maintain than glass bulb electrodes, but those advantages currently come at a significant cost: they're more than twice 
+as expensive as a glass bulb unit and they also require a special meter.
 [/p]
 
 [p]
@@ -1118,7 +1131,7 @@ the pH meter in 1936 (US Patent 2,058,761: Apparatus for testing acidity by Arno
 [/p]
 
 [p]
-Without their combined scientific and engineering ingenuity, we still might be using litmus paper.
+Without their combined scientific and engineering ingenuity, we still might be measuring pH with litmus paper. Or Hydrangeas.
 [/p]
 
 [div style: `{textAlign: 'center'}` ]
@@ -1130,17 +1143,9 @@ Without their combined scientific and engineering ingenuity, we still might be u
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
 
-
-// [div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
-// ![ph-electrode](static/images/ph-electrode-cell.png)
-// [/div]
-// [p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
-// Image by [a href:"https://pixabay.com/users/ginare77-13264986/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Regina Easley[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Pixabay[/a]
-// [/p]
-
 [p]
 Familiarizing yourself with the basic design and operation of the ubiquitous glass bulb electrode will clarify the reasons behind the routine lab procedures required 
-to keep them in good working condition. It also will give you the foundation for understanding the problems of measuring pH in seawater.
+to keep them in good working condition. It also will give you the foundation for understanding the problems with measuring pH in seawater.
 [/p]
 
 [p]
@@ -1250,16 +1255,16 @@ broadly the same temperature."
 
   [div className: 'yellow-panel-div']
 
-    [h3 style:`{textAlign: 'center', marginTop: '8px'}`]Ionic Strength[/h3]
+    [h3 style:`{textAlign: 'center', marginTop: '8px'}`]Ionic Strength *vs.* pH[/h3]
 
     [var name:"sal_ionic" value:15 /]
 
   [div style:`{textAlign:'center'}` ]
     Salinity [Range value:sal_ionic min:0 max:40 step: 0.01 /] [Display value:sal_ionic /]‰
 
-    [derived name:ionic_strength value:`(19.924 * sal_ionic) / (1000.0 - 1.005 * sal_ionic)` /]
+    // [derived name:ionic_strength value:`(19.924 * sal_ionic) / (1000.0 - 1.005 * sal_ionic)` /]
 
-    Ionic Strength = [Display value:ionic_strength format:'.4f' /] mol/kg-H[sub]2[/sub]O
+    // Ionic Strength = [Display value:ionic_strength format:'.4f' /] mol/kg-H[sub]2[/sub]O
   [/div]
 
     // myIS = (19.924 * sal_ionic) / (1000.0 - 1.005 * sal_ionic); // mole/kg-H2O (molal)

@@ -50,6 +50,14 @@ const ionicStrengthData = [
   { sal: 40, is: 0.8303396540946031 },
 ];
 
+// DAVIES EQUATION ZONE
+const daviesEqnData = {
+  sal: 24.48,
+  is: (19.924 * 24.48) / (1000.0 - 1.005 * 24.48),
+  color: "green",
+  start: "n/a",
+};
+
 const size = 600;
 
 const superPlus = "\u207A";
@@ -92,15 +100,26 @@ class IonicStrength extends D3Component {
     let yScale = d3.scaleLinear().domain([0, 1]).range([550, 100]);
 
     // TITLE
-    // svg
-    //   .append("text")
-    //   .attr("class", "title-label")
-    //   .attr("x", size / 2)
-    //   .attr("y", 55)
-    //   .style("font-size", "3.0rem")
-    //   .text(`pH vs. [H${superPlus}]`)
-    //   .attr("text-anchor", "middle")
-    //   .attr("fill", "#646464");
+    svg
+      .selectAll(".text-label")
+      .data(salEntryData)
+      .enter()
+      .append("text")
+      .attr("class", "title-label")
+      .attr("x", size / 2 + 100)
+      .attr("y", 55)
+      .style("font-size", "2.1rem")
+      .attr("fontWeight", 500)
+      .text(
+        `Ionic Strength = ${round(
+          (19.924 * sal) / (1000.0 - 1.005 * sal),
+          4
+        )} mol/kg`
+      )
+      .attr("text-anchor", "middle")
+      .attr("fill", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"))
+      .attr("stroke", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"));
+    // .attr("fill", "blue");
 
     // ********************* //
     // ****** PH LINE ****** //
@@ -128,6 +147,32 @@ class IonicStrength extends D3Component {
     //   .attr("offset", "100%")
     //   .attr("stop-color", "green");
 
+    // DAVIES EQN ZONE UNDERLAY & TITLE
+    svg
+      .append("rect")
+      .attr("class", "davies-rect")
+      .attr("x", 0)
+      .attr("y", yScale(daviesEqnData.is))
+      .attr("width", xScale(daviesEqnData.sal))
+      .attr("height", 550 - yScale(daviesEqnData.is))
+      .attr("stroke", "blue")
+      .attr("stroke-width", "0.5px")
+      .attr("fill", "#E8F4F8");
+
+    svg
+      .append("text")
+      .attr("class", "davies-label")
+      .attr("x", xScale(0.5))
+      .attr("text-anchor", "start")
+      // .attr("x", xScale(daviesEqnData.sal) / 2)
+      // .attr("text-anchor", "middle")
+      .attr("y", yScale(0.43))
+      // .attr("y", yScale(daviesEqnData.is))
+      .style("font-size", "1.70rem")
+      .text(`Davies Equation Validity Zone`)
+      .attr("fill", "blue");
+    // .attr("fill", "#646464");
+
     // ************** //
     // ** THE PATH ** //
     // ************** //
@@ -142,7 +187,7 @@ class IonicStrength extends D3Component {
       .append("path")
       .attr("d", lineGenerator(ionicStrengthData))
       .attr("fill", "none")
-      .attr("stroke", "navy")
+      .attr("stroke", "darkgray")
       // .attr("stroke", "url(#linear-gradient)")
       .attr("stroke-width", 4);
 
@@ -159,7 +204,7 @@ class IonicStrength extends D3Component {
       .attr("class", "sal-line-to-x")
       .transition()
       .duration(750)
-      .attr("stroke", "green")
+      .attr("stroke", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"))
       .attr("stroke-opacity", 0.35)
       .style("stroke-width", 3)
       .attr("x1", (d) => xScale(xAccessor(d)))
@@ -175,7 +220,7 @@ class IonicStrength extends D3Component {
       .attr("class", "sal-line-to-y")
       .transition()
       .duration(750)
-      .attr("stroke", "green")
+      .attr("stroke", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"))
       .attr("stroke-opacity", 0.35)
       .style("stroke-width", 3)
       .attr("x1", (d) => xScale(xAccessor(d)))
@@ -210,8 +255,8 @@ class IonicStrength extends D3Component {
       .attr("cx", (d) => xScale(xAccessor(d)))
       .attr("cy", (d) => yScale(yAccessor(d)))
       .attr("r", 13)
-      // .attr("fill", "url(#linear-gradient)");
-      .attr("fill", "green");
+      .attr("fill", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"));
+    // .attr("fill", "red"); // "#E8F4F8"
     // .attr("opacity", 0.55);
 
     // ************************ //
@@ -228,9 +273,8 @@ class IonicStrength extends D3Component {
       .attr("cx", -24.5)
       .attr("cy", (d) => yScale(yAccessor(d)))
       .attr("r", 7.0)
-      // .attr("r", (d) => (d.start ? 7 : 4.5))
-      // .attr("r", 6.5)
-      .attr("fill", (d) => d.color);
+      .attr("fill", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"));
+    // .attr("fill", (d) => d.color);
 
     // PH X-AXIS CIRCLES
     svg
@@ -242,7 +286,8 @@ class IonicStrength extends D3Component {
       .attr("cx", (d) => xScale(xAccessor(d)))
       .attr("cy", 550)
       .attr("r", 7.0)
-      .attr("fill", "green");
+      .attr("fill", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"));
+    // .attr("fill", (d) => d.color);
 
     // ********************** //
     // **** RESULT "DIV" **** //
@@ -383,7 +428,7 @@ class IonicStrength extends D3Component {
       .attr("cx", (d) => xScale(d.sal))
       .attr("cy", (d) => yScale(d.is))
       .attr("r", 13)
-      .attr("fill", "green");
+      .attr("fill", (d) => (d.is <= 0.5 ? "blue" : "#FF4023")); // "#E8F4F8"
     // .attr("opacity", 0.45);
 
     // PH Y-AXIS CIRCLES
@@ -394,7 +439,7 @@ class IonicStrength extends D3Component {
       .duration(750)
       .attr("cy", (d) => yScale(d.is))
       .attr("r", 7.0)
-      .attr("fill", (d) => d.color);
+      .attr("fill", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"));
 
     // PH X-AXIS CIRCLES
     this.svg
@@ -404,7 +449,7 @@ class IonicStrength extends D3Component {
       .duration(750)
       .attr("cx", (d) => xScale(d.sal))
       .attr("r", 7.0)
-      .attr("fill", (d) => d.color);
+      .attr("fill", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"));
 
     // // [TEST] LINE: TARGET CIRCLE TO STATEMENT
     // // 'start' property FALSE => the target pH (larger circle)
@@ -428,6 +473,21 @@ class IonicStrength extends D3Component {
     // //   .attr("y1", yScale(phEntryData[0].ph))
     // //   .attr("y2", yScale(phEntryData[1].ph));
 
+    // IONIC STRENGTH TITLE LABEL
+    this.svg
+      .selectAll(".title-label")
+      .data(salEntryData)
+      .transition()
+      .duration(750)
+      .attr("fill", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"))
+      .attr("stroke", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"))
+      .text(
+        `Ionic Strength = ${round(
+          (19.924 * sal) / (1000.0 - 1.005 * sal),
+          4
+        ).toFixed(4)} mol/kg`
+      );
+
     // // PH INPUT LINES
     this.svg
       .selectAll(".sal-line-to-x")
@@ -438,7 +498,7 @@ class IonicStrength extends D3Component {
       .attr("y1", (d) => yScale(d.is))
       .attr("x2", (d) => xScale(d.sal))
       .attr("y2", 550)
-      .attr("stroke", (d) => d.color)
+      .attr("stroke", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"))
       .attr("stroke-opacity", 0.35);
 
     this.svg
@@ -449,7 +509,9 @@ class IonicStrength extends D3Component {
       .attr("x1", (d) => xScale(d.sal))
       .attr("y1", (d) => yScale(d.is))
       .attr("x2", -25)
-      .attr("y2", (d) => yScale(d.is));
+      .attr("y2", (d) => yScale(d.is))
+      .attr("stroke", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"))
+      .attr("stroke-opacity", 0.35);
 
     // this.svg.selectAll(".result-rect").attr("stroke", "green");
 
