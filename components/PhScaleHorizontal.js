@@ -16,7 +16,7 @@ class PhScale extends D3Component {
 
     // see: https://stackoverflow.com/questions/44322617/viewbox-attribute-with-svg-height-and-width-attributes-set
     svg
-      .attr("viewBox", `0 0 ${size} ${size}`) // Set content region
+      .attr("viewBox", `0 0 ${size} ${size}`) // Set content region -- [NB] No need to change for Firefox
       // .attr("viewBox", `0 0 ${1.2 * size} ${1.2 * size}`) // Set content region
       // .attr("viewBox", `30 0 100 100`) // Set content region
       .style("width", "100.0%") // Set svg width

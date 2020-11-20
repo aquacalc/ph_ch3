@@ -1254,11 +1254,13 @@ broadly the same temperature."
 
     [var name:"sal_ionic" value:15 /]
 
+  [div style:`{textAlign:'center'}` ]
     Salinity [Range value:sal_ionic min:0 max:40 step: 0.01 /] [Display value:sal_ionic /]‰
 
     [derived name:ionic_strength value:`(19.924 * sal_ionic) / (1000.0 - 1.005 * sal_ionic)` /]
 
     Ionic Strength = [Display value:ionic_strength format:'.4f' /] mol/kg-H[sub]2[/sub]O
+  [/div]
 
     // myIS = (19.924 * sal_ionic) / (1000.0 - 1.005 * sal_ionic); // mole/kg-H2O (molal)
 

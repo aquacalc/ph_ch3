@@ -54,7 +54,11 @@ class PhVsHplus_graph extends D3Component {
     ];
 
     svg
-      .attr("viewBox", `0 0 600 650`)
+      // .attr("overFlow", "visible")
+      .attr("viewBox", `-230 0 1280 650`) // [HACK] MODIFIED to display ~properly in Firefox
+      // .attr("viewBox", `0 0 600 650`)
+      // .style("width", "100%")
+      // .style("height", "auto");
       .style("width", "590")
       .style("height", "400");
 

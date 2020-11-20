@@ -149,7 +149,8 @@ class PhAverage extends D3Component {
     // console.log(phEntryData);
 
     svg
-      .attr("viewBox", `0 0 600 650`)
+      .attr("viewBox", `-230 0 1280 650`) // [HACK] MODIFIED to display ~properly in Firefox
+      // .attr("viewBox", `0 0 600 650`)
       .style("width", "590")
       .style("height", "400");
 
