@@ -1036,7 +1036,7 @@ pH may be measured by observing color changes or voltage changes.
 
 [p]
 Color changes rely on pH-sensitive dyes. In the simplest case, they may be judged by the unassisted eye when using litmus paper, identifying the endpoint of a titration, 
-or associating the color of *Hydrangea* with soil pH.
+or even associating the color of [a href:"https://www.americanscientist.org/article/curious-chemistry-guides-hydrangea-colors"]*Hydrangea* sepals with soil pH[/a].
 [/p]
 
 [div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
@@ -1052,23 +1052,23 @@ Color changes also can be measured with an instrument, either a simple colorimet
 [/p]
 
 [p]
-Most pH measurements today, however, are made potentiometrically with the familiar glass bulb electrode that responds to differences in electrical potential (voltage) 
-between the test solution and a standard.
+Most pH measurements today, however, are made potentiometrically with the familiar glass bulb electrode that responds to differences in electrical potential 
+(*i.e.*, voltage differences) between the test solution and a standard.
 [/p]
 
 [p]
-The remainder of this discussion focuses on the glass bulb electrode that most everyone uses for pH; but it's worth mentioning a 
-tech advance in measuring pH: the Ion Selective Field Effect Transistor (**ISFET**).
+Our focus is on the glass bulb electrode that most everyone uses, but it's worth mentioning a tech advance in pH measurement: Ion Selective Field Effect 
+Transistors (**ISFET**).
 [/p]
 
 [p]
-ISFET pH electrodes are based on solid state silicon chip technology of the sort found in computers, cell phones, and Internet of Things (**IoT**) devices. 
+ISFET electrodes are based on solid state silicon chip technology of the sort found in computers, cell phones, and Internet of Things (**IoT**) devices. 
 They're much more rugged and easier to maintain than glass bulb electrodes, but those advantages currently come at a significaant cost: they're more than twice 
 the cost of a glass bulb unit and they also require a special meter.
 [/p]
 
 [p]
-The main differences between the traditional glass bulb and newer ISFET probes are described succinctly in this 
+The main differences between the traditional glass bulb and the newer ISFET probes are described succinctly in this 
 [a href:'https://www.grainger.com/know-how/equipment-information/kh-ph-electrode-types-uses' ]Grainger article[/a]. You'll find a very useful explanation of 
 Sea-Bird Scientific's ISFET pH technology that's used in oceanographic work, including the deep sea, [a href:"https://www.youtube.com/watch?v=D-malae4448"]in this video[/a].
 [/p]
@@ -1108,7 +1108,7 @@ Without their combined hockey talent and play-making ingenuity, the Pens would h
 [/div]
 
 [p]
-The HBK Line in the present context of pH is German Nobel-Prize winner Fritz Haber, American Physical Chemist and inventor Arnold Beckman, and Polish Physical Chemist 
+The HBK Line in the present context of pH measurement comprises German Nobel-Prize winner Fritz Haber, American Physical Chemist and inventor Arnold Beckman, and Polish Physical Chemist 
 Zygmunt Klemensiewicz.
 [/p]
 
