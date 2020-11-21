@@ -1203,52 +1203,53 @@ The 2 1/2-minute audio track of the second video is poor, but it has good conten
 [/div]
 
 [p]
-In the ideal case, a pH electrode will respond only to the activity of the H[sup]+[/sup] ions in solution. In the real world, however, the electrode also responds to other 
-ions in solution that carry a single positive charge. These *monovalent* ions include Na[sup]+[/sup] and K[sup]+[/sup], both of which are present in significant 
-concentrations in seawater.
+In the ideal case, the electrode will respond only to the activity of the H[sup]+[/sup] ions. 
 [/p]
 
 [p]
-We also know from our discussion of activity *vs.* concentration in the previous section that some H[sup]+[/sup] ions will interact with other ions in solution and 
-with water itself. These interactions increase as ionic strentgth increases, as it does in seawater.
+In the real world, however, it also responds to other ions that carry a single positive charge. These include Na[sup]+[/sup] and K[sup]+[/sup], both of which 
+are present in significant concentrations in seawater.
 [/p]
 
 [p]
-The overall result is that a higher fraction of H[sup]+[/sup] ions won't be measured by the pH electrode. In terms of the discussion in the previous section, more popcorn kernels 
-will not pop.
-[/p]
-
-...temperature calso effects the chemical equilibria ... Temperature will affect the equilibria of solution phase species, 
-as well as chemical species used in the reference electrode.
-
-[p]
-The point here is to make you aware of these measurement errors
+We also know from the discussion of activity in the previous section that some H[sup]+[/sup] ions interact with other ions in solution and 
+with water itself. 
 [/p]
 
 [p]
-Randy Holmes-Farley provides a thorough and accessible explanation of pH electrodes and their calibration [Cite 
+The result of these interactions is that a fraction of the H[sup]+[/sup] ions will not be measured by the pH electrode. (Recalling the 
+earlier discussion, these are the popcorn kernels that don't pop.)
+[/p]
+
+// BUFFERS AND SEGUE TO PH SCALES
+[p]
+Another important point -- and one mentioned in the two videos -- is calibration.
+[/p]
+
+[p]
+All instruments must be checked periodically to make sure that they're providing accurate read-outs. In the case of pH meters, this entails 
+adjusting the meter to match the readings from standard solutions of known pH.
+[/p]
+
+[p]
+If done with only two standards, one should be lower and one higher than the pH values expected when making routine measurements; and the 
+difference in pH of the standards should be no more than about two pH units.
+[/p]
+
+[p]
+A thorough and accessible explanation of pH electrodes and their calibration, including temperature correction, is provided by Holmes-Farley [Cite 
   authors:"R. Holmes-Farley"
   title:"Aquarium Chemistry: Measuring pH with a meter"
   url:"https://reefs.com/magazine/aquarium-chemistry-measuring-ph-with-a-meter/"
   id:"rhf_calibration"
   venue: "reefs.com magazine"
   date:"2003"
-/] that is well worth reading.
+/] and is well worth reading.
 [/p]
 
-
-
-// BUFFERS AND SEGUE TO PH SCALES
 [p]
-Another important point -- and one mentioned in the two videos -- is calibration...
-"For pH meters to be accurate, they have to be properly calibrated (the meter is accurately translating voltage measurements into pH measurements), so they usually 
-need testing and adjusting before you start to use them. You calibrate a pH meter by dipping it into buffers (test solutions of known pH) and adjust the meter 
-accordingly. Another important consideration is that pH measurements made this way depend on temperature. Some meters have built-in thermometers and automatically 
-correct their own pH measurements as the temperature changes; those are best if fluctuations in temperature are likely to occur while you're making a number of 
-different measurements. Alternatively, you can correct the pH measurement yourself, or allow for it by calibrating your instrument and making pH measurements at 
-broadly the same temperature."
+clibration standards and NBS leads to a discussion of scales point here is to make you aware of these measurement errors
 [/p]
-
 
 "Most popular method used to calculate ions activities is the one proposed by Debye and Hückel in 1923. IS limit ~0.1 or 5%o"
 
