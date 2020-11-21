@@ -186,8 +186,8 @@ The symbol "[span style:`{fontSize:'1.13rem'}` ]≔[/span]" indicates a definiti
 [/div]
 
 [p]
-  We pointed out in the previous section that, in dilute solutions, activity can be approximated by concentration. Substitutiong concentration for activity leads 
-  to the operational -- and *approximate* -- definition of pH:
+  We pointed out in the previous section that, in dilute solutions, activity can be approximated by concentration. Substituting concentration for activity leads 
+  to the analytical -- *i.e.*, the measurable -- definition of pH:
 [/p]
 
 [div style:`{marginTop: '15px'}`]
@@ -195,7 +195,28 @@ The symbol "[span style:`{fontSize:'1.13rem'}` ]≔[/span]" indicates a definiti
 [/div]
 
 [p]
-  This approximation is less valid in concentrated solutions, solutions with high ionic activity (like seawater), and when examining the behavior of pH electrodes. 
+  It's important to stress that this is an **approximation**. McCarty & Vitz (2006) [Cite 
+  authors:"McCarty, C. and E. Vitz"
+  title:"pH Paradoxes: Demonstrating that it is not true that pH = -log[H+]"
+  url:"https://www.semanticscholar.org/paper/pH-Paradoxes%3A-Demonstrating-That-It-Is-Not-True-pH-Mccarty-Vitz/852c89694bebe3a5fc03c4bc78615d15b98dcae2#paper-header" 
+  id:"ph-paradoxes"
+  venue: "Journal of Chemical Education, 83 (2006) 752-757"
+  date:"2006"
+/] describe some of the pH paradoxes that arise when this fact is ignored.
+[/p]
+
+// For example, when acid with pH ~1 is diluted with an equal volume of 5 M MgCl2, one would expect the pH calculated as -log\[H+\] to increase as 
+// the concentration of acid is halved; surprisingly, it decreases to values below zero, as demonstrated with a pH meter or methyl green indicator [Cite id:"ph-paradoxes"/]
+
+// A common example is 0.1 M HCl. Calculated in the "typical" way, pH is 1; with the corrections of activity (gamma ~ 0.826), it's less strong: about pH 1.08. because 
+// on the log-10 scale, the concentration approach yields a value ~21% more acidic (true is ~17.4% less acidic), an important difference for precise work.
+
+[p]
+ For our purposes, it is important to remember that this approximation is less valid in concentrated solutions and in solutions with high ionic activity (like seawater).
+[/p]
+
+[p]
+ Distinguishing between activity and concentration also is necessary to understand the behavior and limitations of pH electrodes.
 [/p]
 
 [p]
@@ -311,7 +332,7 @@ Second: *Why use the base-10 log?*
 [p]
 Any logarithmic base would work: log[sub]2[/sub] (binary), log[sub]16[/sub] (hex), or log[sub]e[/sub] (*ln*, the Natural logarithm). 
 But log[sub]10[/sub], the Common or Briggsian logarithm, was well tabulated before the wide availability of digital computing devices and so was the go-to base 
-for most scientific and engineering work; and we seem to be “wired” to be more comfortable with the base-10 number system.
+for most scientific and engineering work; and most of us are more comfortable with the base-10 number system.
 [/p]
 
 [hr className:'neutral-ph-hr'/]
@@ -380,12 +401,8 @@ that results after the -log[sub]10[/sub] transformation. This is illustrated in 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 [p]
-This non-linearity introduces some potential wrinkles into the correct interpretation of pH that we'll iron out below.
-[/p]
-
-[p]
-In fact, we'll rely on this graph to show how small changes in pH represent large changes in acid concentration; and again in demonstrating how to calculate 
-the average of a set of pH values.
+This non-linearity introduces several wrinkles into the proper interpretation of pH. We'll use this graph below to iron out a few of these, such as how small changes in pH 
+represent large changes in acid concentration; and how to calculate the average of a set of pH values.
 [/p]
 
 
@@ -1187,24 +1204,18 @@ The 2 1/2-minute audio track of the second video is poor, but it has good conten
 
 [p]
 In the ideal case, a pH electrode will respond only to the activity of the H[sup]+[/sup] ions in solution. In the real world, however, the electrode also responds to other 
-ions that carry a single positive charge. These *monovalent* ions include Na[sup]+[/sup] and K[sup]+[/sup], both of which are present at significant concentrations in seawater.
+ions in solution that carry a single positive charge. These *monovalent* ions include Na[sup]+[/sup] and K[sup]+[/sup], both of which are present in significant 
+concentrations in seawater.
 [/p]
 
 [p]
-Further, the electrode responds to H[sup]+[/sup] activity, not H[sup]+[/sup] concentration. And this becomes more of a problem as ionic strentgth increases.
-[/p]
-
-Ions are charged so they interact in the solution attracting and repelling each other with coulomb forces. 
-These interactions influence ions behavior and don't allow to treat every ion in the solution independently.
-
-[p]
-We also know from our discussion of activity (*vs.* concentration) in the previous section that some H[sup]+[/sup] ions interact with other ions in solution and 
-with water itself. These interacting H[sup]+[/sup] ions -- the popcorn kernels that didn't pop -- won't be measured by the electrode.
+We also know from our discussion of activity *vs.* concentration in the previous section that some H[sup]+[/sup] ions will interact with other ions in solution and 
+with water itself. These interactions increase as ionic strentgth increases, as it does in seawater.
 [/p]
 
 [p]
-The overall result is that other ions and H[sup]+[/sup] reactivity in solution combine to interfere with our pH measurement, either increasing or decreasing the 
-electrical potential (*i.e.*, the voltage) across the electrode.
+The overall result is that a higher fraction of H[sup]+[/sup] ions won't be measured by the pH electrode. In terms of the discussion in the previous section, more popcorn kernels 
+will not pop.
 [/p]
 
 ...temperature calso effects the chemical equilibria ... Temperature will affect the equilibria of solution phase species, 
@@ -1226,12 +1237,6 @@ Randy Holmes-Farley provides a thorough and accessible explanation of pH electro
 [/p]
 
 
-[p]
-not available for reaction
-a measurable effect
-deviation...adjust...calculated by multiplying the concentration of a solute by an “activity coefficient”, usually symbolized γ, to give a quantity that more accurately represents 
-the intensity of the chemical properties of the solute than the concentration itself does:
-[/p]
 
 // BUFFERS AND SEGUE TO PH SCALES
 [p]
@@ -1373,74 +1378,6 @@ uses -- is correctly converted to the proper
 
 [p]
 A good question is: How high can the salinity before the NBS scale...
-[/p]
-
-// [p]
-// The main point from that panel was that *concentration* represents the ideal case: We measure a quantity of a substance, dissolve it in a volume 
-// of water, and expect that the ions that are produced swim around freely in the solution; they don't react with each other, with the solution, or 
-// with other dissolved substances.
-// [/p]
-
-// [p]
-// On the other hand, *concentration* : We measure a quantity of a substance, dissolve it in a volume 
-// of water, and expect that the ions that are produced swim around freely in the solution; they don't react with each other, with the solution, or 
-// with other dissolved substances.
-// more descriptively, I think, *effective concentration*
-// [/p]
-
-// [p]
-// Here's a simple example:
-// [/p]
-
-// // from abstract of "pH Paradoxes"
-
-// McCarty & Vitz describe some of the problems [Cite 
-//   authors:"McCarty, C. and E. Vitz"
-//   title:"pH Paradoxes: Demonstrating that it is not true that pH = -log[H+]"
-//   url:"https://www.semanticscholar.org/paper/pH-Paradoxes%3A-Demonstrating-That-It-Is-Not-True-pH-Mccarty-Vitz/852c89694bebe3a5fc03c4bc78615d15b98dcae2#paper-header" 
-//   id:"ph-paradoxes"
-//   venue: "Journal of Chemical Education, 83 (2006) 752-757"
-//   date:"2006"
-// /]
-
-// For example, when acid with pH ~1 is diluted with an equal volume of 5 M MgCl2, one would expect the pH calculated as -log\[H+\] to increase as 
-// the concentration of acid is halved; surprisingly, it decreases to values below zero, as demonstrated with a pH meter or methyl green indicator [Cite id:"ph-paradoxes"/]
-
-A common example is 0.1 M HCl. Calculated in the "typical" way, pH is 1; with the corrections of activity (gamma ~ 0.826), it's less strong: about pH 1.08. because 
-on the log-10 scale, the concentration approach yields a value ~21% more acidic (true is ~17.4% less acidic), an important difference for precise work.
-
-// #### pH Paradoxes
-
-[h4 style:`{marginBottom:'2px'}`]pH Paradoxes[/h4]
-
-// // McCarty & Vitz
-// calculated by multiplying the concentration of a solute by an “activity coefficient”, usually symbolized γ, to give a quantity that more accurately represents 
-// the intensity of the chemical properties of the solute than the concentration itself does:
-
-// [Equation display:true]
-//   {pH} = -\log_{10}(\alpha_{H^+})
-// [/Equation]
-
-// [Equation display:true]
-//   {\alpha} = 
-//   \gamma{C}
-// [/Equation]
-
-// [Cite 
-//   authors:"McCarty, C. and E. Vitz"
-//   title:"pH Paradoxes: Demonstrating that it is not true that pH = -log[H+]"
-//   url:"https://www.semanticscholar.org/paper/pH-Paradoxes%3A-Demonstrating-That-It-Is-Not-True-pH-Mccarty-Vitz/852c89694bebe3a5fc03c4bc78615d15b98dcae2#paper-header" 
-//   id:"ph-paradoxes"
-//   venue: "Journal of Chemical Education, 83 (2006) 752-757"
-//   date:"2006"
-// /]
-
-[p]
-Thus, the *effective concentration* -- the number of free ions in solution -- is l
-[/p]
-
-[p]
-When you jump into the water quality literature, you'll see this fact expressed in an equation:
 [/p]
 
 
