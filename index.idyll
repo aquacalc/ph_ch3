@@ -841,8 +841,8 @@ changes in a solution's acidity.
   [/p]
 
   [p]  
-    The exact doubling point is between 0.30 and 0.31 (if you're interested, it's much closer to 0.3010299956639812). We round that 
-    off to 0.30 only because it's a nice number that serves our need for a rough approximation.
+    The exact doubling point is between 0.30 and 0.31: it's about 0.3010299956639812; we round that 
+    off to 0.30 only because it's a much 'nicer' number that serves our need for a rough approximation.
   [/p]
 
   [p]  
@@ -1069,7 +1069,7 @@ Color changes also can be measured with an instrument, either a simple colorimet
 [/p]
 
 [p]
-Most pH measurements today, however, are made potentiometrically with the familiar glass bulb electrode that responds to differences in electrical potential 
+Most pH measurements today, however, are made potentiometrically with a glass bulb electrode that responds to differences in electrical potential 
 (*i.e.*, voltage differences) between the test solution and a standard.
 [/p]
 
@@ -1162,7 +1162,7 @@ Without their combined scientific and engineering ingenuity, we still might be m
 
 [p]
 Familiarizing yourself with the basic design and operation of the ubiquitous glass bulb electrode will clarify the reasons behind the routine lab procedures required 
-to keep them in good working condition. It also will give you the foundation for understanding the problems with measuring pH in seawater.
+to keep them in good working condition. It also will give you the foundation for understanding the problems of measuring pH in seawater.
 [/p]
 
 [p]
@@ -1203,22 +1203,41 @@ The 2 1/2-minute audio track of the second video is poor, but it has good conten
 [/div]
 
 [p]
-In the ideal case, the electrode will respond only to the activity of the H[sup]+[/sup] ions. 
+Keep in mind that these electrodes measure ion activity -- not concentration.
 [/p]
 
 [p]
-In the real world, however, it also responds to other ions that carry a single positive charge. These include Na[sup]+[/sup] and K[sup]+[/sup], both of which 
-are present in significant concentrations in seawater.
+In the ideal case, a pH electrode would respond only to activity of H[sup]+[/sup] ions.
 [/p]
 
 [p]
-We also know from the discussion of activity in the previous section that some H[sup]+[/sup] ions interact with other ions in solution and 
-with water itself. 
+In practice, depending on the type of glass of which the probe is made and the pH of the sample, they also respond to other ions with a single positive charge, such as 
+Na[sup]+[/sup] and K[sup]+[/sup].
 [/p]
 
 [p]
-The result of these interactions is that a fraction of the H[sup]+[/sup] ions will not be measured by the pH electrode. (Recalling the 
+We also know from the discussion of activity in the previous section that some fraction of H[sup]+[/sup] ions will interact with other ions in solution and 
+with water itself.
+[/p]
+
+[p]
+The result of these interactions is that part of the H[sup]+[/sup] ions will not be measured by the electrode. (Recalling the 
 earlier discussion, these are the popcorn kernels that don't pop.)
+[/p]
+
+[p]
+One factor that plays a particularly important role in pH measurements is ionic strength.
+[/p]
+
+[p]
+\[H[sup]+[/sup]\] activity decreases in high ionic strength solutions, like seawater.
+High ionic strength solutions change the liquid junction potential. This may lead to bias and considerable time may be required to establish a stable reading.
+
+SeaWater;0.8M(53mS/cm)
+Low Ionic Strength Examples
+• Pure water in air (1 μs/cm)
+• Rain water (50 μs/cm)
+• Tap water (500 μs/cm)
 [/p]
 
 // BUFFERS AND SEGUE TO PH SCALES
@@ -1248,8 +1267,43 @@ A thorough and accessible explanation of pH electrodes and their calibration, in
 [/p]
 
 [p]
-clibration standards and NBS leads to a discussion of scales point here is to make you aware of these measurement errors
+calibration standards and NBS leads to a discussion of scales point here is to make you aware of these measurement errors
 [/p]
+"  
+
+TRIS buffer
+SOP6: https://data.ess-dive.lbl.gov/view/doi:10.15485/1464253
+
+calibration for use in a high ionic strength medium, glass electrode drift, reference electrode drift, and liquid junction potential issues) that have led to significant 
+measurement uncertainties that are difficult to quantify adequately. In recent years the spectrophotometric pH method described by Byrne and Breland (1989) has been 
+shown to be about one order of magnitude more precise.
+
+** glass electrode measurements (and many more recent ones) were calibrated against NBS style buffers with an ionic strength of 0.1 mol/kg .
+
+liquid junction potential of the pH cell is sensitive to ionic strength
+
+A junction potential is created at the interface separtating two ionic solutions of different ionic strengths.
+
+The junction potential develops at the interface separating the internal solution of the reference electrode and the sample solutions. The cause of the
+development is the different diffusion rate of cations and anions on both sides of the reference junction.
+
+The liquid junction potential of the pH cell is
+sensitive to ionic strength and to the composition of the solution it is in, so moving the electrodes from these low
+ionic strength buffers to the higher ionic strength of seawater (0.72 mol kg–1) makes apparent pH readings drift for a period of time. 
+
+This problem can be largely eliminated by running calibrations with Tris (2-amino-2-methyl-1,3-propanediol) buffers in synthetic seawater [ Cite 
+  authors:"Nemzer, B. V. and A. G. Dickson"
+  title:"The stability and reproducibility of Tris buffers in synthetic seawater"
+  url:"https://doi.org/10.1016/j.marchem.2005.01.004"
+  id:"ph-tris"
+  venue: "Marine Chemistry 96, 237–242"
+  date:"2005"
+/]. Most do not go to this length...
+
+The step from molar concentrations (analytical data) to activities (that enter law-of-mass-action calculations) requires the calculation of activity coefficients γi. 
+For this task several approaches are available, whereas each activity model has its own range of validity defined by the ionic strength I as shown here:1
+
+"
 
 "Most popular method used to calculate ions activities is the one proposed by Debye and Hückel in 1923. IS limit ~0.1 or 5%o"
 

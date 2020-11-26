@@ -58,6 +58,21 @@ const daviesEqnData = {
   start: "n/a",
 };
 
+// ** TRUESDELL-JONES S < 47.78059152372307 ppt
+// console.log(`SAL = ${1000 / (19.924 + 1.005)}`);
+// console.log(
+//   ` IS = ${(19.924 * 47.78059152372307) / (1000.0 - 1.005 * 47.78059152372307)}`
+// );
+
+// TRUESDELL-JONES EQUATION ZONE
+const truesdell_jonesEqnData = {
+  sal: 40.0, // [NB] Set to max of this x-axis, not T-J sal max
+  // sal: 47.78059152372307,
+  is: (19.924 * 47.78059152372307) / (1000.0 - 1.005 * 47.78059152372307),
+  color: "green",
+  start: "n/a",
+};
+
 const size = 600;
 
 const superPlus = "\u207A";
@@ -147,6 +162,29 @@ class IonicStrength extends D3Component {
     //   .attr("offset", "100%")
     //   .attr("stop-color", "green");
 
+    // TRUESDELL-JONES EQN ZONE UNDERLAY & TITLE
+    svg
+      .append("rect")
+      .attr("class", "tdj-rect")
+      .attr("x", 0)
+      .attr("y", yScale(truesdell_jonesEqnData.is))
+      .attr("width", xScale(truesdell_jonesEqnData.sal))
+      .attr("height", 550 - yScale(truesdell_jonesEqnData.is))
+      .attr("stroke", "darkgray")
+      .attr("stroke-width", "0.5px")
+      .attr("fill", "orange")
+      .attr("opacity", 0.15);
+
+    svg
+      .append("text")
+      .attr("class", "tdj-label")
+      .attr("x", xScale(0.5))
+      .attr("text-anchor", "start")
+      .attr("y", yScale(0.93))
+      .style("font-size", "1.70rem")
+      .text(`Truesdell-Jones Equation Validity Zone`)
+      .attr("fill", "brown");
+
     // DAVIES EQN ZONE UNDERLAY & TITLE
     svg
       .append("rect")
@@ -171,7 +209,6 @@ class IonicStrength extends D3Component {
       .style("font-size", "1.70rem")
       .text(`Davies Equation Validity Zone`)
       .attr("fill", "blue");
-    // .attr("fill", "#646464");
 
     // ************** //
     // ** THE PATH ** //
