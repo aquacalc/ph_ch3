@@ -73,6 +73,15 @@ const truesdell_jonesEqnData = {
   start: "n/a",
 };
 
+// STANDARD SW LINE
+const seawaterData = {
+  sal: 34.5, // [NB] Set to max of this x-axis, not T-J sal max
+  // sal: 47.78059152372307,
+  is: (19.924 * 34.5) / (1000.0 - 1.005 * 34.5),
+  color: "red",
+  start: "n/a",
+};
+
 const size = 600;
 
 const superPlus = "\u207A";
@@ -229,7 +238,46 @@ class IonicStrength extends D3Component {
       .attr("stroke-width", 4);
 
     // ********************** //
-    // ****** PH INPUT ****** //
+    // ****** SW INPUT ****** //
+    // ********************** //
+
+    svg
+      .append("text")
+      .attr("class", "sw-label")
+      .attr("x", xScale(11.0))
+      .attr("text-anchor", "start")
+      .attr("y", yScale(seawaterData.is + 0.01))
+      .style("font-size", "1.35rem")
+      .text(`Standard Seawater`)
+      .attr("fill", "green");
+
+    // SW INPUT LINES
+    svg
+      .append("line")
+      .attr("class", "sw-to-x")
+      .attr("stroke", "green")
+      .style("stroke-dasharray", "3, 3")
+      // .attr("stroke-opacity", 0.35)
+      .style("stroke-width", 2)
+      .attr("x1", xScale(seawaterData.sal))
+      .attr("y1", yScale(seawaterData.is))
+      .attr("x2", xScale(seawaterData.sal))
+      .attr("y2", 550);
+
+    svg
+      .append("line")
+      .attr("class", "sw-to-y")
+      .attr("stroke", "green")
+      .style("stroke-dasharray", "3, 3")
+      // .attr("stroke-opacity", 0.35)
+      .style("stroke-width", 2)
+      .attr("x1", xScale(seawaterData.sal))
+      .attr("y1", yScale(seawaterData.is))
+      .attr("x2", -25)
+      .attr("y2", yScale(seawaterData.is));
+
+    // ********************** //
+    // ****** SAL INPUT ***** //
     // ********************** //
 
     // SALINITY INPUT LINES
@@ -242,7 +290,7 @@ class IonicStrength extends D3Component {
       .transition()
       .duration(750)
       .attr("stroke", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"))
-      .attr("stroke-opacity", 0.35)
+      // .attr("stroke-opacity", 0.85)
       .style("stroke-width", 3)
       .attr("x1", (d) => xScale(xAccessor(d)))
       .attr("y1", (d) => yScale(yAccessor(d)))
@@ -258,7 +306,7 @@ class IonicStrength extends D3Component {
       .transition()
       .duration(750)
       .attr("stroke", (d) => (d.is <= 0.5 ? "blue" : "#FF4023"))
-      .attr("stroke-opacity", 0.35)
+      // .attr("stroke-opacity", 0.85)
       .style("stroke-width", 3)
       .attr("x1", (d) => xScale(xAccessor(d)))
       .attr("y1", (d) => yScale(yAccessor(d)))
@@ -282,6 +330,16 @@ class IonicStrength extends D3Component {
     //   .attr("y1", 210)
     //   .attr("x2", (d) => xScale(d.sal))
     //   .attr("y2", (d) => yScale(d.ic));
+
+    // SW LINE CIRCLE
+    // svg
+    //   .append("circle")
+    //   .attr("class", "sw-circle")
+    //   .attr("cx", xScale(seawaterData.sal))
+    //   .attr("cy", yScale(seawaterData.is))
+    //   .attr("r", 10)
+    //   .attr("opacity", 0.35)
+    //   .attr("fill", "green");
 
     // SALINITY LINE CIRCLES
     let circles = svg

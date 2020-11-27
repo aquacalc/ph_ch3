@@ -137,7 +137,7 @@ class PhAverage extends D3Component {
     const real_hPlus_1 = hPlus_1 / Math.pow(10, 9);
     const real_hPlus_2 = hPlus_2 / Math.pow(10, 9);
 
-    console.log("props", props);
+    console.log("** props", props);
 
     // PH ARROWS ⇧⇩ displayed next to results (pH, hplus, posto changes)
     // const myArrows = getUpDownArrows(moreOrLess_ph, moreOrLess_hPlus);

@@ -1432,14 +1432,14 @@ uses -- is correctly converted to the proper
 [/p]
 
 [p]
-A good question is: How high can the salinity before the NBS scale...
+A good question is: How high can the salinity before the NBS scale?
 [/p]
 
 
 // ******************* //
 // ***** MEAN PH ***** //
 // ******************* //
-
+[div][/div]
 // ((((((((( Mean pH )))))))))
 [div style:`{marginTop: '35px'}`]
 [Inline] [h3 style:`{display: 'inline', marginRight: '30px', marginTop: '50px'}` id:"mean-ph"]***What does 'mean pH' mean?!***[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
@@ -1530,8 +1530,8 @@ That's all owed to the -log[sub]10[/sub] transformation. Illustrated by modifyin
     [var name:"phTwo_average" value:8.0 /]
 
     // Owing to (digital) rounding error, 'magnify' by 10^9, do the calc, then telescope out
-    [derived name: phOne_hPlus value:`10000000000 * Math.pow(10, -phOne_average)`/]
-    [derived name: phTwo_hPlus value:`10000000000 * Math.pow(10, -phTwo_average)`/]
+    [derived name: phOne_hPlus_average value:`10000000000 * Math.pow(10, -phOne_average)`/]
+    [derived name: phTwo_hPlus_average value:`10000000000 * Math.pow(10, -phTwo_average)`/]
 
     // Averages
     [derived name: ph_average value:`(phOne_average.toFixed(2) + phTwo_average.toFixed(2)) / 2`/]
@@ -1549,8 +1549,8 @@ That's all owed to the -log[sub]10[/sub] transformation. Illustrated by modifyin
      [PhAverage className:"d3-component" 
      ph_1: phOne_average 
      ph_2: phTwo_average 
-     hPlus_1: phOne_hPlus 
-     hPlus_2: phTwo_hPlus
+     hPlus_1: phOne_hPlus_average 
+     hPlus_2: phTwo_hPlus_average
      ph_average: ph_average
      hplus_average: hplus_average
       /]
