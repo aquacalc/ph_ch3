@@ -926,7 +926,7 @@ We saw that higher temperature drives the reaction to the right. That produces m
 
 // [p style:`{marginBottom:'8px'}`]
 [p]
-Similarly, lower temperature drives the reaction to the left. That produces fewer H[sup]+[/sup], and that means higher pH.
+Similarly, lower temperature drives the reaction to the left. That produces less H[sup]+[/sup], and that means higher pH.
 [/p]
 
 [hr className:"neutral-ph-hr"/]
