@@ -1164,8 +1164,8 @@ Without their combined scientific and engineering ingenuity, we still might be m
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
 
 [p]
-Familiarizing yourself with the basic design and operation of the ubiquitous glass bulb electrode will clarify the reasons behind the routine lab procedures required 
-to keep them in good working condition. It also will give you the foundation for understanding the problems of measuring pH in seawater.
+Becoming familiar with the basic design and operation of the ubiquitous glass bulb electrode will clarify the reasons behind the routine lab procedures that 
+keep them in good working condition. It also will give you the foundation for understanding the problems of measuring pH in seawater.
 [/p]
 
 [p]
@@ -1218,17 +1218,21 @@ description of the ISFET probe.
 [/div]
 
 [p]
-In the ideal case, a pH electrode responds only to the activity of H[sup]+[/sup] ions. In practice, depending on the type of glass used in the probe and the composition of the sample, 
-it also may respond to other ions with a single positive charge, such as Na[sup]+[/sup] and K[sup]+[/sup].
+In the ideal case, a pH electrode responds only to the activity of H[sup]+[/sup] ions.
 [/p]
 
 [p]
-We also know from the earlier discussion of activity that H[sup]+[/sup] ions that interact with other ions and 
-water itself will not be measured. (These are the popcorn kernels that don't pop.)
+In practice, depending on the type of glass used in the probe and the composition of the sample, 
+other ions carrying a single positive charge, such as Na[sup]+[/sup] and K[sup]+[/sup], may interfere with pH readings.
 [/p]
 
 [p]
-A further consideration relates to the sample's ionic strength, a measure of the concentration of dissolved ions in mol/L (or mol/kg).
+We also know from an earlier discussion that H[sup]+[/sup] ions interact with other ions. This reduces their activity and so affects pH readings.
+[/p]
+
+[p]
+This is more pronounced in solutions with high concentrations of ions, such as seawater. A solution's *ionic strength* ([b]I[/b]) quantifies 
+its concentration of dissolved ions in mol/L (or mol/kg).
 [/p]
 
 [p]
@@ -1262,7 +1266,7 @@ In the same way, the contribution of the chloride ion to the solution's ionic st
 [/Equation]
 
 [p]
-The solution's ionic strength ([b]I[/b]) is one-half the sum of these values or:
+The solution's ionic strength is one-half the sum of these values:
 [/p]
 
 [Equation display:true]
@@ -1294,7 +1298,7 @@ thus doubling the sodium concentration to 4 mol/L.
 [/p]
 
 [p]
-Sodium's contribution to the solution's ionic strength now is 4 mol/L times the square of the common valence of *each* ion, +1:
+The sodium ion's contribution is 4 mol/L times the square of its valence, +1:
 [/p]
 
 [Equation display:true]
@@ -1302,7 +1306,7 @@ Sodium's contribution to the solution's ionic strength now is 4 mol/L times the 
 [/Equation]
 
 [p]
-The sulfate ion contribution is *its* concentration, 2 mol/L, times the square of its valence, -2:
+The sulfate ion's contribution is its concentration, 2 mol/L, times the square of -2:
 [/p]
 
 [Equation display:true]
@@ -1310,7 +1314,7 @@ The sulfate ion contribution is *its* concentration, 2 mol/L, times the square o
 [/Equation]
 
 [p]
-This solution's ionic strength thus is:
+Adding these together yields the ionic strength of this solution, 6 mol/L:
 [/p]
 
 [Equation display:true]
@@ -1339,14 +1343,14 @@ that of freshwater. The ionic strength of mean **seawater** (about 35‰ salinit
 [Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"junction-potential"]*Liquid Junction Potential*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
 [/div]
 
-[p]We raised the issue of ionic strength here because it affects pH measurements. High ionic strength solutions like seawater...[/p]
+[p]We raised the issue of ionic strength because it affects pH measurements. High ionic strength solutions like seawater...[/p]
 
 [ul]
   [li] 
-  ...decrease H[sup]+[/sup] activity that lowers pH readings
+  ...decrease H[sup]+[/sup] activity, which lowers pH readings
   [/li]
   [li] 
-  ...create a liquid junction potential that biases pH readings
+  ...create a liquid junction potential, which biases pH readings
   [/li]
 [/ul]
 
@@ -1355,7 +1359,7 @@ The second statement raises the question: *What is the liquid junction potential
 [/p]
 
 [p]
-The junction in question is the border at which the solution in the reference electrode meets the sample solution.
+The junction in question is the border at which the sample solution meets the solution in the reference electrode.
 [/p]
 
 [p]
@@ -1364,35 +1368,14 @@ they are less concentrated. Each ion moves at a rate determined by the concentra
 [/p]
 
 [p]
-The result is a separation of positive and negative charges across this liquid junction that generates a small electrical potential.
+The result is a separation of positive and negative charges across this liquid junction, and that generates an electric potential.
 [/p]
 
 [p]
-This small electrical potential is measured in millivolts (**mV**), but when the sample has a high ionic strength that's enough 
-to cause a pH error of as much as 0.5 pH units. We've seen that even such a small pH difference represents a large 
-difference in a solution's acid content, and that's important for precise water-quality management.
+This potential is small, generally scaled in millivolts (**mV**); but when a sample has a high ionic strength, it's enough 
+to cause a pH error of as much as 0.5 pH units. We've seen above that even such a small pH difference represents a large 
+difference in a solution's acid content, and that's an important consideration for precise management of water quality.
 [/p]
-
-
-[p]
-so moving the electrodes from these low
-ionic strength buffers to the higher ionic strength of seawater (0.72 mol kg–1) makes apparent pH readings drift for a period of time. 
-[/p]
-
-// TRIS buffer SOP6: https://data.ess-dive.lbl.gov/view/doi:10.15485/1464253
-
-[p]
-This problem can be largely eliminated by running calibrations with Tris (2-amino-2-methyl-1,3-propanediol) buffers in synthetic seawater [ Cite 
-  authors:"Nemzer, B. V. and A. G. Dickson"
-  title:"The stability and reproducibility of Tris buffers in synthetic seawater"
-  url:"https://doi.org/10.1016/j.marchem.2005.01.004"
-  id:"ph-tris"
-  venue: "Marine Chemistry 96, 237–242"
-  date:"2005"
-/], but this is a step that generally isn't taken even in aquaculture research, let alone in commercial operations.
-[/p]
-
-[p] [/p]
 
 // BUFFERS AND SEGUE TO PH SCALES
 // ((((((((( BUFFERS & CALIBRATION )))))))))
@@ -1424,6 +1407,22 @@ A thorough and accessible explanation of pH electrodes and their calibration, in
   date:"2003"
 /] and is well worth reading.
 [/p]
+
+[p]
+There's also a drift in pH readings as the ions reach a stead state across the junction, but this is largely eliminated by running calibrations 
+with Tris (2-amino-2-methyl-1,3-propanediol) buffers in synthetic seawater [ Cite 
+  authors:"Nemzer, B. V. and A. G. Dickson"
+  title:"The stability and reproducibility of Tris buffers in synthetic seawater"
+  url:"https://doi.org/10.1016/j.marchem.2005.01.004"
+  id:"ph-tris"
+  venue: "Marine Chemistry 96, 237–242"
+  date:"2005"
+/], but this is a step that generally isn't taken even in aquaculture research, let alone in commercial operations.
+[/p]
+
+// TRIS buffer SOP6: https://data.ess-dive.lbl.gov/view/doi:10.15485/1464253
+
+[p] [/p]
 
 [p]
 calibration standards and NBS leads to a discussion of scales point here is to make you aware of these measurement errors
