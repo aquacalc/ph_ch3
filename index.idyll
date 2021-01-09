@@ -21,11 +21,11 @@ pH chapter.
 
 [p]
 A few of these topics regularly cause confusion, such as how to calculate acidity (\[H[sup]+[/sup]\]) from pH, the 
-correct way to average pH values, and measuring pH in seawater on the NBS scale -- the one most everyone uses.
+correct way to average pH values, and measuring pH in seawater on the NBS scale -- the scale most everyone uses.
 [/p]
 
 [p style: `{fontSize: '0.90rem'}` ]
- *This document was developed with* [a href:"https://idyll-lang.org/"]Idyll[/a] [Cite 
+ *This document was developed with* [a href:"https://idyll-lang.org/" target:"_blank" rel:"noopener noreferrer"]Idyll[/a] [Cite 
   authors:"Matthew Conlen and Jeffrey Heer"
   title:"Idyll: A Markup Language for Authoring and Publishing Interactive Articles on the Web"
   url:"https://idl.cs.washington.edu/files/2018-Idyll-UIST.pdf" 
@@ -33,7 +33,7 @@ correct way to average pH values, and measuring pH in seawater on the NBS scale 
   venue: "Seattle, WA"
   date:"2018"
 /], *a "toolkit for creating data-driven stories 
- and explorable explanations". Custom components were built with* [a href:"https://reactjs.org/"]React[/a] *and*  [a href:"https://d3js.org/"]D3[/a].
+ and explorable explanations". Custom components were built with* [a href:"https://reactjs.org/" target:"_blank" rel:"noopener noreferrer"]React[/a] *and*  [a href:"https://d3js.org/" target:"_blank" rel:"noopener noreferrer"]D3[/a].
 [/p]
 
 [p style:`{textAlign:'right'}`]
@@ -49,10 +49,11 @@ correct way to average pH values, and measuring pH in seawater on the NBS scale 
     [li] [a href:"#ph-def"]pH ≔ -log[sub]10[/sub]|\[H[sup]+[/sup]\]|[/a] [/li]
     [li] [a href:"#ten-to-minus-ph"]*What is 10[sup]-pH[/sup]?!*[/a] [/li]
     [li] [a href:"#power-of-ten"]A Power of Ten[/a] [/li]
-    [li] [a href:"#mean-ph"]*What does ‘mean pH’ mean?!*[/a] [/li]
     [li] [a href:"#neutral-ph"]pH 7 is not always neutral[/a] [/li]
     [li] [a href:"#ph-electrode"]The pH Electrode[/a] [/li]
+    [li] [a href:"#ionic-strength"]Ionic Strength[/a] [/li]
     [li] [a href:"#ph-scales"]NBS & the Three Little pH Scales[/a] [/li]
+    [li] [a href:"#mean-ph"]*What does ‘mean pH’ mean?!*[/a] [/li]
     [li] [a href:"#next-steps"]Next Steps...[/a] [/li]
     [li] [a href:"#refs"]References[/a] [/li]
   [/ul]
@@ -427,7 +428,7 @@ represent large changes in acid concentration; and how to calculate the average 
 [/div]
 
 [p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
-Image by [a href:"https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4251037"]Gerd Altmann[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4251037"]Pixabay[/a]
+Image by [a href:"https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4251037"]Gerd Altmann[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4251037" target:"_blank" rel:"noopener noreferrer"]Pixabay[/a]
 [/p]
 
 #### Who developed logs?
@@ -477,7 +478,7 @@ Logs were used for that same purpose well into the 1970s when they were taught i
 [/div]
 
 [p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
-Image by [a href:"https://pixabay.com/users/sandid-356019/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=683556"]sandid[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=683556"]Pixabay[/a]
+Image by [a href:"https://pixabay.com/users/sandid-356019/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=683556"]sandid[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=683556" target:"_blank" rel:"noopener noreferrer"]Pixabay[/a]
 [/p]
 
 [p]
@@ -490,7 +491,7 @@ simplified calculations.
 [/div]
 
 [p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
-Image by [a href:"https://pixabay.com/users/hoerwin56-2108907/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3499408"]Gerd Altmann[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3499408"]Pixabay[/a]
+Image by [a href:"https://pixabay.com/users/hoerwin56-2108907/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3499408"]Gerd Altmann[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3499408" target:"_blank" rel:"noopener noreferrer"]Pixabay[/a]
 [/p]
 
 [p]
@@ -929,7 +930,7 @@ We saw that higher temperature drives the reaction to the right. That produces m
 Similarly, lower temperature drives the reaction to the left. That produces less H[sup]+[/sup], and that means higher pH.
 [/p]
 
-[hr className:"neutral-ph-hr"/]
+[hr className:"neutral-ph-hr"/] 
 
 [p style:`{marginBottom:'3px'}`]
 Putting those facts together:
@@ -1053,7 +1054,7 @@ pH may be measured by observing color changes or voltage changes.
 
 [p]
 Color changes rely on pH-sensitive organic compounds. In the simplest case, they are judged by the unassisted eye when using litmus paper, identifying the endpoint 
-of a titration, or even associating the color of [a href:"https://www.americanscientist.org/article/curious-chemistry-guides-hydrangea-colors"]*Hydrangea* sepals with soil pH[/a].
+of a titration, or even associating the color of [a href:"https://www.americanscientist.org/article/curious-chemistry-guides-hydrangea-colors" target:"_blank" rel:"noopener noreferrer"]*Hydrangea* sepals with soil pH[/a].
 [/p]
 
 [div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
@@ -1079,10 +1080,10 @@ Most pH measurements today, however, are made potentiometrically with a glass bu
 
 [div style:`{display:'flex', justifyContent:'space-between'}` ]
 [p style:`{textAlign:'left', marginTop:'3px', fontSize:'small'}`]
-Image by [a href:"https://pixabay.com/users/clker-free-vector-images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=35715"]Clker-Free-Vector-Images[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=35715"]Pixabay[/a]
+Image by [a href:"https://pixabay.com/users/clker-free-vector-images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=35715"]Clker-Free-Vector-Images[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=35715" target:"_blank" rel:"noopener noreferrer"]Pixabay[/a]
 [/p]
 [p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
-Image by [a href:"https://pixabay.com/users/ginare77-13264986/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Regina Easley[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Pixabay[/a]
+Image by [a href:"https://pixabay.com/users/ginare77-13264986/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225"]Regina Easley[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4394225" target:"_blank" rel:"noopener noreferrer"]Pixabay[/a]
 [/p]
 [/div]
 
@@ -1100,7 +1101,7 @@ as expensive as a glass bulb unit and they also require a special meter.
 [p]
 The main differences between the traditional glass bulb and the newer ISFET probes are described succinctly in this 
 [a href:'https://www.grainger.com/know-how/equipment-information/kh-ph-electrode-types-uses' ]Grainger article[/a]. You'll find a very useful explanation of 
-Sea-Bird Scientific's ISFET pH technology that's used in oceanographic work, including the deep sea, [a href:"https://www.youtube.com/watch?v=D-malae4448"]in this video[/a].
+Sea-Bird Scientific's ISFET pH technology that's used in oceanographic work, including the deep sea, [a href:"https://www.youtube.com/watch?v=D-malae4448" target:"_blank" rel:"noopener noreferrer"]in this video[/a].
 [/p]
 
 // EXPANDABLE PANEL -- Who invented the pH electrode
@@ -1186,13 +1187,18 @@ The first runs about 3 1/2 minutes. (Don't cringe when the robotic voice says th
   /]
 [/div]
 
+// [p]
+// The 2 1/2-minute audio track of the second video is poor, but it has good content and reinforces the basics from the first video.
+// [/p]
+
 [p]
-The 2 1/2-minute audio track of the second video is poor, but it has good content and reinforces the basics from the first video.
+The next video (Endress+Hauser, 5:13) reinforces the basics with very good content and excellent production value.
 [/p]
 
+  // id:"aIn4D2QXUy4" -- old 2 1/2-min video
 [div className:"dynamic-module" style:`{textAlign: 'center', marginTop: '20px'}` ]
 [Youtube
-  id:"aIn4D2QXUy4"
+  id:"P1wRXTl2L3I"
   play:false
   audio:true
   width:500
@@ -1203,42 +1209,152 @@ The 2 1/2-minute audio track of the second video is poor, but it has good conten
 [/div]
 
 [p]
-Keep in mind that these electrodes measure ion activity -- not concentration.
+In the ideal case, a pH electrode responds only to the activity of H[sup]+[/sup] ions. In practice, depending on the type of glass used in the probe and the composition of the sample, 
+it also may respond to other ions with a single positive charge, such as Na[sup]+[/sup] and K[sup]+[/sup].
 [/p]
 
 [p]
-In the ideal case, a pH electrode would respond only to activity of H[sup]+[/sup] ions.
+We also know from the earlier discussion of activity that H[sup]+[/sup] ions that interact with other ions in solution and 
+with water itself will not be measured. (These are the popcorn kernels that don't pop.)
+[/p]
+
+
+// ((((((((( IONIC STRENGTH )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"ionic-strength"]*Ionic Strength*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]
+A further consideration in pH measurements relates to the sample's ionic strength, a measure of the concentration of dissolved ions in mol/L (or mol/kg).
 [/p]
 
 [p]
-In practice, depending on the type of glass of which the probe is made and the pH of the sample, they also respond to other ions with a single positive charge, such as 
-Na[sup]+[/sup] and K[sup]+[/sup].
+Ionic strength is calculated by taking one-half of the sum of the concentration of each ion multiplied by the square of its charge (also termed its *valence*).
 [/p]
 
 [p]
-We also know from the discussion of activity in the previous section that some fraction of H[sup]+[/sup] ions will interact with other ions in solution and 
-with water itself.
+That's a mouthful. Here's a simple example: to calculate the ionic strength of a 2 M (2 mol/L) solution of sodium chloride, 
+first note that NaCl dissolves to form...
+[/p]
+
+// [div style:`{textAlign:'center'}`] 
+[ul]
+  [li]...2 mol/L of Na[sup]+[/sup] ions[/li]
+  [li]...2 mol/L of Cl[sup]-[/sup] ions[/li]
+[/ul]
+// [/div]
+
+[p]
+The contribution of the sodium ion to the solution's ionic strength is its concentration, 2 mol/L, times the square of its valence (+1):
+[/p]
+
+[Equation display:true]
+  \[{Na^+}\] * ({+1^2}) = 2\;mol/L * 1 = 2\;mol/L
+[/Equation]
+
+[p]
+In the same way, the contribution of the chloride ion to the solution's ionic strength is *its* concentration, also 2 mol/L, times the square of *its* valence (-1):
+[/p]
+
+[Equation display:true]
+  \[{Cl^-}\] * ({-1^2}) = 2\;mol/L * 1 = 2\;mol/L
+[/Equation]
+
+[p]
+The solution's ionic strength ([b]I[/b]) is one-half the sum of these values or:
+[/p]
+
+[Equation display:true]
+  I = 1/2 * (2\;mol/L + 2\;mol/L) = 1/2 * 4\;mol/L = 2\;mol/L
+[/Equation]
+
+[p]
+That's pretty uninteresting, so it's worthwhile to do another example: 2 mol/L of sodium sulfate, Na[sub]2[/sub]SO[sub]4[/sub].
 [/p]
 
 [p]
-The result of these interactions is that part of the H[sup]+[/sup] ions will not be measured by the electrode. (Recalling the 
-earlier discussion, these are the popcorn kernels that don't pop.)
+In this case, the ionic composition of the solution is...
+[/p]
+
+[ul]
+  [li]...4 mol/L of Na[sup]+[/sup] ions[/li]
+  [li]...2 mol/L of SO[sub]4[/sub][sup]-2[/sup] ions[/li]
+[/ul]
+
+[p]
+Why ***four*** mol/L of Na[sup]+[/sup] instead of two, like in the first example?
 [/p]
 
 [p]
-One factor that plays a particularly important role in pH measurements is ionic strength.
+Because each Na[sub]2[/sub]SO[sub]4[/sub] molecule contains 2 Na atoms, 
+both of which ionize when the substance dissolves, thus doubling the sodium concentration to 4 mol/L.
 [/p]
 
 [p]
+Now sodium's contribution to the solution's ionic strength is 4 mol/L times the square of the common valence of *each* ion, +1:
+[/p]
+
+[Equation display:true]
+  \[{Na^+}\] * ({+1^2}) = 4\;mol/L * 1 = 4\;mol/L
+[/Equation]
+
+[p]
+The contribution of the sulfate ion is *its* concentration, 2 mol/L, times the square of its valence, -2:
+[/p]
+
+[Equation display:true]
+  \[{SO_4^{-2}}\] * ({-2^2}) = 2\;mol/L * 4 = 8\;mol/L
+[/Equation]
+
+[p]
+This solution's ionic strength thus is:
+[/p]
+
+[Equation display:true]
+  I = 1/2 * (4\;mol/L + 8\;mol/L) = 1/2 * 12\;mol/L = 6\;mol/L
+[/Equation]
+
+[p]
+Note that the ionic strength of this solution is three-times greater than that of the first because of its additional sodium ion and the higher valence of the sulfate ion.
+[/p]
+
+et alors ... ?
+
+
+[p]What is the effect? 
 \[H[sup]+[/sup]\] activity decreases in high ionic strength solutions, like seawater.
 High ionic strength solutions change the liquid junction potential. This may lead to bias and considerable time may be required to establish a stable reading.
 
-SeaWater;0.8M(53mS/cm)
+SeaWater;0.8M (53mS/cm)
 Low Ionic Strength Examples
 • Pure water in air (1 μs/cm)
 • Rain water (50 μs/cm)
 • Tap water (500 μs/cm)
 [/p]
+
+liquid junction potential of the pH cell is sensitive to ionic strength
+
+separation of charge across the interface of two solutions of different concentrations / ion mobility
+
+A junction potential is created at the interface separtating two ionic solutions of different ionic strengths.
+
+The junction potential develops at the interface separating the internal solution of the reference electrode and the sample solutions. The cause of the
+development is the different diffusion rate of cations and anions on both sides of the reference junction.
+
+a few mV, as much as 0.5 pH units =>
+
+The liquid junction potential of the pH cell is
+sensitive to ionic strength and to the composition of the solution it is in, so moving the electrodes from these low
+ionic strength buffers to the higher ionic strength of seawater (0.72 mol kg–1) makes apparent pH readings drift for a period of time. 
+
+This problem can be largely eliminated by running calibrations with Tris (2-amino-2-methyl-1,3-propanediol) buffers in synthetic seawater [ Cite 
+  authors:"Nemzer, B. V. and A. G. Dickson"
+  title:"The stability and reproducibility of Tris buffers in synthetic seawater"
+  url:"https://doi.org/10.1016/j.marchem.2005.01.004"
+  id:"ph-tris"
+  venue: "Marine Chemistry 96, 237–242"
+  date:"2005"
+/]. Most do not go to this length...
 
 // BUFFERS AND SEGUE TO PH SCALES
 [p]
@@ -1279,26 +1395,6 @@ measurement uncertainties that are difficult to quantify adequately. In recent y
 shown to be about one order of magnitude more precise.
 
 ** glass electrode measurements (and many more recent ones) were calibrated against NBS style buffers with an ionic strength of 0.1 mol/kg .
-
-liquid junction potential of the pH cell is sensitive to ionic strength
-
-A junction potential is created at the interface separtating two ionic solutions of different ionic strengths.
-
-The junction potential develops at the interface separating the internal solution of the reference electrode and the sample solutions. The cause of the
-development is the different diffusion rate of cations and anions on both sides of the reference junction.
-
-The liquid junction potential of the pH cell is
-sensitive to ionic strength and to the composition of the solution it is in, so moving the electrodes from these low
-ionic strength buffers to the higher ionic strength of seawater (0.72 mol kg–1) makes apparent pH readings drift for a period of time. 
-
-This problem can be largely eliminated by running calibrations with Tris (2-amino-2-methyl-1,3-propanediol) buffers in synthetic seawater [ Cite 
-  authors:"Nemzer, B. V. and A. G. Dickson"
-  title:"The stability and reproducibility of Tris buffers in synthetic seawater"
-  url:"https://doi.org/10.1016/j.marchem.2005.01.004"
-  id:"ph-tris"
-  venue: "Marine Chemistry 96, 237–242"
-  date:"2005"
-/]. Most do not go to this length...
 
 The step from molar concentrations (analytical data) to activities (that enter law-of-mass-action calculations) requires the calculation of activity coefficients γi. 
 For this task several approaches are available, whereas each activity model has its own range of validity defined by the ionic strength I as shown here:1
@@ -1583,7 +1679,7 @@ maintain a healthy environment in production and recreational aquatic systems.
 
 Additional resources
 
-// [a href:"https://phet.colorado.edu/en/simulation/ph-scale-basics"]Basic pH Animation[/a]
+// [a href:"https://phet.colorado.edu/en/simulation/ph-scale-basics" target:"_blank" rel:"noopener noreferrer"]Basic pH Animation[/a]
 
 // They're small: "proton at 0.833 femtometres, which is just under one trillionth of a millimetre" vs. 0.05 mm for h
 
