@@ -52,6 +52,8 @@ correct way to average pH values, and measuring pH in seawater on the NBS scale 
     [li] [a href:"#neutral-ph"]pH 7 is not always neutral[/a] [/li]
     [li] [a href:"#ph-electrode"]The pH Electrode[/a] [/li]
     [li] [a href:"#ionic-strength"]Ionic Strength[/a] [/li]
+    [li] [a href:"#junction-potential"]Liquid Junction Potential[/a] [/li]
+    [li] [a href:"#buffers-calibration"]Buffers and Calibration[/a] [/li]
     [li] [a href:"#ph-scales"]NBS & the Three Little pH Scales[/a] [/li]
     [li] [a href:"#mean-ph"]*What does ‘mean pH’ mean?!*[/a] [/li]
     [li] [a href:"#next-steps"]Next Steps...[/a] [/li]
@@ -1192,7 +1194,8 @@ The first runs about 3 1/2 minutes. (Don't cringe when the robotic voice says th
 // [/p]
 
 [p]
-The next video (Endress+Hauser, 5:13) reinforces the basics with very good content and excellent production value.
+The next video (5:13) from Endress+Hauser reinforces the basics with very good content and excellent production value. It includes a 
+description of the ISFET probe.
 [/p]
 
   // id:"aIn4D2QXUy4" -- old 2 1/2-min video
@@ -1208,16 +1211,6 @@ The next video (Endress+Hauser, 5:13) reinforces the basics with very good conte
   /]
 [/div]
 
-[p]
-In the ideal case, a pH electrode responds only to the activity of H[sup]+[/sup] ions. In practice, depending on the type of glass used in the probe and the composition of the sample, 
-it also may respond to other ions with a single positive charge, such as Na[sup]+[/sup] and K[sup]+[/sup].
-[/p]
-
-[p]
-We also know from the earlier discussion of activity that H[sup]+[/sup] ions that interact with other ions in solution and 
-with water itself will not be measured. (These are the popcorn kernels that don't pop.)
-[/p]
-
 
 // ((((((((( IONIC STRENGTH )))))))))
 [div style:`{marginTop: '35px'}`]
@@ -1225,24 +1218,32 @@ with water itself will not be measured. (These are the popcorn kernels that don'
 [/div]
 
 [p]
-A further consideration in pH measurements relates to the sample's ionic strength, a measure of the concentration of dissolved ions in mol/L (or mol/kg).
+In the ideal case, a pH electrode responds only to the activity of H[sup]+[/sup] ions. In practice, depending on the type of glass used in the probe and the composition of the sample, 
+it also may respond to other ions with a single positive charge, such as Na[sup]+[/sup] and K[sup]+[/sup].
 [/p]
 
 [p]
-Ionic strength is calculated by taking one-half of the sum of the concentration of each ion multiplied by the square of its charge (also termed its *valence*).
+We also know from the earlier discussion of activity that H[sup]+[/sup] ions that interact with other ions and 
+water itself will not be measured. (These are the popcorn kernels that don't pop.)
 [/p]
 
 [p]
-That's a mouthful. Here's a simple example: to calculate the ionic strength of a 2 M (2 mol/L) solution of sodium chloride, 
-first note that NaCl dissolves to form...
+A further consideration relates to the sample's ionic strength, a measure of the concentration of dissolved ions in mol/L (or mol/kg).
 [/p]
 
-// [div style:`{textAlign:'center'}`] 
-[ul]
-  [li]...2 mol/L of Na[sup]+[/sup] ions[/li]
-  [li]...2 mol/L of Cl[sup]-[/sup] ions[/li]
-[/ul]
-// [/div]
+[p]
+Ionic strength is calculated by taking one-half the sum of the concentration of each ion multiplied by the square of its charge (termed its *valence*).
+[/p]
+
+[p]
+That's a mouthful. Here's a simple example: to calculate the ionic strength of a [span style:`{color:'blue'}`]2 M[/span] ([span style:`{color:'blue'}`]2 mol/L[/span]) solution of sodium chloride, 
+first note that NaCl dissolves to form 2 mol/L of each ion:
+[/p]
+
+
+[Equation display:true]
+  \color{blue}{2}\color{black}NaCl \rightarrow \color{blue}{2}\color{black}{Na^+} + \color{blue}{2}\color{black}{Cl^-}
+[/Equation]
 
 [p]
 The contribution of the sodium ion to the solution's ionic strength is its concentration, 2 mol/L, times the square of its valence (+1):
@@ -1268,30 +1269,32 @@ The solution's ionic strength ([b]I[/b]) is one-half the sum of these values or:
   I = 1/2 * (2\;mol/L + 2\;mol/L) = 1/2 * 4\;mol/L = 2\;mol/L
 [/Equation]
 
+
+[hr className:"neutral-ph-hr "/]
+
 [p]
-That's pretty uninteresting, so it's worthwhile to do another example: 2 mol/L of sodium sulfate, Na[sub]2[/sub]SO[sub]4[/sub].
+Another example will drive the point home: [span style:`{color:'blue'}`]2 mol/L[/span] of sodium sulfate, Na[sub]2[/sub]SO[sub]4[/sub].
 [/p]
 
 [p]
-In this case, the ionic composition of the solution is...
+In this case, the ionic composition of the solution is:
 [/p]
 
-[ul]
-  [li]...4 mol/L of Na[sup]+[/sup] ions[/li]
-  [li]...2 mol/L of SO[sub]4[/sub][sup]-2[/sup] ions[/li]
-[/ul]
+[Equation display:true]
+  \color{blue}{2}\color{black}{Na_2}{SO_4} \rightarrow \color{green}{4}\color{black}{Na^+} + \color{blue}{2}\color{black}{{SO_4^{-2}}}
+[/Equation]
 
 [p]
-Why ***four*** mol/L of Na[sup]+[/sup] instead of two, like in the first example?
-[/p]
-
-[p]
-Because each Na[sub]2[/sub]SO[sub]4[/sub] molecule contains 2 Na atoms, 
-both of which ionize when the substance dissolves, thus doubling the sodium concentration to 4 mol/L.
+Why ***[span style:`{color:'green'}`]four[/span]*** mol/L of Na[sup]+[/sup] instead of two, like in the first example?
 [/p]
 
 [p]
-Now sodium's contribution to the solution's ionic strength is 4 mol/L times the square of the common valence of *each* ion, +1:
+Because each Na[sub]2[/sub]SO[sub]4[/sub] molecule contains 2 Na atoms, both of which ionize when the substance dissolves, 
+thus doubling the sodium concentration to 4 mol/L.
+[/p]
+
+[p]
+Sodium's contribution to the solution's ionic strength now is 4 mol/L times the square of the common valence of *each* ion, +1:
 [/p]
 
 [Equation display:true]
@@ -1299,7 +1302,7 @@ Now sodium's contribution to the solution's ionic strength is 4 mol/L times the 
 [/Equation]
 
 [p]
-The contribution of the sulfate ion is *its* concentration, 2 mol/L, times the square of its valence, -2:
+The sulfate ion contribution is *its* concentration, 2 mol/L, times the square of its valence, -2:
 [/p]
 
 [Equation display:true]
@@ -1315,38 +1318,70 @@ This solution's ionic strength thus is:
 [/Equation]
 
 [p]
-Note that the ionic strength of this solution is three-times greater than that of the first because of its additional sodium ion and the higher valence of the sulfate ion.
+Note that the ionic strength of this solution is three-times greater than that of the first example because of the contributions of the additional sodium ion and the higher valence of the sulfate ion.
 [/p]
 
-et alors ... ?
+[hr className:"neutral-ph-hr "/]
 
+[p]
+This calculation is carried out in the same way for the dissolved ions of natural waters. **Freshwater**s and rainwater generally have 
+very low concentrations and, therefore, low ionic strengths. These vary from near **0 up to about 0.005 mol/L**.
+[/p]
+//  (Domenico and Schwartz 1990; Pankow 1991)
 
-[p]What is the effect? 
-\[H[sup]+[/sup]\] activity decreases in high ionic strength solutions, like seawater.
-High ionic strength solutions change the liquid junction potential. This may lead to bias and considerable time may be required to establish a stable reading.
-
-SeaWater;0.8M (53mS/cm)
-Low Ionic Strength Examples
-• Pure water in air (1 μs/cm)
-• Rain water (50 μs/cm)
-• Tap water (500 μs/cm)
+[p]
+Seawater, on the other hand, has relatively high levels of dissolved ions, so its ionic strength is several orders of magnitude greater than 
+that of freshwater. The ionic strength of mean **seawater** (about 35‰ salinity) is around **0.72 mol/L**.
 [/p]
 
-liquid junction potential of the pH cell is sensitive to ionic strength
+// ((((((((( LIQUID JUNCTION POTENTIAL )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"junction-potential"]*Liquid Junction Potential*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
 
-separation of charge across the interface of two solutions of different concentrations / ion mobility
+[p]We raised the issue of ionic strength here because it affects pH measurements. High ionic strength solutions like seawater...[/p]
 
-A junction potential is created at the interface separtating two ionic solutions of different ionic strengths.
+[ul]
+  [li] 
+  ...decrease H[sup]+[/sup] activity that lowers pH readings
+  [/li]
+  [li] 
+  ...create a liquid junction potential that biases pH readings
+  [/li]
+[/ul]
 
-The junction potential develops at the interface separating the internal solution of the reference electrode and the sample solutions. The cause of the
-development is the different diffusion rate of cations and anions on both sides of the reference junction.
+[p]
+The second statement raises the question: *What is the liquid junction potential?*
+[/p]
 
-a few mV, as much as 0.5 pH units =>
+[p]
+The junction in question is the border at which the solution in the reference electrode meets the sample solution.
+[/p]
 
-The liquid junction potential of the pH cell is
-sensitive to ionic strength and to the composition of the solution it is in, so moving the electrodes from these low
+[p]
+Ions in each liquid diffuse across this interface. They flow from the solution in which they are more concentrated to the solution in which 
+they are less concentrated. Each ion moves at a rate determined by the concentration gradient and its particular chemical properties.
+[/p]
+
+[p]
+The result is a separation of positive and negative charges across this liquid junction that generates a small electrical potential.
+[/p]
+
+[p]
+This small electrical potential is measured in millivolts (**mV**), but when the sample has a high ionic strength that's enough 
+to cause a pH error of as much as 0.5 pH units. We've seen that even such a small pH difference represents a large 
+difference in a solution's acid content, and that's important for precise water-quality management.
+[/p]
+
+
+[p]
+so moving the electrodes from these low
 ionic strength buffers to the higher ionic strength of seawater (0.72 mol kg–1) makes apparent pH readings drift for a period of time. 
+[/p]
 
+// TRIS buffer SOP6: https://data.ess-dive.lbl.gov/view/doi:10.15485/1464253
+
+[p]
 This problem can be largely eliminated by running calibrations with Tris (2-amino-2-methyl-1,3-propanediol) buffers in synthetic seawater [ Cite 
   authors:"Nemzer, B. V. and A. G. Dickson"
   title:"The stability and reproducibility of Tris buffers in synthetic seawater"
@@ -1354,9 +1389,17 @@ This problem can be largely eliminated by running calibrations with Tris (2-amin
   id:"ph-tris"
   venue: "Marine Chemistry 96, 237–242"
   date:"2005"
-/]. Most do not go to this length...
+/], but this is a step that generally isn't taken even in aquaculture research, let alone in commercial operations.
+[/p]
+
+[p] [/p]
 
 // BUFFERS AND SEGUE TO PH SCALES
+// ((((((((( BUFFERS & CALIBRATION )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"buffers-calibration"]*Buffers & Calibration*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div] 
+
 [p]
 Another important point -- and one mentioned in the two videos -- is calibration.
 [/p]
@@ -1387,8 +1430,6 @@ calibration standards and NBS leads to a discussion of scales point here is to m
 [/p]
 "  
 
-TRIS buffer
-SOP6: https://data.ess-dive.lbl.gov/view/doi:10.15485/1464253
 
 calibration for use in a high ionic strength medium, glass electrode drift, reference electrode drift, and liquid junction potential issues) that have led to significant 
 measurement uncertainties that are difficult to quantify adequately. In recent years the spectrophotometric pH method described by Byrne and Breland (1989) has been 
@@ -1409,7 +1450,7 @@ For this task several approaches are available, whereas each activity model has 
 
 [div className:"dynamic-module" ]
 
-  [div className: 'yellow-panel-div']
+  [div className: 'yellow-panel-div' style:`{width:'625px'}`]
 
     [h3 style:`{textAlign: 'center', marginTop: '8px'}`]Ionic Strength *vs.* pH[/h3]
 
@@ -1426,7 +1467,6 @@ For this task several approaches are available, whereas each activity model has 
     // myIS = (19.924 * sal_ionic) / (1000.0 - 1.005 * sal_ionic); // mole/kg-H2O (molal)
 
     [IonicStrength className:"d3-component" sal:sal_ionic /]
-
 
   [/div]
 
