@@ -1457,8 +1457,12 @@ measurement and traceability program[/a]. The legacy terms "NBS buffer" and "NBS
 
 // BUFFER IMAGE
 [div style:`{border:'black 1px solid', marginTop:'25px', marginBottom:'25px', width:'350px', marginLeft:'120px'}`]
-![phBuffers](static/images/ph-buffers-SENSOREX.jpg)
+![ph_buffers](static/images/ph-buffers-sensorex.jpg)
 [/div]
+
+// [div style:`{border:'black 1px solid', marginTop:'25px', marginBottom:'25px'`]
+// ![ph_buffers](static/images/ph-buffers-sensorex.jpg)
+// [/div]
 
 [p]
 Because an ion's activity cannot be determined experimentally (see the summary in [Cite 
