@@ -1227,12 +1227,12 @@ other ions carrying a single positive charge, such as Na[sup]+[/sup] and K[sup]+
 [/p]
 
 [p]
-We also know from an earlier discussion that H[sup]+[/sup] ions interact with other ions. This reduces their activity and so affects pH readings.
+We also know from an earlier discussion that H[sup]+[/sup] ions interact with other ions. This reduces their effective concentration and so affects pH readings.
 [/p]
 
 [p]
-This is more pronounced in solutions with high concentrations of ions, such as seawater. A solution's *ionic strength* ([b]I[/b]) quantifies 
-its concentration of dissolved ions in mol/L (or mol/kg).
+This is more pronounced in solutions with high concentrations of ions, such as seawater. *Ionic strength* ([b]I[/b]) quantifies 
+this property in mol/L (or mol/kg).
 [/p]
 
 [p]
@@ -1250,11 +1250,11 @@ first note that NaCl dissolves to form 2 mol/L of each ion:
 [/Equation]
 
 [p]
-The contribution of the sodium ion to the solution's ionic strength is its concentration, 2 mol/L, times the square of its valence (+1):
+The contribution of the sodium ion to the solution's ionic strength equals its concentration, 2 mol/L, times the square of its valence (+1):
 [/p]
 
 [Equation display:true]
-  \[{Na^+}\] * ({+1^2}) = 2\;mol/L * 1 = 2\;mol/L
+  \[{Na^+}\] * {(+1)}^2 = 2\;mol/L * 1 = 2\;mol/L
 [/Equation]
 
 [p]
@@ -1262,7 +1262,7 @@ In the same way, the contribution of the chloride ion to the solution's ionic st
 [/p]
 
 [Equation display:true]
-  \[{Cl^-}\] * ({-1^2}) = 2\;mol/L * 1 = 2\;mol/L
+  \[{Cl^-}\] * {(-1)}^2  = 2\;mol/L * 1 = 2\;mol/L
 [/Equation]
 
 [p]
@@ -1270,7 +1270,7 @@ The solution's ionic strength is one-half the sum of these values:
 [/p]
 
 [Equation display:true]
-  I = 1/2 * (2\;mol/L + 2\;mol/L) = 1/2 * 4\;mol/L = 2\;mol/L
+  I = \dfrac{1}{2} * (2\;mol/L + 2\;mol/L) = \dfrac{1}{2} * 4\;mol/L = 2\;mol/L
 [/Equation]
 
 
@@ -1302,7 +1302,7 @@ The sodium ion's contribution is 4 mol/L times the square of its valence, +1:
 [/p]
 
 [Equation display:true]
-  \[{Na^+}\] * ({+1^2}) = 4\;mol/L * 1 = 4\;mol/L
+  \[{Na^+}\] * {(+1)}^2  = 4\;mol/L * 1 = 4\;mol/L
 [/Equation]
 
 [p]
@@ -1310,15 +1310,15 @@ The sulfate ion's contribution is its concentration, 2 mol/L, times the square o
 [/p]
 
 [Equation display:true]
-  \[{SO_4^{-2}}\] * ({-2^2}) = 2\;mol/L * 4 = 8\;mol/L
+  \[{SO_4^{-2}}\] * {(-2)}^2  = 2\;mol/L * 4 = 8\;mol/L
 [/Equation]
 
 [p]
-Adding these together yields the ionic strength of this solution, 6 mol/L:
+Taking one-half of the sum of these gives the solution's ionic strength, 6 mol/L:
 [/p]
 
 [Equation display:true]
-  I = 1/2 * (4\;mol/L + 8\;mol/L) = 1/2 * 12\;mol/L = 6\;mol/L
+  I = \dfrac{1}{2} * (4\;mol/L + 8\;mol/L) = \dfrac{1}{2} * 12\;mol/L = 6\;mol/L
 [/Equation]
 
 [p]
@@ -1368,12 +1368,13 @@ they are less concentrated. Each ion moves at a rate determined by the concentra
 [/p]
 
 [p]
-The result is a separation of positive and negative charges across this liquid junction, and that generates an electric potential.
+The resulting separation of positive and negative charges across this liquid junction generates an electric potential -- 
+cleverly named the *liquid junction potential*.
 [/p]
 
 [p]
-This potential is small, generally scaled in millivolts (**mV**); but when a sample has a high ionic strength, it's enough 
-to cause a pH error of as much as 0.5 pH units. We've seen above that even such a small pH difference represents a large 
+This potential is small and difficult to quantify, but it generally scales in the millivolt (**mV**) range. When a sample has a high ionic strength, however, 
+it's enough to cause a pH error of as much as 0.5 pH units. We've seen above that even such a small pH difference represents a large 
 difference in a solution's acid content, and that's an important consideration for precise management of water quality.
 [/p]
 
@@ -1384,21 +1385,18 @@ difference in a solution's acid content, and that's an important consideration f
 [/div] 
 
 [p]
-Another important point -- and one mentioned in the two videos -- is calibration.
+pH meters must be calibrated periodically to insure their accuracy and precision. This is done by 
+adjusting meter output to match the pH of a series of standard solutions, each buffered to a particular pH.
 [/p]
 
 [p]
-All instruments must be checked periodically to make sure that they're providing accurate read-outs. In the case of pH meters, this entails 
-adjusting the meter to match the readings from standard solutions of known pH.
+If calibration is performed with only two standards, one should be lower and one higher than the pH values expected from routine measurements. 
+Standards should be no more than about two pH units apart.
 [/p]
 
 [p]
-If done with only two standards, one should be lower and one higher than the pH values expected when making routine measurements; and the 
-difference in pH of the standards should be no more than about two pH units.
-[/p]
-
-[p]
-A thorough and accessible explanation of pH electrodes and their calibration, including temperature correction, is provided by Holmes-Farley [Cite 
+A thorough and accessible explanation of pH electrodes and their calibration, including temperature correction, is 
+provided by Holmes-Farley [Cite 
   authors:"R. Holmes-Farley"
   title:"Aquarium Chemistry: Measuring pH with a meter"
   url:"https://reefs.com/magazine/aquarium-chemistry-measuring-ph-with-a-meter/"
@@ -1408,38 +1406,75 @@ A thorough and accessible explanation of pH electrodes and their calibration, in
 /] and is well worth reading.
 [/p]
 
+*Standard Buffers*
+
 [p]
-There's also a drift in pH readings as the ions reach a stead state across the junction, but this is largely eliminated by running calibrations 
-with Tris (2-amino-2-methyl-1,3-propanediol) buffers in synthetic seawater [ Cite 
-  authors:"Nemzer, B. V. and A. G. Dickson"
-  title:"The stability and reproducibility of Tris buffers in synthetic seawater"
-  url:"https://doi.org/10.1016/j.marchem.2005.01.004"
-  id:"ph-tris"
-  venue: "Marine Chemistry 96, 237–242"
-  date:"2005"
-/], but this is a step that generally isn't taken even in aquaculture research, let alone in commercial operations.
+The most common buffers used to calibrate pH meters were developed by the International Union of Pure and Applied Chemistry (**IUPAC**). 
 [/p]
 
-// TRIS buffer SOP6: https://data.ess-dive.lbl.gov/view/doi:10.15485/1464253
+[p]
+Many refer to these as NBS buffers, *NBS* standing for the National Bureau of Standards. The NBS was re-named as the 
+National Institute of Standards and Technology (**NIST**) in 1988, and the buffers now are marketed as NIST buffers conforming to [a href:'https://www.nist.gov/programs-projects/ph-metrology'  target:"_blank" rel:"noopener noreferrer"] NIST's pH 
+measurement and traceability program[/a]. The legacy terms "NBS buffer" and "NBS pH" remain common in the marine science community.
+[/p]
+
+[p]
+Because an ion's activity cannot be determined experimentally (see the summary in [Cite 
+  authors:"R. E. Zeebe & D. wolf-Gladrow"
+  title:"CO₂ in Seawater: Equilibrium, Kinetics, Isotopes"
+  url:"https://www.amazon.com/CO2-Seawater-Equilibrium-Kinetics-Oceanography/dp/0444509461/ref=sr_1_3?dchild=1&keywords=zeebe+wolf-gladrow&qid=1610292071&sr=8-3"
+  id:"zeebe-wolf-gladrow"
+  venue: "Elsevier Oceanography Series 65"
+  date:"2003"
+/], pp 54-55), NBS buffers were designed to approximate H[sup]+[/sup] activity on an operational pH scale pegged to an infinitely dilute solution. In the limit, 
+this makes H[sup]+[/sup] activity and concentration equal.
+[/p]
+
+[p]
+We don't need to delve deeper into details, but it's important to know that NBS buffers have a low ionic strength of about 0.1 mol/kg. They are fine for freshwater 
+work that does not require high precision, but there's a problem when measuring pH in high ionic strength solutions like seawater. As seen above, 
+ionic strength differences create a liquid junction potential effect.
+[/p]
+
+// As an FYI, spectrophotometric pH measurement (Byrne and Breland, 1989) provides much greater precision, but at a cost that makes it impractical in 
+// aquaculture/aquarium/pool applications. https://www.sciencedirect.com/science/article/abs/pii/0198014989901520?via%3Dihub
+
+[p]
+What to do about SW and legacy pH data? This leads to calibration standards and NBS leads to a discussion of scales point here is to make you aware of these measurement errors
+[/p]
 
 [p] [/p]
 
+// [p]
+// There's also a drift in pH readings as the ions reach a stead state across the junction, but this is largely eliminated by running calibrations 
+// with Tris (2-amino-2-methyl-1,3-propanediol) buffers in synthetic seawater [ Cite 
+//   authors:"Nemzer, B. V. and A. G. Dickson"
+//   title:"The stability and reproducibility of Tris buffers in synthetic seawater"
+//   url:"https://doi.org/10.1016/j.marchem.2005.01.004"
+//   id:"ph-tris"
+//   venue: "Marine Chemistry 96, 237–242"
+//   date:"2005"
+// /], but this is a step that generally isn't taken even in aquaculture research, let alone in commercial operations.
+// [/p]
+
+// TRIS buffer SOP6: https://data.ess-dive.lbl.gov/view/doi:10.15485/1464253
+
+---------------------------
+
+
+
+// ((((((((( PH SCALES )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"ph-scales"]*NBS & the Three Little pH Scales*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
 [p]
-calibration standards and NBS leads to a discussion of scales point here is to make you aware of these measurement errors
-[/p]
-"  
-
-
-calibration for use in a high ionic strength medium, glass electrode drift, reference electrode drift, and liquid junction potential issues) that have led to significant 
-measurement uncertainties that are difficult to quantify adequately. In recent years the spectrophotometric pH method described by Byrne and Breland (1989) has been 
-shown to be about one order of magnitude more precise.
-
-** glass electrode measurements (and many more recent ones) were calibrated against NBS style buffers with an ionic strength of 0.1 mol/kg .
+The NBS scale is activity-based; that is, as we know, pH activity is measured. The three other scale are concentration-based, and therein 
+lies a conversion problem.
 
 The step from molar concentrations (analytical data) to activities (that enter law-of-mass-action calculations) requires the calculation of activity coefficients γi. 
 For this task several approaches are available, whereas each activity model has its own range of validity defined by the ionic strength I as shown here:1
 
-"
 
 "Most popular method used to calculate ions activities is the one proposed by Debye and Hückel in 1923. IS limit ~0.1 or 5%o"
 
@@ -1472,14 +1507,20 @@ For this task several approaches are available, whereas each activity model has 
 [/div]
 
 
-// ((((((((( PH SCALES )))))))))
-[div style:`{marginTop: '35px'}`]
-[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"ph-scales"]*NBS & the Three Little pH Scales*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
-[/div]
+Further, the modern formulae used to compute the dissociation constants and other processes needed to perform important aquatic chemistry calculations 
+were not established on the NBS scale but on one of the others, either the Seawater, or Total, or Free scales.
 
-[p]
-Many water-quality managers are unfamiliar the final topic in this chapter: pH scales.
+pH play a central role in the formulae describing the dissociation coefficients needed to calculate seawater WQ properties. These pH values, however, 
+generally were not based on the NBS scale with which most every practioner is familiar. Instead, they were based on one of 
+three other spH cales: the Free scale, the Total scale, and the Seawater scale.
+
+Bottom-line: I do all of the necessary conversions in the software -- which I've checked, re-checked, and re-re-checked vs 
+reputable marine science sources -- and then I convert back to the NBS scale -- the one that everyone uses -- for display in the WQ Map. 
+
+Thus, the user doesn't have to worry about any of those complicated details, although I will make them aware of them in the manual. 
+(Using the wrong scale yields erroneous results -- even small differences are unacceptable because pH is defined on a log-10 scale.)
 [/p]
+
 
 [p]
 Wherever you enter pH in the WQ ToolBox -- as in the screenshot of the WQ Map below -- it always is labeled explicitly as 
@@ -1489,6 +1530,9 @@ being on the NBS scale.
 [div style:`{border:'black 1px solid', marginTop:'25px', marginBottom:'25px'}`]
 ![WqMapNBS](static/images/wqmap-nbs.png)
 [/div]
+
+
+Different approximations. Older version of the WQ ToolBox software used xxx. This is reasonable up to an ionic strength of about ... (~22ppt)
 
 [p]
 A very common question users ask is: *What is NBS?!*
@@ -1517,6 +1561,9 @@ You don't have to bother with the others:
 [/ul]
 
 
+Bottom-line: You still can measure pH on the familiar NBS scale and the WQ ToolBox software will perform the necessary conversions...
+
+
 [p]
 Part of the software's job is making sure that the NBS pH you enter is converted to the correct scale before performing water-quality 
 calculations.
@@ -1530,26 +1577,6 @@ NBS established the buffers used to calibrate pH electrodes, thus the reason for
 distinction still call it the NBS scale.
 
 "...derived and must be alert to the differences arising from the usage of various pH scales.
-
-"These primary standards are commonly known as NBS buffers (where NBS stands for the US National Bureau of Standards, now 
-National Institute of Standards and Technology, NIST). One of the constraints imposed upon these standards is that their 
-ionic strengths must not exceed 0.1 molal"
-
-The problem is that the NBS buffers are fine for freshwater but only good up to a certain ionic strength that is less than the ionic 
-strength of standard seawater. 
-
-"the concentration gradients across the reference electrode’s liquid junction will be significantly different between 
-any seawater sample and the standard buffers."
-
-That's an important point when measuring pH in seawater and when performing WQ calculations. 
-(Many people either ignore it or just don't know about it, as far as I've seen.)
-
-Further, the modern formulae used to compute the dissociation constants and other processes needed to perform important aquatic chemistry c
-alculations were not established on the NBS scale but on one of the others, either the Seawater, or Total, or Free scales.
-Bottom-line: I do all of the necessary conversions in the software -- which I've checked, re-checked, and re-re-checked vs reputable 
-marine science sources -- and then I convert back to the NBS scale -- the one that everyone uses -- for display in the WQ Map. 
-Thus, the user doesn't have to worry about any of those complicated details, although I will make them aware of them in the manual. 
-(Using the wrong scale yields erroneous results -- even small differences are unacceptable because pH is defined on a log-10 scale.)
 
 [p]
 Many **WQ ToolBox** calculations -- especially those that animate the **WQ Map** -- depend heavily on chemical equilibrium constants, like K[sub]w[/sub], 
