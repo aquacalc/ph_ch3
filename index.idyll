@@ -1247,13 +1247,13 @@ The next expanding panel provides examples of how ionic strength is calculated.
 
 [p id:"calc-ionic-strength"][/p]
 
-[var name:"showContent_ph_electrode" value:false /]
+[var name:"showContent_ionic_strength" value:false /]
 
-[Button className: 'showHideBtn' onClick:`showContent_ph_electrode = !showContent_ph_electrode` ]
-  [Display value:`showContent_ph_electrode ? 'Hide Content' : 'Calculating Ionic Strength' ` /]
+[Button className: 'showHideBtn' onClick:`showContent_ionic_strength = !showContent_ionic_strength` ]
+  [Display value:`showContent_ionic_strength ? 'Hide Content' : 'Calculating Ionic Strength' ` /]
 [/Button]
 
-[Conditional if:`showContent_ph_electrode`]
+[Conditional if:`showContent_ionic_strength`]
 
 [div className:"dynamic-module" ]
 
@@ -1355,7 +1355,7 @@ and the higher valence of sulfate.
 
 
 [div style: `{textAlign: 'center'}` ]
-[a className:"closePanelBtn" href:"#calc-ionic-strength" onClick:`showContent_ph_electrode = false` ]Close Content[/a]
+[a className:"closePanelBtn" href:"#calc-ionic-strength" onClick:`showContent_ionic_strength = false` ]Close Content[/a]
 [/div]
 
 [/div]
