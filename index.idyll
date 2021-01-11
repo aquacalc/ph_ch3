@@ -1227,13 +1227,35 @@ other ions carrying a single positive charge, such as Na[sup]+[/sup] and K[sup]+
 [/p]
 
 [p]
-We also know from an earlier discussion that H[sup]+[/sup] ions interact with other ions. This reduces their effective concentration and so affects pH readings.
+We also know that H[sup]+[/sup] ions interact with other ions, and this affects pH readings by reducing their effective concentration (*i.e.*, their activity).
 [/p]
 
 [p]
-This is more pronounced in solutions with high concentrations of ions, such as seawater. *Ionic strength* ([b]I[/b]) quantifies 
-this property in mol/L (or mol/kg).
+This effect is more pronounced in solutions with a high concentration of ions, such as seawater. It is quantified by *ionic strength* 
+([b]I[/b]) and measured in mol/L (or mol/kg).
 [/p]
+
+[p]
+The next expanding panel provides examples of how ionic strength is calculated.
+[/p]
+
+
+// EXPANDABLE PANEL -- Who invented the pH electrode
+// **************************************** //
+// ****** IONIC STRENGTH CALCULATION ****** //
+// **************************************** //
+
+[p id:"calc-ionic-strength"][/p]
+
+[var name:"showContent_ph_electrode" value:false /]
+
+[Button className: 'showHideBtn' onClick:`showContent_ph_electrode = !showContent_ph_electrode` ]
+  [Display value:`showContent_ph_electrode ? 'Hide Content' : 'Calculating Ionic Strength' ` /]
+[/Button]
+
+[Conditional if:`showContent_ph_electrode`]
+
+[div className:"dynamic-module" ]
 
 [p]
 Ionic strength is calculated by taking one-half the sum of the concentration of each ion multiplied by the square of its charge (termed its *valence*).
@@ -1322,14 +1344,29 @@ Taking one-half of the sum of these gives the solution's ionic strength, 6 mol/L
 [/Equation]
 
 [p]
-Note that the ionic strength of this solution is three-times greater than that of the first example because of the contributions of the additional sodium ion and the higher valence of the sulfate ion.
+The concentration was the same in each example (2 mol/L), but the ionic strength of the second solution 
+is three-times greater than that of the first. This is owed to the contributions of the additional sodium ion 
+and the higher valence of sulfate.
 [/p]
 
-[hr className:"neutral-ph-hr "/]
+// [p]
+// The calculation outlined above is carried out in the same way for the dissolved ions of natural waters. 
+// [/p]
+
+
+[div style: `{textAlign: 'center'}` ]
+[a className:"closePanelBtn" href:"#calc-ionic-strength" onClick:`showContent_ph_electrode = false` ]Close Content[/a]
+[/div]
+
+[/div]
+[/Conditional]
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
+
 
 [p]
-This calculation is carried out in the same way for the dissolved ions of natural waters. **Freshwater**s and rainwater generally have 
-very low concentrations and, therefore, low ionic strengths. These vary from near **0 up to about 0.005 mol/L**.
+**Freshwater**s and rainwater generally have very low ion concentrations and, therefore, low ionic strength. These vary from 
+**0 up to ~0.005 mol/L**.
 [/p]
 //  (Domenico and Schwartz 1990; Pankow 1991)
 
@@ -1418,6 +1455,11 @@ National Institute of Standards and Technology (**NIST**) in 1988, and the buffe
 measurement and traceability program[/a]. The legacy terms "NBS buffer" and "NBS pH" remain common in the marine science community.
 [/p]
 
+// BUFFER IMAGE
+[div style:`{border:'black 1px solid', marginTop:'25px', marginBottom:'25px', width:'350px', marginLeft:'120px'}`]
+![phBuffers](static/images/ph-buffers-SENSOREX.jpg)
+[/div]
+
 [p]
 Because an ion's activity cannot be determined experimentally (see the summary in [Cite 
   authors:"R. E. Zeebe & D. wolf-Gladrow"
@@ -1440,10 +1482,13 @@ ionic strength differences create a liquid junction potential effect.
 // aquaculture/aquarium/pool applications. https://www.sciencedirect.com/science/article/abs/pii/0198014989901520?via%3Dihub
 
 [p]
-What to do about SW and legacy pH data? This leads to calibration standards and NBS leads to a discussion of scales point here is to make you aware of these measurement errors
+That raises the question: *How should you measure pH in seawater?*
 [/p]
 
-[p] [/p]
+[p]
+The answer involves a brief introduction to pH scales used in seawater and how this  
+problem is handled in the WQ ToolBox software.
+[/p]
 
 // [p]
 // There's also a drift in pH readings as the ions reach a stead state across the junction, but this is largely eliminated by running calibrations 
@@ -1458,9 +1503,6 @@ What to do about SW and legacy pH data? This leads to calibration standards and 
 // [/p]
 
 // TRIS buffer SOP6: https://data.ess-dive.lbl.gov/view/doi:10.15485/1464253
-
----------------------------
-
 
 
 // ((((((((( PH SCALES )))))))))
