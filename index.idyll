@@ -1375,9 +1375,25 @@ is three-times greater than that of the first. This is owed to the contributions
 and the higher valence of sulfate.
 [/p]
 
-// [p]
-// The calculation outlined above is carried out in the same way for the dissolved ions of natural waters. 
-// [/p]
+[p]
+The calculation outlined above is carried out in the same way for the dissolved ions of natural waters. 
+[/p]
+
+// If you want to "own" ionic strength...
+
+// Example: Compare the ionic strength of freshwater and seawater.
+// Molality Seawater (SW)
+// Na+ 0.49 Mg2+ 0.053 Ca2+ 0.010 K+ 0.010 Cl- 0.57 SO42- 0.028 HCO3- 0.002
+
+// Lake Water (LW) 0.2 x 10-3
+// 0.14 x 10-3
+// 0.22 x 10-3
+// 0.03 x 10-3 0.09 x 10-3 0.102 x 10-3 0.816 x 10-3
+// charge of i th ion
+//    ISW = 1/2 (mNa x 12 + mMg x 22 + mCa x 22 + mK x 12 + mCl x 12 + mSO4 x 22 + mHCO3 x 12)
+// = 0.72 mol kg-1
+// ILW = 0.0015 = 1.5 x 10-3 mol kg-1
+// So the ionic strength of seawater is about 500 times larger than that of fresh water.
 
 
 [div style: `{textAlign: 'center'}` ]
@@ -1458,8 +1474,8 @@ adjusting meter output to match the pH of standard *buffers*.
 [/p]
 
 [p]
-If calibration is performed with only two standards, one should be lower and one higher than the pH expected from routine measurements. 
-In that case, standards should be no more than about two pH units apart.
+Better calibration is achieved by using several standards. If only two are used, one should be lower and the other higher than the pH expected from 
+routine measurements. In that case, the two standards should be no more than about two pH units apart.
 [/p]
 
 [p]
@@ -1512,9 +1528,9 @@ this choice makes H[sup]+[/sup] activity and H[sup]+[/sup] concentration equal.
 [/p]
 
 [p]
-We don't need to delve deeper into details, but it's important to know that NBS buffers have a low ionic strength of about 0.1 mol/kg. This is fine for freshwater 
-work that does not require high precision, but there's a problem when measuring pH in high ionic strength solutions like seawater: As seen above, 
-ionic strength differences create a liquid junction potential that introduces measurement error.
+NBS buffers have low ionic strength (~0.1 mol/kg). This is OK for freshwater work that doesn't require high precision, but it's a problem when measuring 
+pH in high ionic strength solutions like seawater: As seen above, ionic strength differences create a liquid junction potential that introduces 
+measurement error.
 [/p]
 
 // As an FYI, spectrophotometric pH measurement (Byrne and Breland, 1989) provides much greater precision, but at a cost that makes it impractical in 
@@ -1553,7 +1569,7 @@ Most people are so used to measuring pH in the traditional way that they're surp
 [/p]
 
 [p]
-In addition to the familiar NBS scale (pH[sub]NBS[/sub]) based on the series of buffers mentioned above, three scales are used for seawater:
+In addition to the familiar pH scale based on the series of NBS buffers mentioned above -- designate it as pH[sub]NBS[/sub] -- three scales are used for seawater:
 [/p]
 
 [ul]
@@ -1587,50 +1603,77 @@ Those who are interested will find a bit more info in the next expanding panel.
 [h4] Seawater pH Scales [/h4]
 
 *Why were the seawater pH scales developed?*
+
 [p]
-The Total, Free, & Seawater scales address the measurement problem that arises from the difference in 
-ionic strength (and composition) between seawater and the standard pH electrode's reference and calibration solutions. 
-In particular, this minimizes the liquid junction potential problem outlined above.
+To minimize the liquid junction potential problem when measuring pH in seawater.
 [/p]
 
-*How are they defined?*
 [p]
-Each scale is based on a particular artificial seawater formula. They are distinguished by the way in which they define the relationship 
-between H[sup]+[/sup] activity and concentration. Briefly:
+The Free, Total, & Seawater scales address the measurement problem that arises from the difference in 
+ionic strength (and composition) between seawater and the standard pH electrode's reference and calibration solutions.
 [/p]
 
-[ul]
-  [li] pH[sub]F[/sub] considers all H[sup]+[/sup] free, uncomplexed with other ions [/li]
-  [li] pH[sub]T[/sub] considers the protonation of sulfate (HSO[sub]4[/sub][sup]-1[/sup]) [/li]
-  [li] pH[sub]SWS[/sub] incorporates protonation of sulfate & fluoride (F[sup]-[/sup])[/li]
+*How are these scales defined?*
+[p]
+Each scale is based on a particular artificial seawater formula and is distinguished from the others by the way in which it relates 
+H[sup]+[/sup] activity and concentration. Very briefly:
+[/p]
+
+[ul style:`{fontSize:'0.85rem'}`]
+  [li] pH[sub]F[/sub] considers all H[sup]+[/sup] as free -- uncomplexed with & unshielded by other ions [/li]
+  [li] pH[sub]T[/sub] considers H[sup]+[/sup] associated with sulfate (HSO[sub]4[/sub][sup]-[/sup]) [/li]
+  [li] pH[sub]SWS[/sub] considers H[sup]+[/sup] associated with sulfate & fluoride (F[sup]-[/sup])[/li]
 [/ul]
 
 [p]
-A different set of standard buffers has been developed for pH calibration on these scales.
+An appropriate set of buffers has been developed for calibration on each scale.
 [/p]
 
-*How are these scales related to each other?*
+*How big are the pH differences among these scales?*
 [p]
-A different set of standard buffers has been developed for pH calibration on these scales.
+That depends on the solution's temperature and salinity. In general. the pH difference between the Total & Seawater scales is small. pH on the Free scale is ~0.11 - 0.13 units higher than on the other two. 
+
 [/p]
 
-*How are these scales realted to the traditional NBS scale?*
+*How do these scales relate to the NBS scale?*
 [p]
-total & sws, small; between those two and free, ~0.11 - 0.13 pH units lower
+This is explained below this expandable panel.
 [/p]
+
+[hr className:'neutral-ph-hr'/]
 
 *Why are these seawater scales important?*
 [p]
-See below
+*Short answer*: Precise water-quality management requires precise pH measurement.
 [/p]
 
 [p]
-In the same way, the contribution of the chloride ion to the solution's ionic strength is *its* concentration, also 2 mol/L, times the square of *its* valence (-1):
+*Longer answer*: We know that pH is a master variable that controls the rate and direction of chemical processes that are important in managing production and 
+recreational aquatic systems.
 [/p]
 
 [p]
-For more info...
+We also know that even small changes in pH represent large changes in acidity.
 [/p]
+
+[p]
+The impact of any pH change is magnified when calculating its effect on key water-quality properties like the concentrations of un-ionized ammonia and 
+carbon dioxide, and the degree of carbonate saturation.
+[/p]
+
+[p]
+*Why 'magnified'?* Because formulae used for such calculations don't involve only \[H[sup]+[/sup]\] (= 10[sup]-pH[/sup]), but also higher powers 
+of \[H[sup]+[/sup]\] (up to \[H[sup]+[/sup]\][sup]4[/sup] in some formulae). This makes it essential to measure pH as accurately and precisely as possible.
+[/p]
+
+[p]
+Furthermore, the formulae were derived from experimental data that used one or the other of these scales (often either the Total or the Seawater scale). 
+Plugging in the unconverted NBS pH (as some have done) produces unnecessary errors.
+[/p]
+
+// [p]
+// For more info...
+// [/p]
 
 [div style: `{textAlign: 'center'}` ]
 [a className:"closePanelBtn" href:"#three-ph-scales" onClick:`showContent_ph_scales = false` ]Close Content[/a]
@@ -1640,7 +1683,6 @@ For more info...
 [/Conditional]
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
-
 
 [p]
 After hearing that there are other pH scales, users often ask: *Which am I using?*
@@ -1664,43 +1706,23 @@ You don't have to bother with the others:
   [li] for seawater, the **WQ ToolBox** does all the heavy lifting [/li]
 [/ul]
 
-
 [p]
-The difference is... More correct...but do we need it?
+In either case, when you use the software you only have to enter the NBS pH -- the one you already are using. The software converts pH[sub]NBS[/sub] 
+to the correct scale before carrying out water-quality calculations.
+[/p]
+
+[h4]*Converting from pH[sub]NBS[/sub]*[/h4]
+[p]
+The NBS scale is activity-based. The three other scales are concentration-based. Therein lies a conversion problem.
 [/p]
 
 [p]
-Many **WQ ToolBox** calculations -- especially those that animate the **WQ Map** -- depend heavily on chemical equilibrium constants, like K[sub]w[/sub], 
-the dissociation constant of water that was central to the discussion of the previous section.
-[/p]
-
-[p]
-Just like K[sub]w[/sub], these equilibrium constants are determined experimentally. ome were measured on the Total pH scale, others on the Seawater scale, and s
-on the Free scale.
-[/p]
-
-[p]
-To develop tools that help us manage water quality, especially with saline water, we have to make sure that pH measured on the NBS scale -- the scale that everyone 
-uses -- is correctly converted to the proper 
+Going from activity to molar concentration requires estimation of an activity coefficient. There are several approaches, each of which has assumptions and
+limitations.
 [/p]
 
 [p]
 A good question is: How high can the salinity before the NBS scale?
-[/p]
-
-[p]
-Part of the software's job is making sure that the NBS pH you enter is converted to the correct scale before performing water-quality 
-calculations.
-[/p]
-
-Bottom-line: You still can measure pH on the familiar NBS scale and the WQ ToolBox software will perform the necessary conversions...
-
-[p]
-The NBS scale is activity-based; that is, as we know, pH activity is measured. The three other scale are concentration-based, and therein 
-lies a conversion problem.
-
-The step from molar concentrations (analytical data) to activities (that enter law-of-mass-action calculations) requires the calculation of activity coefficients γi. 
-For this task several approaches are available, whereas each activity model has its own range of validity defined by the ionic strength I as shown here:1
 [/p]
 
 "Most popular method used to calculate ions activities is the one proposed by Debye and Hückel in 1923. IS limit ~0.1 or 5%o"
@@ -1734,19 +1756,14 @@ For this task several approaches are available, whereas each activity model has 
 [/div]
 
 
-Further, the modern formulae used to compute the dissociation constants and other processes needed to perform important aquatic chemistry calculations 
-were not established on the NBS scale but on one of the others, either the Seawater, or Total, or Free scales.
-
-pH play a central role in the formulae describing the dissociation coefficients needed to calculate seawater WQ properties. These pH values, however, 
-generally were not based on the NBS scale with which most every practioner is familiar. Instead, they were based on one of 
-three other spH cales: the Free scale, the Total scale, and the Seawater scale.
+The formulae used to compute the dissociation constants and other processes needed to perform important aquatic chemistry calculations 
+were not established on the NBS scale, but on one of the others, either the Seawater, or Total, or Free scales.
 
 Bottom-line: I do all of the necessary conversions in the software -- which I've checked, re-checked, and re-re-checked vs 
 reputable marine science sources -- and then I convert back to the NBS scale -- the one that everyone uses -- for display in the WQ Map. 
 
 Thus, the user doesn't have to worry about any of those complicated details, although I will make them aware of them in the manual. 
 (Using the wrong scale yields erroneous results -- even small differences are unacceptable because pH is defined on a log-10 scale.)
-
 
 [p]
 Wherever you enter pH in the WQ ToolBox -- as in the screenshot of the WQ Map below -- it always is labeled explicitly as 
@@ -1757,9 +1774,9 @@ being on the NBS scale.
 ![WqMapNBS](static/images/wqmap-nbs.png)
 [/div]
 
+*How convert from pH nbs to...*
 
 Different approximations. Older version of the WQ ToolBox software used xxx. This is reasonable up to an ionic strength of about ... (~22ppt)
-
 
 
 // ******************* //
