@@ -12,6 +12,18 @@
 
 [div style: `{textAlign:'center', color:'red', fontSize:'0.85rem'}` ]
 \[*This section still under development*\]
+Learning Objective
+Explain...
+
+Key Points
+// A basic solution will have a pH above 7.0, while an acidic solution will have a pH below 7.0.
+// Buffers are solutions that contain a weak acid and its a conjugate base; as such, they can absorb excess H+ions or OH– ions, thereby maintaining an overall steady pH in the solution.
+// pH is equal to the negative logarithm of the concentration of H+ ions in solution: pH = – log[H+].
+
+Terms
+// buffera solution composed of a weak acid and its conjugate base that can be used to stabilize the pH of a solution
+// alkalinehaving a pH greater than 7; basic
+// acidichaving a pH less than 7
 [/div]
 
 [p]
@@ -1236,7 +1248,7 @@ This effect is more pronounced in solutions with a high concentration of ions, s
 [/p]
 
 [p]
-The next expanding panel provides examples of how ionic strength is calculated.
+The next expanding panel shows how ionic strength is calculated.
 [/p]
 
 
@@ -1257,22 +1269,35 @@ The next expanding panel provides examples of how ionic strength is calculated.
 
 [div className:"dynamic-module" ]
 
+[h4] Calculating Ionic Strength[/h4]
+
 [p]
-Ionic strength is calculated by taking one-half the sum of the concentration of each ion multiplied by the square of its charge (termed its *valence*).
+The recipe for calculating ionic strength is:
+[/p]
+
+[ul]
+  [li] find the concentration of each ion in solution [/li]
+  [li] multiply each concentration by the square of the ion's charge (its *valence*) [/li]
+  [li] add all of those terms together  [/li]
+  [li] divide the result by two (the same as multiplying by one-half) [/li]
+[/ul]
+
+[p]
+Example: calculate the ionic strength of a [span style:`{color:'blue'}`]2 M[/span] ([span style:`{color:'blue'}`]2 mol/L[/span]) 
+sodium chloride solution.
 [/p]
 
 [p]
-That's a mouthful. Here's a simple example: to calculate the ionic strength of a [span style:`{color:'blue'}`]2 M[/span] ([span style:`{color:'blue'}`]2 mol/L[/span]) solution of sodium chloride, 
-first note that NaCl dissolves to form 2 mol/L of each ion:
+First note that NaCl dissolves to form 2 mol/L of each ion:
 [/p]
-
 
 [Equation display:true]
   \color{blue}{2}\color{black}NaCl \rightarrow \color{blue}{2}\color{black}{Na^+} + \color{blue}{2}\color{black}{Cl^-}
 [/Equation]
 
 [p]
-The contribution of the sodium ion to the solution's ionic strength equals its concentration, 2 mol/L, times the square of its valence (+1):
+Following the steps in the recipe, the sodium ion's contribution to the solution's ionic strength equals its concentration, 
+2 mol/L, times the square of its valence (+1):
 [/p]
 
 [Equation display:true]
@@ -1299,7 +1324,8 @@ The solution's ionic strength is one-half the sum of these values:
 [hr className:"neutral-ph-hr "/]
 
 [p]
-Another example will drive the point home: [span style:`{color:'blue'}`]2 mol/L[/span] of sodium sulfate, Na[sub]2[/sub]SO[sub]4[/sub].
+Another example will drive the point home. Calculate the ionic strength of a [span style:`{color:'blue'}`]2 mol/L[/span] solution 
+of sodium sulfate, Na[sub]2[/sub]SO[sub]4[/sub].
 [/p]
 
 [p]
@@ -1344,7 +1370,7 @@ Taking one-half of the sum of these gives the solution's ionic strength, 6 mol/L
 [/Equation]
 
 [p]
-The concentration was the same in each example (2 mol/L), but the ionic strength of the second solution 
+The concentration is the same in each example (2 mol/L), but the ionic strength of the second solution 
 is three-times greater than that of the first. This is owed to the contributions of the additional sodium ion 
 and the higher valence of sulfate.
 [/p]
@@ -1411,24 +1437,29 @@ cleverly named the *liquid junction potential*.
 
 [p]
 This potential is small and difficult to quantify, but it generally scales in the millivolt (**mV**) range. When a sample has a high ionic strength, however, 
-it's enough to cause a pH error of as much as 0.5 pH units. We've seen above that even such a small pH difference represents a large 
-difference in a solution's acid content, and that's an important consideration for precise management of water quality.
+that's enough to cause a pH error of as much as 0.5 pH units. We've seen above that even such a small pH difference represents a large 
+difference in a solution's acid content, so this is a consideration in precise management of water quality.
 [/p]
 
 // BUFFERS AND SEGUE TO PH SCALES
 // ((((((((( BUFFERS & CALIBRATION )))))))))
 [div style:`{marginTop: '35px'}`]
 [Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"buffers-calibration"]*Buffers & Calibration*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
-[/div] 
+[/div]
+
+[aside][Inline]
+Buffers chemically regulate H[sup]+[/sup] and OH[sup]-[/sup] ions to maintain a particular pH.
+[/Inline]
+[/aside]
 
 [p]
 pH meters must be calibrated periodically to insure their accuracy and precision. This is done by 
-adjusting meter output to match the pH of a series of standard solutions, each buffered to a particular pH.
+adjusting meter output to match the pH of standard *buffers*.
 [/p]
 
 [p]
-If calibration is performed with only two standards, one should be lower and one higher than the pH values expected from routine measurements. 
-Standards should be no more than about two pH units apart.
+If calibration is performed with only two standards, one should be lower and one higher than the pH expected from routine measurements. 
+In that case, standards should be no more than about two pH units apart.
 [/p]
 
 [p]
@@ -1450,9 +1481,13 @@ The most common buffers used to calibrate pH meters were developed by the Intern
 [/p]
 
 [p]
-Many refer to these as NBS buffers, *NBS* standing for the National Bureau of Standards. The NBS was re-named as the 
-National Institute of Standards and Technology (**NIST**) in 1988, and the buffers now are marketed as NIST buffers conforming to [a href:'https://www.nist.gov/programs-projects/ph-metrology'  target:"_blank" rel:"noopener noreferrer"] NIST's pH 
-measurement and traceability program[/a]. The legacy terms "NBS buffer" and "NBS pH" remain common in the marine science community.
+Many refer to these as NBS buffers, *NBS* standing for the National Bureau of Standards. The NBS was re-named the 
+National Institute of Standards and Technology (**NIST**) in 1988, however, and the buffers often are marketed as NIST buffers conforming to [a href:'https://www.nist.gov/programs-projects/ph-metrology'  target:"_blank" rel:"noopener noreferrer"] NIST's pH 
+measurement and traceability program[/a].
+[/p]
+
+[p]
+The legacy terms "NBS buffer" and "NBS pH" nevertheless remain common in the marine science community.
 [/p]
 
 // BUFFER IMAGE
@@ -1466,20 +1501,20 @@ measurement and traceability program[/a]. The legacy terms "NBS buffer" and "NBS
 
 [p]
 Because an ion's activity cannot be determined experimentally (see the summary in [Cite 
-  authors:"R. E. Zeebe & D. wolf-Gladrow"
+  authors:"R. E. Zeebe & D. Wolf-Gladrow"
   title:"CO₂ in Seawater: Equilibrium, Kinetics, Isotopes"
   url:"https://www.amazon.com/CO2-Seawater-Equilibrium-Kinetics-Oceanography/dp/0444509461/ref=sr_1_3?dchild=1&keywords=zeebe+wolf-gladrow&qid=1610292071&sr=8-3"
   id:"zeebe-wolf-gladrow"
   venue: "Elsevier Oceanography Series 65"
   date:"2003"
 /], pp 54-55), NBS buffers were designed to approximate H[sup]+[/sup] activity on an operational pH scale pegged to an infinitely dilute solution. In the limit, 
-this makes H[sup]+[/sup] activity and concentration equal.
+this choice makes H[sup]+[/sup] activity and H[sup]+[/sup] concentration equal.
 [/p]
 
 [p]
-We don't need to delve deeper into details, but it's important to know that NBS buffers have a low ionic strength of about 0.1 mol/kg. They are fine for freshwater 
-work that does not require high precision, but there's a problem when measuring pH in high ionic strength solutions like seawater. As seen above, 
-ionic strength differences create a liquid junction potential effect.
+We don't need to delve deeper into details, but it's important to know that NBS buffers have a low ionic strength of about 0.1 mol/kg. This is fine for freshwater 
+work that does not require high precision, but there's a problem when measuring pH in high ionic strength solutions like seawater: As seen above, 
+ionic strength differences create a liquid junction potential that introduces measurement error.
 [/p]
 
 // As an FYI, spectrophotometric pH measurement (Byrne and Breland, 1989) provides much greater precision, but at a cost that makes it impractical in 
@@ -1490,8 +1525,7 @@ That raises the question: *How should you measure pH in seawater?*
 [/p]
 
 [p]
-The answer involves a brief introduction to pH scales used in seawater and how this  
-problem is handled in the WQ ToolBox software.
+The answer involves a brief introduction to seawater pH scales and how this problem is handled by the WQ ToolBox software.
 [/p]
 
 // [p]
@@ -1515,12 +1549,159 @@ problem is handled in the WQ ToolBox software.
 [/div]
 
 [p]
+Most people are so used to measuring pH in the traditional way that they're surprised to learn that there is more than one pH scale.
+[/p]
+
+[p]
+In addition to the familiar NBS scale (pH[sub]NBS[/sub]) based on the series of buffers mentioned above, three scales are used for seawater:
+[/p]
+
+[ul]
+  [li] Free scale (pH[sub]F[/sub]) [/li]
+  [li] Total scale (pH[sub]T[/sub]) [/li]
+  [li] Seawater scale (pH[sub]SWS[/sub]) [/li]
+[/ul]
+
+[p]
+Those who are interested will find a bit more info in the next expanding panel.
+[/p]
+
+
+// EXPANDABLE PANEL -- The three pH scales
+// ********************************** //
+// ****** PH SCALE EXPLANATION ****** //
+// ********************************** //
+
+[p id:"three-ph-scales"][/p]
+
+[var name:"showContent_ph_scales" value:false /]
+
+[Button className: 'showHideBtn' onClick:`showContent_ph_scales = !showContent_ph_scales` ]
+  [Display value:`showContent_ph_scales ? 'Hide Content' : 'Seawater pH Scales' ` /]
+[/Button]
+
+[Conditional if:`showContent_ph_scales`]
+
+[div className:"dynamic-module" ]
+
+[h4] Seawater pH Scales [/h4]
+
+*Why were the seawater pH scales developed?*
+[p]
+The Total, Free, & Seawater scales address the measurement problem that arises from the difference in 
+ionic strength (and composition) between seawater and the standard pH electrode's reference and calibration solutions. 
+In particular, this minimizes the liquid junction potential problem outlined above.
+[/p]
+
+*How are they defined?*
+[p]
+Each scale is based on a particular artificial seawater formula. They are distinguished by the way in which they define the relationship 
+between H[sup]+[/sup] activity and concentration. Briefly:
+[/p]
+
+[ul]
+  [li] pH[sub]F[/sub] considers all H[sup]+[/sup] free, uncomplexed with other ions [/li]
+  [li] pH[sub]T[/sub] considers the protonation of sulfate (HSO[sub]4[/sub][sup]-1[/sup]) [/li]
+  [li] pH[sub]SWS[/sub] incorporates protonation of sulfate & fluoride (F[sup]-[/sup])[/li]
+[/ul]
+
+[p]
+A different set of standard buffers has been developed for pH calibration on these scales.
+[/p]
+
+*How are these scales related to each other?*
+[p]
+A different set of standard buffers has been developed for pH calibration on these scales.
+[/p]
+
+*How are these scales realted to the traditional NBS scale?*
+[p]
+total & sws, small; between those two and free, ~0.11 - 0.13 pH units lower
+[/p]
+
+*Why are these seawater scales important?*
+[p]
+See below
+[/p]
+
+[p]
+In the same way, the contribution of the chloride ion to the solution's ionic strength is *its* concentration, also 2 mol/L, times the square of *its* valence (-1):
+[/p]
+
+[p]
+For more info...
+[/p]
+
+[div style: `{textAlign: 'center'}` ]
+[a className:"closePanelBtn" href:"#three-ph-scales" onClick:`showContent_ph_scales = false` ]Close Content[/a]
+[/div]
+
+[/div]
+[/Conditional]
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
+
+
+[p]
+After hearing that there are other pH scales, users often ask: *Which am I using?*
+[/p]
+
+[p]
+The quick answer: If you don't know which pH scale you're using, then you're using the traditional NBS scale. In fact, it's very safe to say 
+that most everyone working outside of chemical oceanography measures pH on the NBS scale.
+[/p]
+
+[p]
+Then: *OK, but if I'm already using the NBS scale, why bother with the others?*
+[/p]
+
+[p]
+You don't have to bother with the others:
+[/p]
+
+[ul]
+  [li] for freshwater, you're good-to-go with the NBS scale in most cases [/li]
+  [li] for seawater, the **WQ ToolBox** does all the heavy lifting [/li]
+[/ul]
+
+
+[p]
+The difference is... More correct...but do we need it?
+[/p]
+
+[p]
+Many **WQ ToolBox** calculations -- especially those that animate the **WQ Map** -- depend heavily on chemical equilibrium constants, like K[sub]w[/sub], 
+the dissociation constant of water that was central to the discussion of the previous section.
+[/p]
+
+[p]
+Just like K[sub]w[/sub], these equilibrium constants are determined experimentally. ome were measured on the Total pH scale, others on the Seawater scale, and s
+on the Free scale.
+[/p]
+
+[p]
+To develop tools that help us manage water quality, especially with saline water, we have to make sure that pH measured on the NBS scale -- the scale that everyone 
+uses -- is correctly converted to the proper 
+[/p]
+
+[p]
+A good question is: How high can the salinity before the NBS scale?
+[/p]
+
+[p]
+Part of the software's job is making sure that the NBS pH you enter is converted to the correct scale before performing water-quality 
+calculations.
+[/p]
+
+Bottom-line: You still can measure pH on the familiar NBS scale and the WQ ToolBox software will perform the necessary conversions...
+
+[p]
 The NBS scale is activity-based; that is, as we know, pH activity is measured. The three other scale are concentration-based, and therein 
 lies a conversion problem.
 
 The step from molar concentrations (analytical data) to activities (that enter law-of-mass-action calculations) requires the calculation of activity coefficients γi. 
 For this task several approaches are available, whereas each activity model has its own range of validity defined by the ionic strength I as shown here:1
-
+[/p]
 
 "Most popular method used to calculate ions activities is the one proposed by Debye and Hückel in 1923. IS limit ~0.1 or 5%o"
 
@@ -1532,7 +1713,7 @@ For this task several approaches are available, whereas each activity model has 
 
   [div className: 'yellow-panel-div' style:`{width:'625px'}`]
 
-    [h3 style:`{textAlign: 'center', marginTop: '8px'}`]Ionic Strength *vs.* pH[/h3]
+    [h3 style:`{textAlign: 'center', marginTop: '8px'}`]Ionic Strength *vs.* Salinity[/h3]
 
     [var name:"sal_ionic" value:15 /]
 
@@ -1565,7 +1746,6 @@ reputable marine science sources -- and then I convert back to the NBS scale -- 
 
 Thus, the user doesn't have to worry about any of those complicated details, although I will make them aware of them in the manual. 
 (Using the wrong scale yields erroneous results -- even small differences are unacceptable because pH is defined on a log-10 scale.)
-[/p]
 
 
 [p]
@@ -1580,68 +1760,6 @@ being on the NBS scale.
 
 Different approximations. Older version of the WQ ToolBox software used xxx. This is reasonable up to an ionic strength of about ... (~22ppt)
 
-[p]
-A very common question users ask is: *What is NBS?!*
-[/p]
-
-[p]
-That's quickly followed by: *Am I using it?*
-[/p]
-
-[p]
-The quick answer to the second question: If you don't know what NBS is, then that's the pH scale you're using. In fact, it's very safe to say 
-that most everyone working outside of chemical oceanography measures pH on the NBS scale.
-[/p]
-
-[p]
-*OK, but if I'm already using the NBS scale, why do I have to bother with any others?*
-[/p]
-
-[p]
-You don't have to bother with the others:
-[/p]
-
-[ul]
-  [li] if you're working with freshwater, then you're good-to-go with the NBS scale [/li]
-  [li] if you're working with seawater, then the **WQ ToolBox** does the heavy lifting [/li]
-[/ul]
-
-
-Bottom-line: You still can measure pH on the familiar NBS scale and the WQ ToolBox software will perform the necessary conversions...
-
-
-[p]
-Part of the software's job is making sure that the NBS pH you enter is converted to the correct scale before performing water-quality 
-calculations.
-[/p]
-
-
-There are four important pH scales for seawater, of which NBS is the one that everyone uses -- except specialists like marine chemists. 
-So, when aquaculturists measure pH, they're measuring it on the NBS scale.
-NBS stands for "National Bureau of Standards". It was re-named in 1988 to NIST (National Institute of Standards and Technology). 
-NBS established the buffers used to calibrate pH electrodes, thus the reason for naming it the NBS scale. Most who deal with the 
-distinction still call it the NBS scale.
-
-"...derived and must be alert to the differences arising from the usage of various pH scales.
-
-[p]
-Many **WQ ToolBox** calculations -- especially those that animate the **WQ Map** -- depend heavily on chemical equilibrium constants, like K[sub]w[/sub], 
-the dissociation constant of water that was central to the discussion of the previous section.
-[/p]
-
-[p]
-Just like K[sub]w[/sub], these equilibrium constants are determined experimentally. ome were measured on the Total pH scale, others on the Seawater scale, and s
-on the Free scale.
-[/p]
-
-[p]
-To develop tools that help us manage water quality, especially with saline water, we have to make sure that pH measured on the NBS scale -- the scale that everyone 
-uses -- is correctly converted to the proper 
-[/p]
-
-[p]
-A good question is: How high can the salinity before the NBS scale?
-[/p]
 
 
 // ******************* //
