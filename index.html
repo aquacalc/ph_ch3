@@ -272,7 +272,8 @@ they are less concentrated. Each ion moves at a rate determined by the concentra
 The resulting separation of positive and negative charges across this liquid junction generates an electric potential -- 
 cleverly named the <em>liquid junction potential</em>.</p><p>
 This potential is small and difficult to quantify, but it generally scales in the millivolt (<strong>mV</strong>) range. When a sample has a high ionic strength, however, 
-that’s enough to cause a pH error of as much as 0.5 pH units. We’ve seen above that even such a small pH difference represents a large 
+that’s enough to cause a pH error of as much as 0.5 pH units.</p><p>
+We’ve seen above that even such a small pH difference represents a large 
 difference in a solution’s acid content, so this is a consideration in precise management of water quality.</p><div style="margin-top:35px" idyll="[object Object]"><div style="display:inline-block"> <h3 style="display:inline;margin-right:30px" id="buffers-calibration"><em>Buffers &amp; Calibration</em></h3> <span style="font-size:0.85rem" idyll="[object Object]"><a href="#top" style="text-decoration:none" idyll="[object Object]">[TableOfContents]</a></span> </div></div><span class="aside-container"><span class="aside"><div style="display:inline-block">
 Buffers chemically regulate H<sup>+</sup> and OH<sup>-</sup> ions to maintain a particular pH.</div></span></span><p>
 pH meters must be calibrated periodically to insure their accuracy and precision. This is done by 
@@ -296,25 +297,24 @@ That raises the question: <em>How should you measure pH in seawater?</em>
 The answer involves a brief introduction to seawater pH scales and how this problem is handled by the WQ ToolBox software.</p><div style="margin-top:35px" idyll="[object Object]"><div style="display:inline-block"> <h3 style="display:inline;margin-right:30px" id="ph-scales"><em>NBS &amp; the Three Little pH Scales</em></h3> <span style="font-size:0.85rem" idyll="[object Object]"><a href="#top" style="text-decoration:none" idyll="[object Object]">[TableOfContents]</a></span> </div></div><p>
 Most people are so used to measuring pH in the traditional way that they’re surprised to learn that there is more than one pH scale.</p><p>
 In addition to the familiar pH scale based on the series of NBS buffers mentioned above -- designate it as pH<sub>NBS</sub> -- three scales are used for seawater:</p><ul><li> Free scale (pH<sub>F</sub>) </li><li> Total scale (pH<sub>T</sub>) </li><li> Seawater scale (pH<sub>SWS</sub>) </li></ul><p>
-Those who are interested will find a bit more info in the next expanding panel.</p><p id="three-ph-scales"></p><button class="showHideBtn"><span class="idyll-display">Seawater pH Scales</span></button><div style="display:none"><div class="dynamic-module"><h4 id="seawater-ph-scales"> Seawater pH Scales </h4><em>Why were the seawater pH scales developed?</em><p>
+Those who are interested will find a bit more info in the next expanding panel.</p><p id="three-ph-scales"></p><button class="showHideBtn"><span class="idyll-display">Seawater pH Scales</span></button><div style="display:none"><div class="dynamic-module"><h3 id="seawater-ph-scales"> Seawater pH Scales </h3><strong><em>Why were the seawater pH scales developed?</em></strong><p>
 To minimize the liquid junction potential problem when measuring pH in seawater.</p><p>
 The Free, Total, &amp; Seawater scales address the measurement problem that arises from the difference in 
-ionic strength (and composition) between seawater and the standard pH electrode’s reference and calibration solutions.</p><p><em>How are these scales defined?</em>
+ionic strength (and composition) between seawater and the standard pH electrode’s reference and calibration solutions.</p><p><strong><em>How are these scales defined?</em></strong>
 <p>
 Each scale is based on a particular artificial seawater formula and is distinguished from the others by the way in which it relates 
 H<sup>+</sup> activity and concentration. Very briefly:</p></p><ul style="font-size:0.85rem" idyll="[object Object]"><li> pH<sub>F</sub> considers all H<sup>+</sup> as free -- uncomplexed with &amp; unshielded by other ions </li><li> pH<sub>T</sub> considers H<sup>+</sup> associated with sulfate (HSO<sub>4</sub><sup>-</sup>) </li><li> pH<sub>SWS</sub> considers H<sup>+</sup> associated with sulfate &amp; fluoride (F<sup>-</sup>)</li></ul><p>
-An appropriate set of buffers has been developed for calibration on each scale.</p><p><em>How big are the pH differences among these scales?</em>
+An appropriate set of buffers has been developed for calibration on each scale.</p><p><strong><em>How big are the pH differences among these scales?</em></strong>
 <p>
-That depends on the solution’s temperature and salinity. In general. the pH difference between the Total &amp; Seawater scales is small. pH on the Free scale is ~0.11 - 0.13 units higher than on the other two. </p></p><p><em>How do these scales relate to the NBS scale?</em>
+That depends on the solution’s temperature and salinity. In general. the pH difference between the Total &amp; Seawater scales is small. pH on the Free scale is ~0.11 - 0.13 units higher than on the other two. </p></p><p><strong><em>How do these scales relate to the NBS scale?</em></strong>
 <p>
-This is explained below this expandable panel.</p></p><hr class="neutral-ph-hr"/><p><em>Why are these seawater scales important?</em>
-<p><em>Short answer</em>: Precise water-quality management requires precise pH measurement.</p></p><p><em>Longer answer</em>: We know that pH is a master variable that controls the rate and direction of chemical processes that are important in managing production and 
-recreational aquatic systems.</p><p>
-We also know that even small changes in pH represent large changes in acidity.</p><p>
-The impact of any pH change is magnified when calculating its effect on key water-quality properties like the concentrations of un-ionized ammonia and 
-carbon dioxide, and the degree of carbonate saturation.</p><p><em>Why ‘magnified’?</em> Because formulae used for such calculations don’t involve only [H<sup>+</sup>] (= 10<sup>-pH</sup>), but also higher powers 
-of [H<sup>+</sup>] (up to [H<sup>+</sup>]<sup>4</sup> in some formulae). This makes it essential to measure pH as accurately and precisely as possible.</p><p>
-Furthermore, the formulae were derived from experimental data that used one or the other of these scales (often either the Total or the Seawater scale). 
+This is explained below this expandable panel.</p></p><hr class="neutral-ph-hr"/><p><strong><em>Why are these seawater scales important?</em></strong>
+<p><em>Short answer</em>: Precise water-quality management requires precise pH measurement.</p></p><p><em>Longer answer</em>: pH is a master variable that controls the rate and direction of chemical processes in aquatic systems.</p><p>
+Even small changes in pH represent large changes in acidity.</p><p>
+The impact of any pH change is magnified when calculating key water-quality properties, like un-ionized ammonia, 
+carbon dioxide, and carbonate saturation.</p><p><em>Why ‘magnified’?</em> Because these formulae don’t always involve only [H<sup>+</sup>] (= 10<sup>-pH</sup>); some have higher powers 
+of [H<sup>+</sup>] (up to [H<sup>+</sup>]<sup>4</sup>). This makes it essential to measure pH as accurately and precisely as possible.</p><p>
+Furthermore, the formulae themselves were derived from experimental data that used one or the other of these scales (often either the Total or the Seawater scale). 
 Plugging in the unconverted NBS pH (as some have done) produces unnecessary errors.</p><div style="text-align:center" idyll="[object Object]"><a class="closePanelBtn" href="#three-ph-scales" idyll="[object Object]">Close Content</a></div></div></div><p>
 After hearing that there are other pH scales, users often ask: <em>Which am I using?</em>
 </p><p>
@@ -323,18 +323,16 @@ that most everyone working outside of chemical oceanography measures pH on the N
 Then: <em>OK, but if I’m already using the NBS scale, why bother with the others?</em>
 </p><p>
 You don’t have to bother with the others:</p><ul><li> for freshwater, you’re good-to-go with the NBS scale in most cases </li><li> for seawater, the <strong>WQ ToolBox</strong> does all the heavy lifting </li></ul><p>
-In either case, when you use the software you only have to enter the NBS pH -- the one you already are using. The software converts pH<sub>NBS</sub> 
-to the correct scale before carrying out water-quality calculations.</p><h4 id="[object-object]"><em>Converting from pH<sub>NBS</sub></em></h4><p>
+In either case, when you use the software you only have to enter the pH<sub>NBS</sub> -- the one you already are using. The software converts pH<sub>NBS</sub> 
+to the correct scale before carrying out water-quality calculations.</p><p>
+As in the WQ Map screenshot below, pH always is entered on the NBS scale.</p><div style="border:black 1px solid;margin-top:25px;margin-bottom:25px" idyll="[object Object]"><img src="static/images/wqmap-nbs.png" alt="WqMapNBS"/></div><h4 id="[object-object]"><em>Converting from pH<sub>NBS</sub></em></h4><p>
 The NBS scale is activity-based. The three other scales are concentration-based. Therein lies a conversion problem.</p><p>
-Going from activity to molar concentration requires estimation of an activity coefficient. There are several approaches, each of which has assumptions and
-limitations.</p><p>
-A good question is: How high can the salinity before the NBS scale?</p><p>“Most popular method used to calculate ions activities is the one proposed by Debye and Hückel in 1923. IS limit ~0.1 or 5%o”</p><div class="dynamic-module"><div class="yellow-panel-div" style="width:625px" idyll="[object Object]"><h3 style="text-align:center;margin-top:8px" id="ionic-strength-[object-object]-salinity">Ionic Strength <em>vs.</em> Salinity</h3><div style="text-align:center" idyll="[object Object]">
-    Salinity <input type="range" value="15" min="0" max="40" step="0.01"/> <span class="idyll-display">15.00</span>‰</div><div class="d3-component" style="width:100%"></div></div></div><p>The formulae used to compute the dissociation constants and other processes needed to perform important aquatic chemistry calculations 
-were not established on the NBS scale, but on one of the others, either the Seawater, or Total, or Free scales.</p><p>Bottom-line: I do all of the necessary conversions in the software -- which I’ve checked, re-checked, and re-re-checked vs 
-reputable marine science sources -- and then I convert back to the NBS scale -- the one that everyone uses -- for display in the WQ Map. </p><p>Thus, the user doesn’t have to worry about any of those complicated details, although I will make them aware of them in the manual. 
-(Using the wrong scale yields erroneous results -- even small differences are unacceptable because pH is defined on a log-10 scale.)</p><p>
-Wherever you enter pH in the WQ ToolBox -- as in the screenshot of the WQ Map below -- it always is labeled explicitly as 
-being on the NBS scale.</p><div style="border:black 1px solid;margin-top:25px;margin-bottom:25px" idyll="[object Object]"><img src="static/images/wqmap-nbs.png" alt="WqMapNBS"/></div><em>How convert from pH nbs to...</em><p>Different approximations. Older version of the WQ ToolBox software used xxx. This is reasonable up to an ionic strength of about ... (~22ppt)</p><div></div><div style="margin-top:35px" idyll="[object Object]"><div style="display:inline-block"> <h3 style="display:inline;margin-right:30px;margin-top:50px" id="mean-ph"><strong><em>What does ‘mean pH’ mean?<!-- -->!</em></strong></h3> <span style="font-size:0.85rem" idyll="[object Object]"><a href="#top" style="text-decoration:none" idyll="[object Object]">[TableOfContents]</a></span> </div></div><p>
+Going from activity to molar concentration requires an activity coefficient. There are several approaches to making this conversion, each of which has 
+its assumptions and limitations.</p><p>“Most popular method used to calculate ions activities is the one proposed by Debye and Hückel in 1923. IS limit ~0.1 or 5%o” and that ws used in an old 
+version of aquaCalc CiteItHere
+The Davis eqn... is reasonable up to an ionic strength of about ... extends to ionic strengh of...(~22ppt) 
+current, extends to ...</p><div class="dynamic-module"><div class="yellow-panel-div" style="width:625px" idyll="[object Object]"><h3 style="text-align:center;margin-top:8px" id="ionic-strength-[object-object]-salinity">Ionic Strength <em>vs.</em> Salinity</h3><div style="text-align:center" idyll="[object Object]">
+    Salinity <input type="range" value="15" min="0" max="40" step="0.01"/> <span class="idyll-display">15.00</span>‰</div><div class="d3-component" style="width:100%"></div></div></div><p><em>Bottom-line:</em> The s/ware will handle it.</p><div></div><div style="margin-top:35px" idyll="[object Object]"><div style="display:inline-block"> <h3 style="display:inline;margin-right:30px;margin-top:50px" id="mean-ph"><strong><em>What does ‘mean pH’ mean?<!-- -->!</em></strong></h3> <span style="font-size:0.85rem" idyll="[object Object]"><a href="#top" style="text-decoration:none" idyll="[object Object]">[TableOfContents]</a></span> </div></div><p>
 Question: <em>What’s the mean (</em>i.e.<em>, average) of pH <!-- -->7 <!-- -->and pH <!-- -->8<!-- -->?</em> Is it pH 7.5?</p><p>
 Another consequence of putting pH on the -log<sub>10</sub> scale is that we have to be careful when answering that straighforward question.</p><p>
 When we ask for a mean value, we’re asking for a summary statistic that describes the central tendency of a set of data.</p><p>
