@@ -1248,7 +1248,7 @@ This effect is more pronounced in solutions with a high concentration of ions, s
 [/p]
 
 [p]
-The next expanding panel shows how ionic strength is calculated.
+If you're interested in how ionic strength is calculated, you'll find the recipe and two examples in the next expanding panel.
 [/p]
 
 
@@ -1635,8 +1635,13 @@ An appropriate set of buffers has been developed for calibration on each scale.
 
 ***How big are the pH differences among these scales?***
 [p]
-That depends on the solution's temperature and salinity. In general. the pH difference between the Total & Seawater scales is small. pH on the Free scale is ~0.11 - 0.13 units higher than on the other two. 
+That depends on the solution's temperature and salinity. In general. the pH difference between the Total & Seawater scales is small. 
+pH on the Free scale is ~0.11 - 0.13 units higher than on the other two.
+[/p]
 
+[p]
+You can use the "pH Changes and \[H[sup]+[/sup]\] Acidity" interactive tool above (under the *A Power of Ten* section) to confirm that a pH difference of 
+0.11 - 0.13 units represents a 22 - 25% difference in acidity.
 [/p]
 
 ***How do these scales relate to the NBS scale?***
@@ -1676,6 +1681,16 @@ Plugging in the unconverted NBS pH (as some have done) produces unnecessary erro
 
 // [p]
 // For more info...
+
+// [Cite 
+//   authors:"Munhoven, G."
+//   title:"Mathematics of the total alkalinity–pH equation – pathway to robust and universal solution algorithms: the SolveSAPHE package v1.0.1"
+//   url:"https://gmd.copernicus.org/articles/6/1367/2013/"
+//   id:"ph-munhoven"
+//   venue: "Geosci. Model Dev., 6 1367-2013"
+//   date:"2013"
+// // /]
+
 // [/p]
 
 [div style: `{textAlign: 'center'}` ]
@@ -1692,53 +1707,71 @@ After hearing that there are other pH scales, users often ask: *Which am I using
 [/p]
 
 [p]
-The quick answer: If you don't know which pH scale you're using, then you're using the traditional NBS scale. In fact, it's very safe to say 
-that most everyone working outside of chemical oceanography measures pH on the NBS scale.
+The quick answer: If you don't know which pH scale you're using, then you're using the traditional NBS scale.
 [/p]
 
 [p]
-Then: *OK, but if I'm already using the NBS scale, why bother with the others?*
+In fact, it's very safe to say that most everyone working outside of chemical oceanography measures pH on the NBS scale.
 [/p]
 
 [p]
-You don't have to bother with the others:
+The follow-on question is: *If I'm already using the NBS scale, then why should I bother with the others?*
+[/p]
+
+[p]
+Answer: You don't have to bother with the others because...
 [/p]
 
 [ul]
-  [li] for freshwater, you're good-to-go with the NBS scale in most cases [/li]
-  [li] for seawater, the **WQ ToolBox** does all the heavy lifting [/li]
+  [li] ...for freshwater, you're (mostly) good-to-go with the NBS scale [/li]
+  [li] ...for seawater, the **WQ ToolBox** does all of the heavy lifting [/li]
 [/ul]
 
 [p]
-In either case, when you use the software you only have to enter the pH[sub]NBS[/sub] -- the one you already are using. The software converts pH[sub]NBS[/sub] 
-to the correct scale before carrying out water-quality calculations.
+In either case, when you use the software you only have to enter pH[sub]NBS[/sub] -- the pH you already know and love. The software converts pH[sub]NBS[/sub] 
+to the correct scale before carrying out the necessary water-quality calculations.
 [/p]
 
 [p]
-As in the WQ Map screenshot below, pH always is entered on the NBS scale.
+As in the WQ Map screenshot below, *pH always is entered on the NBS scale*.
 [/p]
 
 [div style:`{border:'black 1px solid', marginTop:'25px', marginBottom:'25px'}`]
 ![WqMapNBS](static/images/wqmap-nbs.png)
 [/div]
 
-[h4]*Converting from pH[sub]NBS[/sub]*[/h4]
+[h4]*Converting pH[sub]NBS[/sub]*[/h4]
 [p]
-The NBS scale is activity-based. The three other scales are concentration-based. Therein lies a conversion problem.
+The NBS scale is based on H[sup]+[/sup] *activity*; the other three, H[sup]+[/sup] *concentration*.
 [/p]
 
 [p]
-Going from activity to molar concentration requires an activity coefficient. There are several approaches to making this conversion, each of which has 
-its assumptions and limitations.
+Therein lies a conversion problem: estimation of an activity coefficient.
 [/p]
 
 [p]
+That coefficient turns activity (the pH[sub]NBS[/sub] measurement, in our case) into a molar concentration 
+(the pH[sub]F[/sub], pH[sub]T[/sub], & pH[sub]SWS[/sub] that we need for our calculations).
+[/p]
 
-"Most popular method used to calculate ions activities is the one proposed by Debye and Hückel in 1923. IS limit ~0.1 or 5%o" and that ws used in an old 
-version of aquaCalc CiteItHere
-The Davis eqn... is reasonable up to an ionic strength of about ... extends to ionic strengh of...(~22ppt) 
-current, extends to ...
+[p]
+There are several approaches, each with its assumptions and limitations. Three were used in different versions of the software.
+[/p]
 
+[p]
+The simplest way to calculate H[sup]+[/sup] ion activity is with the Debye-Hückel formula. This was used in a much earlier version of the old 
+aquaCalc software. It is valid up to an ionic strength of about 0.1 mol/kg (the same as the NBS buffers). That effectively limits its use for 
+solutions below a salinity of about 5‰.
+[/p]
+
+[p]
+The Davis equation is a bit more complicated. It was used in a demo version of the WQ ToolBox software and extends the range of validity up to an ionic 
+strength of about 0.45 mol/kg. As illustrated in the next interactive chart, this is equivalent to a salinity of about 22‰.
+[/p]
+
+[p]
+The Truesdell-Jones Equation extends the validity beyond standard seawater (~34.5‰) to 40‰, the upper salinity limit of many of the formulae used to 
+calculate water-quality properties.
 [/p]
 
 
@@ -1750,7 +1783,7 @@ current, extends to ...
 
   [div className: 'yellow-panel-div' style:`{width:'625px'}`]
 
-    [h3 style:`{textAlign: 'center', marginTop: '8px'}`]Ionic Strength *vs.* Salinity[/h3]
+    [h3 style:`{textAlign: 'center', marginTop: '8px'}`]Ionic Strength *vs.* Seawater Salinity[/h3]
 
     [var name:"sal_ionic" value:15 /]
 
@@ -1771,7 +1804,8 @@ current, extends to ...
 [/div]
 
 [p]
-*Bottom-line:* The s/ware will handle it.
+*Bottom-line:* Just use the pH that you're used to measuring. The software handles all of the computational details under the hood using the best formulae 
+currently available. If a better comes along, the software will be upgraded to include it.
 [/p]
 
 
