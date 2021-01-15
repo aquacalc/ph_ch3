@@ -186,6 +186,86 @@ small span {
   cursor: pointer;
 }
 
+/* TABLE OF CONTENTS for a section */
+
+.table-of-contents {
+  background-color: #fefedc;
+  /* background-color: #f5f5dc; */
+  border: 1px solid #2c0e03;
+  border-radius: 15px;
+  color: #2c0e03;
+  margin-bottom: 18px;
+
+  /* padding: '15px', textAlign:'center', marginTop:'0px', paddingTop:'2px' */
+}
+.table-of-contents h3 {
+  margin-bottom: 8px;
+  text-align: center;
+  /* margin-left: 20px; */
+}
+/* .table-of-contents ul {
+  margin-top: 3px;
+  margin-left: 20px;
+} */
+
+/* KEY TAKE_AWAYS for a section */
+
+.key-take-aways {
+  background-color: #eef7fa;
+  border: 1px solid navy;
+  border-radius: 30px;
+  color: navy;
+  margin-bottom: 25px;
+}
+.key-take-aways h3 {
+  margin-bottom: 0px;
+  text-align: center;
+  /* margin-left: 20px; */
+}
+.key-take-aways h4:nth-of-type(1) {
+  margin-top: 18px;
+}
+.key-take-aways h4 {
+  color: rgb(83, 82, 82);
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  /* text-align: center; */
+  margin-left: 20px;
+}
+.key-take-aways ul {
+  margin-top: 3px;
+  margin-left: 20px;
+}
+
+/* KEY TERMS for a section */
+
+.key-terms {
+  background-color: #f6ead0;
+  /* background-color: #f2e2bc; */
+  /* background-color: #ebd093; */
+  border: 1px solid #2c0e03;
+  border-radius: 30px;
+  color: #2c0e03;
+  margin-bottom: 25px;
+
+  /* background-color: #f7e6d5;
+  border: 1px solid #160701;
+  border-radius: 30px;
+  color: #374666;
+  margin-bottom: 25px; */
+}
+.key-terms h3 {
+  margin-bottom: 8px;
+  text-align: center;
+  /* margin-left: 20px; */
+}
+.key-terms ul {
+  margin-top: 3px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* LEARNING OBJECTIVES */
 /* [div] for Section 'PREFACE' */
 .section-preface {
   background-color: #eef7fa; /* lighter blue */
@@ -194,9 +274,10 @@ small span {
   color: navy;
   margin-bottom: 25px;
 }
-.section-preface h4 {
-  margin-bottom: 3px;
-  margin-left: 20px;
+.section-preface h3 {
+  margin-bottom: 8px;
+  text-align: center;
+  /* margin-left: 20px; */
 }
 .section-preface ul {
   margin-top: 3px;
@@ -246,4 +327,12 @@ small span {
 /* reduced from 4em to tighten spacing after Header */
 .article-header {
   margin-bottom: 2em;
+}
+
+/* Used in "key takeaways", pH part 3 */
+#wavy-underline {
+  text-decoration-style: double;
+  /* color: red; */
+  text-decoration: underline;
+  text-decoration-color: red;
 }

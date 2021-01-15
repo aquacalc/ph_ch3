@@ -10,22 +10,6 @@
   color:"white"
    /]
 
-[div style: `{textAlign:'center', color:'red', fontSize:'0.85rem'}` ]
-\[*This section still under development*\]
-Learning Objective
-Explain...
-
-Key Points
-// A basic solution will have a pH above 7.0, while an acidic solution will have a pH below 7.0.
-// Buffers are solutions that contain a weak acid and its a conjugate base; as such, they can absorb excess H+ions or OH– ions, thereby maintaining an overall steady pH in the solution.
-// pH is equal to the negative logarithm of the concentration of H+ ions in solution: pH = – log[H+].
-
-Terms
-// buffera solution composed of a weak acid and its conjugate base that can be used to stabilize the pH of a solution
-// alkalinehaving a pH greater than 7; basic
-// acidichaving a pH less than 7
-[/div]
-
 [p]
 The previous section was preparation for understanding important aspects of pH covered in this final part of the **WQ ToolBox** 
 pH chapter.
@@ -52,11 +36,102 @@ correct way to average pH values, and measuring pH in seawater on the NBS scale 
   contact [a href:'mailto: aquacalc@gmail.com']aquacalc@gmail.com[/a]
 [/p]
 
-[div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', marginBottom:'18px', paddingTop:'2px'}`]
+
+// ** LEARNING OBJECTIVES ** //
+// [div className: 'section-preface']
+// // ((((((((( To pH and Beyond )))))))))
+//   // [div style:`{textAlign:'center', marginTop:'15px'}`]
+//   // [Inline] [h2 style:`{display: 'inline', marginRight: '30px'}` id:"section-goals"]*To pH and Beyond*[/h2] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+//   // [/div]
+
+//   [h3]Learning Objectives[/h3]
+
+//   [ul]
+//     [li] explain why pH is defined as a **negative logarithm** [/li]
+//     [li] distinguish the **strict definition of pH** (as H[sup]+[/sup] *activity*)[br/]from the **operational definition of pH** (as H[sup]+[/sup] *concentration*) [/li]
+//     [li] explain **the meaning of 10[sup]-pH[/sup]** and how to use it [/li]
+//     [li] know **which pH change doubles** (and which halves) **acidity** [/li]
+//     [li] understand the basics of **how a pH electrode works** [/li]
+//     [li] explain **ionic strength** and its importance to pH measurement [/li]
+//     [li] describe the **liquid junction potential** and its significance [/li]
+//     [li] distinguish the **NBS pH scale** from the **three seawater pH scales** [/li]
+//     [li] explain **the correct way to average pH values** [/li]
+//   [/ul]
+
+// [/div]
+
+// ** KEY POINTS ** //
+[div className: 'key-take-aways']
+// ((((((((( To pH and Beyond )))))))))
+  // [div style:`{textAlign:'center', marginTop:'15px'}`]
+  // [Inline] [h2 style:`{display: 'inline', marginRight: '30px'}` id:"section-goals"]*To pH and Beyond*[/h2] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+  // [/div]
+
+  [h3]Key Take-aways[/h3]
+
+  [h4]General[/h4]
+  [ul]
+    [li] **negative logarithms** transform \[H[sup]+[/sup]\] into human-friendly pH values [/li]
+    [li] **10[sup]-pH[/sup]** transforms pH into \[H[sup]+[/sup]\] values for water-quality calculations [/li]
+    [li] **neutral pH is not always 7.0**; it varies with temperature & salinity [/li]
+  [/ul]
+
+  [h4]Rules of Thumb[/h4]
+  [ul]
+    [li] a pH *de*crease of ~0.3 units **doubles acidity** [/li]
+    [li] a pH *in*crease of ~0.3 units **halves acidity** [/li]
+  [/ul]
+
+  [h4]Measurement[/h4]
+  [ul]
+    [li] **pH electrodes measure H[sup]+[/sup] activity**, not H[sup]+[/sup] concentration [/li]
+    [li] **high ionic strength** solutions (seawater) create **high junction potentials** [/li]
+    [li] **high junction potentials** introduce pH measurement error [/li]
+    [li] **seawater pH scales** minimize the junction potential problem[/li]
+  [/ul]
+
+  [h4]Calculating Mean pH[/h4]
+  [ul]
+    // [li] calculating **average pH** depends on the distribution of pH values [/li]
+    [li] the distribution of pH values determines how to calculate **average pH** [/li]
+    [li] in aquaculture/aquaponics/aquaria/pools, pH is mostly ***normally[br/]distributed***, so **calculate the arithmetic mean of pH values** [/li]
+    [li] in that case, **[span id:'wavy-underline']do not[/span]** calculate the arithmetic mean of the \[H[sup]+[/sup]\] values [/li]
+    [li] (if *log-normally* distributed, use the *geometric mean of the pH values*) [/li]
+  [/ul]
+
+[/div]
+
+// ** KEY TERMS ** //
+[div className: 'key-terms']
+// ((((((((( To pH and Beyond )))))))))
+  // [div style:`{textAlign:'center', marginTop:'15px'}`]
+  // [Inline] [h2 style:`{display: 'inline', marginRight: '30px'}` id:"section-goals"]*To pH and Beyond*[/h2] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+  // [/div]
+
+  [h3]Key Terms[/h3]
+
+  [ul]
+    [li] **ionic strength** -- a solution's ionic charge in mol/L or mol/kg [/li]
+    [li] **liquid junction potential** -- voltage difference across the boundary[br/]where the reference fluid meets the sample solution [/li]
+    [li] **buffer** -- a chemical system designed to maintain pH within a narrow range of values [/li]
+    [li] **NBS (or NIST) buffers** -- a series of standard buffers used to calibrate pH electrodes [/li]
+    [li] **Ion Selective Field Effect Transistors (ISFET)** solid state technology that is an alternative to traditional glass electrodes [/li]
+    [li] **order of magnitude** -- a power of ten; a factor (multiple) of ten difference between values (*e.g.*, 100 is one order of magnitude greater than 10) [/li]
+    [li] **normal distribution** -- a probability distribution of a variable that generates the familiar bell-shaped curve [/li]
+    [li] **log-normal distribution** -- a probability distribution in which the *logarithm* of the variable generates a bell-shaped curve. [/li]
+    // [li] **geometric mean** -- central tendency of lognormal distributions[/li]
+  [/ul]
+
+[/div]
+
+
+
+[div className: 'table-of-contents']
+// [div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', marginBottom:'18px', paddingTop:'2px'}`]
 [h3 id:"top"]Table of Contents[/h3]
 [ul style:`{listStyleType:'none', marginTop:'0px'}`]
   [ul className: 'ulToc']
-    [li] [a href:"#section-goals"]Section Goals[/a] [/li]
+    // [li] [a href:"#section-goals"]Section Goals[/a] [/li]
     [li] [a href:"#inconvenient"]Inconvenient numbers[/a] [/li]
     [li] [a href:"#ph-def"]pH ≔ -log[sub]10[/sub]|\[H[sup]+[/sup]\]|[/a] [/li]
     [li] [a href:"#ten-to-minus-ph"]*What is 10[sup]-pH[/sup]?!*[/a] [/li]
@@ -72,31 +147,6 @@ correct way to average pH values, and measuring pH in seawater on the NBS scale 
     [li] [a href:"#refs"]References[/a] [/li]
   [/ul]
 [/ul]
-[/div]
-
-// #### *To pH and Beyond*
-[div className: 'section-preface']
-// ((((((((( To pH and Beyond )))))))))
-  [div style:`{textAlign:'center', marginTop:'15px'}`]
-  [Inline] [h2 style:`{display: 'inline', marginRight: '30px'}` id:"section-goals"]*To pH and Beyond*[/h2] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
-  [/div]
-
-  [h4]Section Goals[/h4]
-
-  [ul]
-    [li] describe three ways to handle **inconveniently small (large) numbers** [/li]
-    [li] write the **strict definition of pH** (in terms of activity) [/li]
-    [li] write the **operational definition of pH** (in terms of concentration) [/li]
-    [li] understand why pH is defined on a **logarithmic scale** [/li]
-    [li] explain the meaning of **10[sup]-pH[/sup]** [/li]
-    [li] know **the pH change that doubles (halves) acidity** [/li]
-    [li] explain why **pH 7.0 is not always neutral** [/li]
-    [li] have a basic idea of **how a pH electrode works** [/li]
-    [li] describe the **NBS pH scale** and discuss its limitations [/li]
-    [li] list the **pH scales for seawater** and explain their use [/li]
-    [li] explain **the correct way to average a set of pH values** [/li]
-  [/ul]
-
 [/div]
 
 // ((((((((( Inconvenient Numbers )))))))))
@@ -191,7 +241,7 @@ The symbol "[span style:`{fontSize:'1.13rem'}` ]≔[/span]" indicates a definiti
 [/div]
 
 [p]
-  As a heads-up, you also might see it written in different notation with [Equation display:false]\alpha[/Equation] (alpha) symbolizing activity:
+  As a heads-up, you also will see it written in different notation with [Equation display:false]\alpha[/Equation] (alpha) symbolizing activity:
 [/p]
 
 [div]
@@ -1805,7 +1855,7 @@ calculate water-quality properties.
 
 [p]
 *Bottom-line:* Just use the pH that you're used to measuring. The software handles all of the computational details under the hood using the best formulae 
-currently available. If a better comes along, the software will be upgraded to include it.
+currently available. If a better one comes along, the software will be upgraded to include it.
 [/p]
 
 
@@ -1823,7 +1873,7 @@ Question: *What's the mean (*i.e.*, average) of pH 7 and pH 8?* Is it pH 7.5?
 [/p]
 
 [p]
-Another consequence of putting pH on the -log[sub]10[/sub] scale is that we have to be careful when answering that straighforward question.
+Another consequence of putting pH on the -log[sub]10[/sub] scale is that we have to be careful when answering that otherwise straighforward question.
 [/p]
 
 [p]
@@ -1949,11 +1999,6 @@ clean data: not mindlessly include outliers, but mindfully consider if they are 
 //   [var name:"textVal" value:"Hello World" /]
 // [TextInput value:textVal /]
 
-[p]
-The take-way: Be aware that small changes in pH mean large changes in acid concentration. This underlines the need for precise pH management to 
-maintain a healthy environment in production and recreational aquatic systems.
-[/p]
-
 Additional resources
 
 // [a href:"https://phet.colorado.edu/en/simulation/ph-scale-basics" target:"_blank" rel:"noopener noreferrer"]Basic pH Animation[/a]
@@ -1967,6 +2012,11 @@ Additional resources
 // [var name:"func" value:`Math.sin` /]
 // [var name:"domainStart" value:0 /]
 // [var name:"domainEnd" value:`2 * Math.PI` /]
+
+[p]
+The take-way: Be aware that small changes in pH mean large changes in acid concentration. This underlines the need for precise pH management to 
+maintain a healthy environment in production and recreational aquatic systems.
+[/p]
 
 // ![Buzasunseastone](static/images/Buzasunseastone.jpg)
 
