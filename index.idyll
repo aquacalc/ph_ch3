@@ -86,14 +86,14 @@ correct way to average pH values, and measuring pH in seawater on the NBS scale 
   [ul]
     [li] **pH electrodes measure H[sup]+[/sup] activity**, not H[sup]+[/sup] concentration [/li]
     [li] **high ionic strength** solutions (seawater) create **high junction potentials** [/li]
-    [li] **high junction potentials** introduce pH measurement error [/li]
+    // [li] **high junction potentials** introduce pH measurement error [/li]
     [li] **seawater pH scales** minimize the junction potential problem[/li]
   [/ul]
 
   [h4]Calculating Mean pH[/h4]
   [ul]
     // [li] calculating **average pH** depends on the distribution of pH values [/li]
-    [li] the distribution of pH values determines how to calculate **average pH** [/li]
+    // [li] the distribution of pH values determines how to calculate **average pH** [/li]
     [li] in aquaculture/aquaponics/aquaria/pools, pH is mostly ***normally[br/]distributed***, so **calculate the arithmetic mean of pH values** [/li]
     [li] in that case, **[span id:'wavy-underline']do not[/span]** calculate the arithmetic mean of the \[H[sup]+[/sup]\] values [/li]
     [li] (if *log-normally* distributed, use the *geometric mean of the pH values*) [/li]
@@ -466,8 +466,8 @@ that results after the -log[sub]10[/sub] transformation. This is illustrated in 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 [p]
-This non-linearity introduces several wrinkles into the proper interpretation of pH. We'll use this graph below to iron out a few of these, such as how small changes in pH 
-represent large changes in acid concentration; and how to calculate the average of a set of pH values.
+This non-linearity introduces several wrinkles into the proper interpretation of pH. We'll use this graph later to iron out a few of these, 
+such as how small changes in pH represent large changes in acid concentration; and how to calculate the average of a set of pH values.
 [/p]
 
 
@@ -1868,6 +1868,42 @@ currently available. If a better one comes along, the software will be upgraded 
 [Inline] [h3 style:`{display: 'inline', marginRight: '30px', marginTop: '50px'}` id:"mean-ph"]***What does 'mean pH' mean?!***[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
 [/div]
 
+*[h4]Bottomline at the Top[/h4]*
+
+[p]
+The Answer...As long as the pH data that you're averaging follow a Normal distribution (*i.e.*, they satisfy a bell-shaped curve), then simply calculate 
+the arithmetic mean: add all of the pH values and divide by the number of values you've added.
+[/p]
+
+[p]
+In the aquaculture/aquaponics/aquaria/pools & spas, it is almost always the case that repeated pH samples will follow ...
+[/p]
+
+[p]
+So, if you take three pH measurements in your tank, average them in what most would consider the usual way.
+[/p]
+
+// [hr/]
+symmetric vs skewed right
+![normal](static/images/normal.png)
+![lognormal](static/images/lognormal.png)
+
+[h4]*Why the Confusion?*[/h4]
+
+[p]
+If it's that simple, then why even mention it?
+[/p]
+
+[p]
+Because there is genuine confusion about whether to (1) take the arithmetic mean of the pH values *or* 
+(2) first convert the pH values to their \[H[sup]+[/sup]\] values and then take the arithmetic mean of those converted values.
+[/p]
+
+[p]
+The second operation seems reasonable: After all, the pH numbers are transformed from the \[H[sup]+[/sup]\] that really represent a solution's 
+acidity, so 
+[/p]
+
 [p]
 Question: *What's the mean (*i.e.*, average) of pH 7 and pH 8?* Is it pH 7.5?
 [/p]
@@ -1933,6 +1969,15 @@ The average of a set of pH values generally is *not equal to* the average \[H[su
 [/p]
 
 That's all owed to the -log[sub]10[/sub] transformation. Illustrated by modifying the last display...
+
+Don't calculate the mean just because you can. Back it up with a reason. For example, if your tank/pond/pool is exposed to the outdoors and experiences 
+significant day-night swings in pH, the mean pH may not be so informative; *more* informative is to display a time-series chart that shows details of 
+the change along with max and min values.
+
+If you have data over several days/weeks/months, then calculate the mean for each time mark along with error bars. But the overall mean -- all of those data 
+squeezed into a single pH value -- would convey useful information about your system.
+
+The mean compresses a series of data into a single number; it's much less rich in information.
 
 
 // *************************** //
@@ -2007,16 +2052,15 @@ Additional resources
 
 
 
-## Take-aways
-
 // [var name:"func" value:`Math.sin` /]
 // [var name:"domainStart" value:0 /]
 // [var name:"domainEnd" value:`2 * Math.PI` /]
 
-[p]
-The take-way: Be aware that small changes in pH mean large changes in acid concentration. This underlines the need for precise pH management to 
-maintain a healthy environment in production and recreational aquatic systems.
-[/p]
+// ## Take-aways
+// [p]
+// The take-way: Be aware that small changes in pH mean large changes in acid concentration. This underlines the need for precise pH management to 
+// maintain a healthy environment in production and recreational aquatic systems.
+// [/p]
 
 // ![Buzasunseastone](static/images/Buzasunseastone.jpg)
 
