@@ -94,9 +94,9 @@ correct way to average pH values, and measuring pH in seawater on the NBS scale 
   [ul]
     // [li] calculating **average pH** depends on the distribution of pH values [/li]
     // [li] the distribution of pH values determines how to calculate **average pH** [/li]
-    [li] in aquaculture/aquaponics/aquaria/pools, pH is mostly ***normally[br/]distributed***, so **calculate the arithmetic mean of pH values** [/li]
+    [li] aquaculture/aquaponics/aquaria/pools pH sampling data are mostly[br/]***Normally distributed***, so **use the arithmetic mean** [/li]
     [li] in that case, **[span id:'wavy-underline']do not[/span]** calculate the arithmetic mean of the \[H[sup]+[/sup]\] values [/li]
-    [li] (if *log-normally* distributed, use the *geometric mean of the pH values*) [/li]
+    // [li] (if *log-normally* distributed, use the *geometric mean of the pH values*) [/li]
   [/ul]
 
 [/div]
@@ -573,8 +573,6 @@ Logs are used in this way not only for pH, but also for the decibel scale of sou
 [/p]
 // Observed that multiplying two numbers of the same base was simplified by adding their exponents. *e.g.*, 
 // 4 x 8 = 2[sup]2[/sup] x 2[sup]3[/sup] = 2[sup]\(2 + 3\)[/sup] = 2[sup]5[/sup] = 32
-
-// [Button className:'closePanelBtn' onClick:`showContent_logs_napier = false` ]Close Content[/Button]
 
 [div style: `{textAlign: 'center'}` ]
 [a className:"closePanelBtn" href:"#close-who-and-why" onClick:`showContent_logs_napier = false` ]Close Content[/a]
@@ -1868,7 +1866,15 @@ currently available. If a better one comes along, the software will be upgraded 
 [Inline] [h3 style:`{display: 'inline', marginRight: '30px', marginTop: '50px'}` id:"mean-ph"]***What does 'mean pH' mean?!***[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
 [/div]
 
-*[h4]Bottomline at the Top[/h4]*
+[span style:`{color: 'red'}`](NB: This section under construction)[/span]
+
+*[h4]The Confusion[/h4]*
+
+*[h4]The Short Answer[/h4]*
+
+*[h4]The Long Answer[/h4]*
+
+
 
 [p]
 The Answer...As long as the pH data that you're averaging follow a Normal distribution (*i.e.*, they satisfy a bell-shaped curve), then simply calculate 
@@ -1887,8 +1893,6 @@ So, if you take three pH measurements in your tank, average them in what most wo
 symmetric vs skewed right
 ![normal](static/images/normal.png)
 ![lognormal](static/images/lognormal.png)
-
-[h4]*Why the Confusion?*[/h4]
 
 [p]
 If it's that simple, then why even mention it?
