@@ -4,7 +4,7 @@
   fullWidth:true
   title:"WQ ToolBox Manual"
   subtitle:"pH III: To pH and Beyond..."
-  authorLink:"aquacalc@gmail.com"
+  authorLink:"aquacalc@protonmail.ch"
   date:`(new Date()).toDateString()`
   background:"url('static/images/Buza-2.png')"
   color:"white"
@@ -33,7 +33,7 @@ correct way to average pH values, and measuring pH in seawater on the NBS scale 
 [/p]
 
 [p style:`{textAlign:'right'}`]
-  contact [a href:'mailto: aquacalc@gmail.com']aquacalc@gmail.com[/a]
+  contact [a href:'mailto: aquacalc@protonmail.ch']aquacalc@protonmail.ch[/a]
 [/p]
 
 
