@@ -33,7 +33,9 @@ correct way to average pH values, and measuring pH in seawater on the NBS scale 
 [/p]
 
 [p style:`{textAlign:'right'}`]
-  contact [a href:'mailto: aquacalc@protonmail.ch']aquacalc@protonmail.ch[/a]
+  contact [a href:'mailto: aquacalc@protonmail.ch' 
+                target:"_blank"
+                rel:"noopener noreferrer"]aquacalc@protonmail.ch[/a]
 [/p]
 
 
@@ -1153,6 +1155,13 @@ Image by [a href:"https://pixabay.com/users/ginare77-13264986/?utm_source=link-a
 Our focus is on the glass bulb electrode that most everyone uses, but it's worth mentioning a tech advance in pH measurement: Ion Selective Field Effect 
 Transistors (**ISFET**).
 [/p]
+
+// see: https://en.wikipedia.org/wiki/Chemical_field-effect_transistor
+// The MOSFET (metal-oxide-semiconductor field-effect transistor)[10] was invented by Egyptian engineer Mohamed M. Atalla and Korean engineer Dawon Kahng in 1959.[11] Dutch engineer Piet Bergveld later studied the MOSFET and realized it could be adapted into a sensor for chemical and biological applications.[10]
+
+// In 1970, Bergveld invented the ion-sensitive field-effect transistor (ISFET).[12] He described the ISFET as "a special type of MOSFET with a gate at a certain distance".[10] In the ISFET structure, the metal gate of a standard MOSFET is replaced by an ion-sensitive membrane, electrolyte solution and reference electrode.[13]
+
+// ChemFETs are based on a modified ISFET, a concept developed by Bergveld in the 1970s.[4] There is some confusion as to the relationship between ChemFETs and ISFETs. Whereas an ISFET only detects ions, a ChemFET detects any chemical (including ions).
 
 [p]
 ISFET electrodes are based on solid state silicon chip technology of the sort found in computers, cell phones, and Internet of Things (**IoT**) devices. 
